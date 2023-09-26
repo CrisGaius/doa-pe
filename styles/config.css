@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*Utilizar @import url('config.css') para incluir esse arquivo nos arquivos css que formos fazendo. Dessa forma, evitamos ter que copiar tudo de novo. Procurem utilizar sempre as variáveis.*/
+
+:root {
+    --inter: 'Inter', sans-serif;
+    --rosa: #F2055C;
+    --roxo: #341FBF;
+    --ciano: #00BCC8;
+    --amarelo: #F29544;
+    --preto: #0D0D0D;
+    --branco: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    font-family: var(--inter);
+}
+
+img, a {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
