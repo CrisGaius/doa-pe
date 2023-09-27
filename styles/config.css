@@ -7,10 +7,11 @@
     --inter: 'Inter', sans-serif;
     --rosa: #F2055C;
     --roxo: #341FBF;
-    --ciano: #00BCC8;
+    --ciano: #00F0FF;
     --amarelo: #F29544;
     --preto: #0D0D0D;
     --branco: #FFFFFF;
+    --azul-linkedin: #48A3FF;
 }
 
 * {
@@ -23,6 +24,11 @@
     scroll-behavior: smooth;
     list-style-type: none;
     font-family: var(--inter);
+}
+
+body {
+    background-color: var(--roxo);
+    color: var(--branco);
 }
 
 img, a {
