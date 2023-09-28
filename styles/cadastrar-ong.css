@@ -38,6 +38,7 @@ img, a {
 
 /* HEADER */
 #btn-voltar{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +50,13 @@ img, a {
     font-weight: 600;
     color: var(--branco);
     background-color: var(--rosa);
+}
+
+#btn-voltar:hover{
+    transition: 0.4s;
+    scale: 1.05;
+    box-shadow: 1px 1px 3px var(--rosa);
+    background-color: #e90055;
 }
 
 #btn-voltar > img{
@@ -88,21 +96,37 @@ div.inputs{
 }
 
 .caixa-input{
-    width: 100%;
+    width: 400px;
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgb(224, 211, 211);
 }
 
-#ipt-pagamento{
-    width: 100%;
-    height: 200px;
+/* Formas de Pagamento */
+div#ipt-pagamento{
+    width: 400px;
+    height: auto;
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(224, 211, 211);
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
+}
+
+.flex-container-pagamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+/* Pix */
+.flex-container-pagamento:first-child > label{
+    width: 100%;
+    margin-left: 8px;
+    text-align: left;
 }
 
 .label-pagameto{
@@ -110,4 +134,45 @@ div.inputs{
     color: var(--preto);
 }
 
-/* FOOTER */
+#ipt-pix{
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+}
+/* Linha Divisória */
+#flex-container-linha{
+    display: flex;
+    align-items: center;
+}
+
+.linha-vertical{
+    width: 3px;
+    height: 9px;
+    background-color: rgba(148, 147, 147, 0.7);
+}
+
+#linha-divisoria{
+    width: 370px;
+    height: 2px;
+    background-color: rgba(148, 147, 147, 0.7);
+}
+/* Conta Bancária */
+.flex{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alinhando-pagamentos{
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+}
+
+.ipt-cbancaria{
+    width: 175px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+}

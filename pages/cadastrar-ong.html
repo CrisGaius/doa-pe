@@ -53,16 +53,47 @@
                     <select name="" id="ipt-tipos" class="caixa-input" placeholder="Selecione o tipo da sua ONG...">oi</select>
                 </div>
 
+                <!-- Caixa Formas de Pagamento -->
                 <div class="inputs">
                     <p>Formas de Pagamentos</p>
                     <div id="ipt-pagamento">
-                        <label for="ipt-pix" class="label-pagameto">Pix</label>
-                        <input type="number" name="" id="ipt-pix">
+                        <!-- Pix -->
+                        <div class="flex-container-pagamento">
+                            <label for="ipt-pix" class="label-pagameto">Pix</label>
+                            <input type="text" name="" id="ipt-pix" placeholder="Digite seu pix...">
+                        </div>
 
+                        <!-- Linha Divisória -->
+                        <div id="flex-container-linha">
+                            <div class="linha-vertical"></div>
+                            <div id="linha-divisoria"></div>
+                            <div class="linha-vertical"></div>
+                        </div>
+
+                        <!-- Conta Bancária -->
+                        <div class="flex-container-pagamento">
+                            <label class="label-pagameto">Conta Bancária</label>
+                            <div class="flex">
+                                <div class="alinhando-pagamentos">
+                                    <input type="text" name="" id="ipt-numero" class="ipt-cbancaria" placeholder="Número da conta...">
+
+                                    <input type="text" name="" id="ipt-agencia" class="ipt-cbancaria" placeholder="Agência da conta...">
+                                </div>
+                                <div class="alinhando-pagamentos">
+                                    <input type="text" name="" id="ipt-instituicao" class="ipt-cbancaria" placeholder="Instituição da conta...">
+
+                                    <input type="text" name="" id="ipt-tipconta" class="ipt-cbancaria" placeholder="Tipo da conta...">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
         </section>
     </main>
+
+    <footer>
+        <button type="submit" id="btn-enviar">Enviar</button>
+    </footer>
 </body>
 </html>
