@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página que conta um pouco sobre o projeto da Doa PE e dos seus desenvolvedores.">
+    <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
+    <title>Cadastrar ONG</title>
+    <link rel="stylesheet" href="../styles/cadastrar-ong.css">
+    <script src="../scripts/sobre.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="#">
+            <button id="btn-voltar">
+                <img src="../images/seta-voltar.png" alt="Botão Voltar">voltar
+            </button>
+        </a>
+    </header>
+
+    <main>
+        <section class="flex-container">
+            <h1>Cadastrar ONG</h1>
+
+            <form action="">
+                <div class="inputs">
+                    <label for="ipt-nome">Nome</label>
+                    <input type="text" name="" id="ipt-nome" class="caixa-input" placeholder="Digite o nome da sua ONG...">
+                </div>
+            
+                <div class="inputs">
+                    <label for="ipt-endereco">Endereço</label>
+                    <input type="text" name="" id="ipt-endereco" class="caixa-input" placeholder="Digite o endereço da sua ONG...">
+                </div>
+                
+                <div class="inputs">
+                    <label for="ipt-email">E-mail</label>
+                    <input type="text" name="" id="ipt-email" class="caixa-input" placeholder="Digite o e-mail da sua ONG...">
+                </div>
+                
+                <div class="inputs">
+                    <label for="ipt-contato">Contato</label>
+                    <input type="number" min="0" name="" id="ipt-contato" class="caixa-input" placeholder="Digite o número de contato da sua ONG...">
+                </div>
+
+                <div class="inputs">
+                    <label for="ipt-cnpj">CNPJ</label>
+                    <input type="number" min="0" name="" id="ipt-cnpj" class="caixa-input" placeholder="Digite o CNPJ da sua ONG...">
+                </div>
+
+                <div class="inputs">
+                    <label for="ipt-tipos">Tipos</label>
+                    <select name="" id="ipt-tipos" class="caixa-input" placeholder="Selecione o tipo da sua ONG...">oi</select>
+                </div>
+
+                <div class="inputs">
+                    <p>Formas de Pagamentos</p>
+                    <div id="ipt-pagamento">
+                        <label for="ipt-pix" class="label-pagameto">Pix</label>
+                        <input type="number" name="" id="ipt-pix">
+
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
