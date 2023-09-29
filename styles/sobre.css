@@ -112,7 +112,7 @@ main p#texto-quem-somos {
     font-size: 19px;
     font-weight: 500;
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -240,13 +240,204 @@ section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-c
 }
 
 /*Celulares muito pequenos*/
-@media only screen and (min-width: 390px) and (max-width: 459px) {}
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 10px 0 10px;
+    }
+
+    main img#foto-principal {
+        max-width: 350px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 70px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    main h1#titulo-quem-somos {
+        font-size: 40px;
+    }
+
+    section#container-cards-devs {
+        margin-bottom: 20px;
+    }
+
+    section#container-cards-devs div.flex-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 250px;
+        height: 250px;
+    }
+
+    section#container-cards-devs div.flex-container div p.nome-dev {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev {
+        flex-direction: row;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container img {
+        width: 25px;
+        height: 25px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p {
+        font-size: 13px;
+    }
+}
 
 /*Transição entre celulares muito pequenos e pequenos*/
-@media only screen and (min-width: 459px) and (max-width: 599px) {}
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 10px 0 10px;
+    }
+
+    main img#foto-principal {
+        max-width: 400px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 75px;
+    }
+
+    main h1#titulo-quem-somos {
+        font-size: 42px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    section#container-cards-devs {
+        margin-bottom: 20px;
+    }
+
+    section#container-cards-devs div.flex-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 270px;
+        height: 270px;
+    }
+
+    section#container-cards-devs div.flex-container div p.nome-dev {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev {
+        flex-direction: row;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container img {
+        width: 25px;
+        height: 25px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p {
+        font-size: 13px;
+    }
+}
 
 /*Celulares pequenos*/
 @media only screen and (min-width: 599px) and (max-width: 767px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 20px 0 20px;
+    }
+
+    main img#foto-principal {
+        max-width: 450px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 80px;
+    }
+
+    main h1#titulo-quem-somos {
+        font-size: 44px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    section#container-cards-devs {
+        margin-bottom: 20px;
+    }
+
+    section#container-cards-devs div.flex-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 280px;
+        height: 280px;
+    }
+
+    section#container-cards-devs div.flex-container div p.nome-dev {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev {
+        flex-direction: row;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container img {
+        width: 25px;
+        height: 25px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p {
+        font-size: 13px;
+    }
 }
 
 /* Menu mobile */
@@ -267,5 +458,87 @@ section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-c
 
 /*TABLETS*/
 @media only screen and (min-width: 767px) and (max-width: 992px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 20px 0 20px;
+    }
+
+    main img#foto-principal {
+        max-width: 500px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 80px;
+    }
+
+    main h1#titulo-quem-somos {
+        font-size: 46px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 17px;
+        line-height: 2;
+    }
+
+    section#container-cards-devs {
+        margin-bottom: 20px;
+    }
+
+    section#container-cards-devs div.flex-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 290px;
+        height: 290px;
+    }
+
+    section#container-cards-devs div.flex-container div p.nome-dev {
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev {
+        flex-direction: row;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container {
+        flex-direction: row;
+        gap: 7px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container img {
+        width: 30px;
+        height: 30px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p {
+        font-size: 14px;
+    }
 }
 
+/*ESPECÍFICA*/
+@media only screen and (min-width: 993px) and (max-width: 1100px) {
+    main {
+        padding: 0 20px 0 20px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 80px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 18px;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 280px;
+        height: 280px;
+    }
+}
