@@ -2,11 +2,11 @@
 
 header#cabecalho {
     background-color: var(--preto);
-    padding: 13px;
 }
 
-nav#navbar{
+nav#navbar {
     justify-content: space-around;
+    padding: 13px;
 }
 
 nav#navbar img#logo-doa-pe {
@@ -21,7 +21,7 @@ ul#lista a {
     color: var(--branco);
 }
 
-ul#lista li:hover{
+ul#lista li:hover {
     transition: .3s ease-in-out;
     transform: scale(1.1);
 }
@@ -60,13 +60,33 @@ ul#lista li#botao-logout img {
     width: 20px;
 }
 
+ul#lista img#icone-menu {
+    display: none;
+}
+
+div.menu-mobile {
+    display: none;
+    position: absolute;
+    background-color: var(--amarelo);
+    width: 100%;
+    top: 80px;
+    padding: 20px 0 20px 0;
+    font-weight: bold;
+}
+
+div.menu-mobile ul#lista{
+    gap: 20px;
+    flex-direction: column;
+}
+
 main {
     margin-top: 30px;
     flex-direction: column;
 }
 
 main img#foto-principal {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -148,3 +168,104 @@ section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-c
 section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p.paragrafo-linkedin {
     color: var(--azul-linkedin);
 }
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main {
+        margin-top: 20px;
+        padding: 0 10px 0 10px;
+    }
+
+    main img#foto-principal {
+        max-width: 300px;
+    }
+
+    main img#icone-pessoas {
+        max-width: 70px;
+    }
+
+    main p#texto-quem-somos {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    main h1#titulo-quem-somos {
+        font-size: 35px;
+    }
+
+    section#container-cards-devs {
+        margin-bottom: 20px;
+    }
+
+    section#container-cards-devs div.flex-container {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    section#container-cards-devs div.flex-container div img.foto-dev {
+        width: 250px;
+        height: 250px;
+    }
+
+    section#container-cards-devs div.flex-container div p.nome-dev {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev {
+        flex-direction: row;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container img {
+        width: 25px;
+        height: 25px;
+    }
+
+    section#container-cards-devs div.flex-container div.redes-sociais-dev div.flex-container p {
+        font-size: 13px;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+}
+
+/* Menu mobile */
+@media only screen and (max-width: 767px) {
+    header nav ul#lista li {
+        display: none;
+    }
+
+    ul#lista img#icone-menu {
+        cursor: pointer;
+        display: block;
+    }
+
+    div.menu-mobile.open {
+        display: block;
+    }
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+}
+
