@@ -1,0 +1,117 @@
+@import url('../styles/config.css');
+
+body {
+    overflow: hidden;
+}
+
+header#cabecalho {
+    padding: 0 20px;
+    font-weight: bold;
+    height: 10vh;
+}
+
+header#cabecalho section#caixa-voltar {
+    position: absolute;
+    background-color: var(--rosa);
+    left: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+header#cabecalho section#caixa-voltar img {
+    width: 16px;
+}
+
+header#cabecalho h1 {
+    font-size: 40px;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
+}
+
+main {
+    flex-direction: column;
+    height: calc(100vh - 10vh);
+}
+
+main form#formulario {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 550px;
+    width: 100%;
+}
+
+main form#formulario div#container-email {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+main form#formulario label#caixa-email {
+    color: var(--ciano);
+    font-size: 30px;
+    font-weight: bold;
+    gap: 5px;
+}
+
+main form#formulario label#caixa-email img#icone-email {
+    width: 25px;
+}
+
+main form#formulario label#caixa-email p {
+    cursor: text;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
+}
+
+main form#formulario input#email {
+    border-radius: 8px;
+    padding: 13px 10px;
+    font-size: 18px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+main form#formulario input#email.erro {
+    border: 2.3px solid var(--amarelo);
+}
+
+main form#formulario span.texto-erro {
+    color: var(--amarelo);
+    padding-left: 7px;
+    width: 100%;
+    font-weight: bold;
+    display: none;
+}
+
+main form#formulario span.texto-erro.mostrar {
+    display: block;
+}
+
+main form#formulario button#botao-enviar {
+    width: 100%;
+    background-color: var(--ciano);
+    color: var(--preto);
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 13px 10px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {}
