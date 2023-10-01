@@ -75,15 +75,15 @@ main form#formulario input {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+main form#formulario input.erro {
+    border: 2.3px solid var(--amarelo);
+}
+
 main form#formulario img#icone-olho {
     width: 30px;
     position: absolute;
     right: 10px;
     cursor: pointer;
-}
-
-main form#formulario input.erro {
-    border: 2.3px solid var(--amarelo);
 }
 
 main form#formulario span.texto-erro {
