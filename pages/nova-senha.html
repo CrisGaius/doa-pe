@@ -6,29 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
-    <title>Esqueceu a senha</title>
+    <title>Nova Senha</title>
     <link rel="stylesheet" href="../styles/esqueceu-a-senha.css">
-    <script src="../scripts/esqueceu-a-senha.js" defer></script>
+    <script src="../scripts/nova-senha.js" defer></script>
 </head>
 
 <body>
     <header id="cabecalho" class="flex-container">
-        <section id="caixa-voltar" class="flex-container">
-            <img src="../icons/icone-voltar.svg" alt="Ícone de voltar" id="icone-voltar">
-            <p>VOLTAR</p>
-        </section>
         <h1>ESQUECEU A SENHA</h1>
     </header>
     <main class="flex-container">
         <form id="formulario" class="flex-container">
             <div id="container"class="flex-container">
-                <label id="caixa" for="email" class="flex-container">
-                    <img src="../icons/icone-email.svg" alt="Ícone de email" id="icone-email">
-                    <p>Email:</p>
+                <label id="caixa" for="senha" class="flex-container">
+                    <img src="../icons/icone-senha.svg" alt="Ícone de senha" id="icone-senha">
+                    <p>Senha:</p>
                 </label>
             </div>
-            <input type="email" name="email" id="email" placeholder="Digite seu email...">
-            <span class="texto-erro">Email inválido.</span>
+            <div id="caixa-input" class="flex-container">
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha..." maxlength="20">
+                <img src="../icons/icone-olho.svg" alt="Ícone de olho" id="icone-olho">
+            </div>
+            <span class="texto-erro">Senha inválida.</span>
             <button id="botao-enviar">ENVIAR</button>
         </form>
     </main>

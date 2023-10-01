@@ -41,28 +41,33 @@ main form#formulario {
     width: 100%;
 }
 
-main form#formulario div#container-email {
+main form#formulario div#container {
     width: 100%;
     justify-content: flex-start;
 }
 
-main form#formulario label#caixa-email {
+main form#formulario label#caixa {
     color: var(--ciano);
     font-size: 30px;
     font-weight: bold;
-    gap: 5px;
+    gap: 7px;
 }
 
-main form#formulario label#caixa-email img#icone-email {
+main form#formulario label#caixa img {
     width: 25px;
 }
 
-main form#formulario label#caixa-email p {
+main form#formulario label#caixa p {
     cursor: text;
     text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
 }
 
-main form#formulario input#email {
+div#caixa-input {
+    width: 100%;
+    position: relative;
+}
+
+main form#formulario input {
     border-radius: 8px;
     padding: 13px 10px;
     font-size: 18px;
@@ -70,7 +75,14 @@ main form#formulario input#email {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-main form#formulario input#email.erro {
+main form#formulario img#icone-olho {
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+main form#formulario input.erro {
     border: 2.3px solid var(--amarelo);
 }
 
