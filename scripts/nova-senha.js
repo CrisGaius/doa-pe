@@ -1,7 +1,12 @@
+const botaoVoltar = document.querySelector('#caixa-voltar')
 const formulario = document.querySelector('form#formulario')
 const inputSenha = document.querySelector('input#senha')
 const textoErro = document.querySelector('.texto-erro')
 const iconeOlho = document.querySelector('img#icone-olho')
+
+botaoVoltar.addEventListener('click', () => {
+    window.open('../pages/sobre.html', '_self')
+})
 
 formulario.addEventListener('submit', function verificarCampo(e) {
     e.preventDefault()

@@ -7,7 +7,7 @@ body {
 header#cabecalho {
     padding: 0 20px;
     font-weight: bold;
-    height: 10vh;
+    height: 9vh;
 }
 
 header#cabecalho section#caixa-voltar {
@@ -31,7 +31,7 @@ header#cabecalho h1 {
 
 main {
     flex-direction: column;
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 9vh);
 }
 
 main form#formulario {
@@ -114,16 +114,206 @@ main form#formulario button#botao-enviar {
 /* MEDIA QUERIES */
 
 /*TELA DE IPHONE 5 E MENORES*/
-@media screen and (max-width: 390px) {}
+@media screen and (max-width: 390px) {
+    header#cabecalho {
+        padding: 0 10px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 12px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    main form#formulario label#caixa {
+        font-size: 20px;
+    }
+
+    main form#formulario input, main form#formulario button#botao-enviar {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    main form#formulario input.erro {
+        border: 2px solid var(--amarelo);
+    }
+
+    main form#formulario img#icone-olho {
+        width: 24px;
+    }
+
+    main form#formulario span.texto-erro {
+        font-size: 13px;
+    }
+
+}
 
 /*Celulares muito pequenos*/
-@media only screen and (min-width: 390px) and (max-width: 459px) {}
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header#cabecalho {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 12px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main form#formulario label#caixa {
+        font-size: 23px;
+    }
+
+    main form#formulario input, main form#formulario button#botao-enviar {
+        padding: 11px 10px;
+        font-size: 14px;
+    }
+
+    main form#formulario input.erro {
+        border: 2px solid var(--amarelo);
+    }
+
+    main form#formulario img#icone-olho {
+        width: 24px;
+    }
+
+    main form#formulario span.texto-erro {
+        font-size: 13px;
+    }
+}
 
 /*Transição entre celulares muito pequenos e pequenos*/
-@media only screen and (min-width: 459px) and (max-width: 599px) {}
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header#cabecalho {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 13px;
+        padding: 6px 9px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 27px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main form#formulario label#caixa {
+        font-size: 25px;
+    }
+
+    main form#formulario input, main form#formulario button#botao-enviar {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+
+    main form#formulario input.erro {
+        border: 2px solid var(--amarelo);
+    }
+
+    main form#formulario img#icone-olho {
+        width: 24px;
+    }
+
+    main form#formulario span.texto-erro {
+        font-size: 13px;
+    }
+}
 
 /*Celulares pequenos*/
-@media only screen and (min-width: 599px) and (max-width: 767px) {}
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    header#cabecalho {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 14px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 31px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main form#formulario label#caixa {
+        font-size: 27px;
+    }
+
+    main form#formulario input, main form#formulario button#botao-enviar {
+        padding: 13px 10px;
+        font-size: 16px;
+    }
+}
 
 /*TABLETS*/
-@media only screen and (min-width: 767px) and (max-width: 992px) {}
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    header#cabecalho section#caixa-voltar {
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 15px;
+    }
+
+    main form#formulario label#caixa {
+        font-size: 28px;
+    }
+
+    main form#formulario input, main form#formulario button#botao-enviar {
+        padding: 13px 10px;
+        font-size: 17px;
+    }
+}
