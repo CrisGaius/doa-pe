@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <title>Esqueceu a senha</title>
-    <link rel="stylesheet" href="../styles/esqueceu-a-senha.css">
-    <script src="../scripts/esqueceu-a-senha.js" defer></script>
+    <link rel="stylesheet" href="../styles/mensagem-esqueceu-a-senha-sucesso.css">
     <script src="../scripts/botao-voltar-sobre.js" defer></script>
 </head>
-
 <body>
     <header id="cabecalho" class="flex-container">
         <section id="caixa-voltar" class="flex-container">
@@ -21,20 +18,13 @@
         <h1>ESQUECEU A SENHA</h1>
     </header>
     <main class="flex-container">
-        <form id="formulario" class="flex-container">
-            <div id="container"class="flex-container">
-                <label id="caixa" for="email" class="flex-container">
-                    <img src="../icons/icone-email.svg" alt="Ícone de email" id="icone-email">
-                    <p>Email:</p>
-                </label>
+        <section id="mensagem" class="flex-container">
+            <div id="caixa-texto-principal" class="flex-container">
+                <img src="../icons/icone-email-enviado.svg" alt="Ícone de email enviado">
+                <p id="texto-principal">EMAIL ENVIADO COM SUCESSO!</p>
             </div>
-            <div id="caixa-input">
-                <input type="email" name="email" id="email" placeholder="Digite seu email...">
-            </div>
-            <span class="texto-erro">Email inválido.</span>
-            <button id="botao-enviar">ENVIAR</button>
-        </form>
+            <p id="texto-complementar">Será enviado um link para que você possa alterar a senha.</p>
+        </section>
     </main>
 </body>
-
 </html>

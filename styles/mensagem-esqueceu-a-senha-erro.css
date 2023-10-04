@@ -34,81 +34,40 @@ main {
     height: calc(100vh - 9vh);
 }
 
-main form#formulario {
+main section#mensagem {
     flex-direction: column;
-    gap: 10px;
-    max-width: 550px;
-    width: 100%;
-}
-
-main form#formulario div#container {
-    width: 100%;
-    justify-content: flex-start;
-}
-
-main form#formulario label#caixa {
-    color: var(--ciano);
-    font-size: 30px;
-    font-weight: bold;
-    gap: 7px;
-}
-
-main form#formulario label#caixa img {
-    width: 25px;
-}
-
-main form#formulario label#caixa p {
-    cursor: text;
-    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
-}
-
-div#caixa-input {
-    width: 100%;
     position: relative;
 }
 
-main form#formulario input {
-    border-radius: 8px;
-    padding: 13px 10px;
-    font-size: 18px;
+main section#mensagem div#caixa-texto-principal {
+    gap: 20px;
+    max-width: 900px;
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-main form#formulario input.erro {
-    border: 2.3px solid var(--amarelo);
+main section#mensagem div#caixa-texto-principal img {
+    width: 150px;
 }
 
-main form#formulario img#icone-olho {
-    width: 30px;
+main section#mensagem div#caixa-texto-principal p#texto-principal {
+    color: var(--vermelho);
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.158);
+}
+
+main section#mensagem p#texto-complementar {
     position: absolute;
-    right: 10px;
-    cursor: pointer;
+    right: 0;
+    bottom: -30px;
+    text-align: right;
+    color: var(--branco);
+    font-weight: 500;
+    font-size: 20px;
+    width: 245px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.112);
 }
 
-main form#formulario span.texto-erro {
-    color: var(--amarelo);
-    padding-left: 7px;
-    width: 100%;
-    font-weight: bold;
-    display: none;
-}
-
-main form#formulario span.texto-erro.mostrar {
-    display: block;
-}
-
-main form#formulario button#botao-enviar {
-    width: 100%;
-    background-color: var(--ciano);
-    color: var(--preto);
-    font-size: 17px;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 13px 10px;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
 
 
 /* MEDIA QUERIES */
@@ -140,25 +99,22 @@ main form#formulario button#botao-enviar {
         padding: 0 15px;
     }
 
-    main form#formulario label#caixa {
-        font-size: 20px;
+    main section#mensagem div#caixa-texto-principal {
+        gap: 10px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
-        padding: 10px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 70px;
+    }
+
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 19px;
+    }
+
+    main section#mensagem p#texto-complementar {
+        width: 130px;
         font-size: 13px;
-    }
-
-    main form#formulario input.erro {
-        border: 2px solid var(--amarelo);
-    }
-
-    main form#formulario img#icone-olho {
-        width: 24px;
-    }
-
-    main form#formulario span.texto-erro {
-        font-size: 13px;
+        bottom: -55px;
     }
 
 }
@@ -190,25 +146,22 @@ main form#formulario button#botao-enviar {
         padding: 0 20px;
     }
 
-    main form#formulario label#caixa {
+    main section#mensagem div#caixa-texto-principal {
+        gap: 10px;
+    }
+
+    main section#mensagem div#caixa-texto-principal img {
+        width: 94px;
+    }
+
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
         font-size: 23px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
-        padding: 11px 10px;
-        font-size: 14px;
-    }
-
-    main form#formulario input.erro {
-        border: 2px solid var(--amarelo);
-    }
-
-    main form#formulario img#icone-olho {
-        width: 24px;
-    }
-
-    main form#formulario span.texto-erro {
+    main section#mensagem p#texto-complementar {
+        width: 150px;
         font-size: 13px;
+        bottom: -50px;
     }
 }
 
@@ -239,25 +192,22 @@ main form#formulario button#botao-enviar {
         padding: 0 20px;
     }
 
-    main form#formulario label#caixa {
-        font-size: 25px;
+    main section#mensagem div#caixa-texto-principal {
+        gap: 15px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
-        padding: 12px 10px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 100px;
+    }
+
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 28.5px;
+    }
+
+    main section#mensagem p#texto-complementar {
+        width: 160px;
         font-size: 15px;
-    }
-
-    main form#formulario input.erro {
-        border: 2px solid var(--amarelo);
-    }
-
-    main form#formulario img#icone-olho {
-        width: 24px;
-    }
-
-    main form#formulario span.texto-erro {
-        font-size: 13px;
+        bottom: -62px;
     }
 }
 
@@ -287,13 +237,18 @@ main form#formulario button#botao-enviar {
         padding: 0 20px;
     }
 
-    main form#formulario label#caixa {
-        font-size: 27px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 145px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
-        padding: 13px 10px;
-        font-size: 16px;
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 34px;
+    }
+
+    main section#mensagem p#texto-complementar {
+        width: 170px;
+        bottom: -55px;
+        font-size: 17px;
     }
 }
 
@@ -308,13 +263,20 @@ main form#formulario button#botao-enviar {
         width: 15px;
     }
 
-    main form#formulario label#caixa {
-        font-size: 28px;
+    main {
+        padding: 0 20px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
-        padding: 13px 10px;
-        font-size: 17px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 165px;
+    }
+
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 30px;
+    }
+
+    main section#mensagem p#texto-complementar {
+        bottom: -50px;
     }
 }
 
