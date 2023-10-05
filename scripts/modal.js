@@ -1,7 +1,11 @@
-const botaoAbrirModal = document.querySelector('button#abrir-modal')
+const botaoAbrirModal = document.querySelector('#abrir-modal')
 const fundoModal = document.querySelector('#fundo-modal')
+const botaoConfirmar = document.querySelector('#botao-confirmar')
 
-botaoAbrirModal.addEventListener('click', () => {
+botaoConfirmar.href = botaoAbrirModal.href
+
+botaoAbrirModal.addEventListener('click', (e) => {
+    e.preventDefault();
     fundoModal.classList.add('open')
 })
 
