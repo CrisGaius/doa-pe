@@ -1,11 +1,7 @@
-body {
-    overflow: hidden;
-}
-
 header#cabecalho {
+    margin-top: 15px;
     padding: 0 20px;
     font-weight: bold;
-    height: 9vh;
 }
 
 header#cabecalho section#caixa-voltar {
@@ -29,7 +25,11 @@ header#cabecalho h1 {
 
 main {
     flex-direction: column;
-    height: calc(100vh - 9vh);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
 main form#formulario {
@@ -313,16 +313,5 @@ main form#formulario button#botao-enviar {
     main form#formulario input, main form#formulario button#botao-enviar {
         padding: 13px 10px;
         font-size: 17px;
-    }
-}
-
-/*Específica*/
-@media only screen and (orientation: landscape) {
-    header#cabecalho {
-        padding: 40px 20px 40px 20px;
-    }
-
-    main {
-        height: calc(100vh - (9vh + 80px));
     }
 }
