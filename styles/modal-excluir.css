@@ -37,18 +37,22 @@ section#modal div#caixa-botoes {
     justify-content: space-around;
 }
 
-section#modal div#caixa-botoes a {
+section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
     color: var(--branco);
     padding: 13px 40px;
     border-radius: 10px;
     font-size: 20px;
+    font-weight: bold;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
 }
 
 section#modal div#caixa-botoes a#botao-confirmar {
     background-color: var(--verde);
 }
 
-section#modal div#caixa-botoes a#botao-negar {
+section#modal div#caixa-botoes button#botao-negar {
     background-color: var(--vermelho);
 }
 
