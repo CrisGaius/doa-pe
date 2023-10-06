@@ -26,10 +26,12 @@ section#modal {
     width: 100%;
     max-height: 250px;
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 
 section#modal p {
     font-size: 30px;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.326);
 }
 
 section#modal div#caixa-botoes {
@@ -46,6 +48,7 @@ section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-ne
     border: 0;
     outline: 0;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 section#modal div#caixa-botoes a#botao-confirmar {
@@ -67,4 +70,98 @@ section#modal button#botao-fechar-modal {
     color: var(--branco);
     font-size: 25px;
     font-weight: bold;
+    box-shadow: rgb(0, 0, 0) 1.95px 1.95px 2.6px;
+}
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    section#fundo-modal {
+        padding: 0 20px;
+    }
+
+    section#modal {
+        max-height: 180px;
+    }
+
+    section#modal p {
+        font-size: 19px;
+        text-align: center;
+    }
+
+    section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+
+    section#modal button#botao-fechar-modal {
+        top: -20px;
+        right: -16px;
+        font-size: 17px;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    section#fundo-modal {
+        padding: 0 20px;
+    }
+
+    section#modal {
+        max-height: 210px;
+    }
+
+    section#modal p {
+        font-size: 21px;
+        text-align: center;
+    }
+
+    section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
+        font-size: 19px;
+        padding: 11px 30px;
+    }
+
+    section#modal button#botao-fechar-modal {
+        top: -22px;
+        right: -17px;
+        font-size: 21px;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    section#fundo-modal {
+        padding: 0 30px;
+    }
+
+    section#modal {
+        max-height: 230px;
+    }
+
+    section#modal p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    section#modal button#botao-fechar-modal {
+        top: -22px;
+        right: -17px;
+        font-size: 22px;
+    }
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    section#fundo-modal {
+        padding: 0 40px;
+    }
+
+    section#modal p {
+        text-align: center;
+    }
+
+    section#modal button#botao-fechar-modal {
+        top: -25px;
+    }
 }
