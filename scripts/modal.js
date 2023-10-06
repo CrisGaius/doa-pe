@@ -1,8 +1,8 @@
-const botaoAbrirModal = document.querySelectorAll('.abrir-modal')
+const botoesAbrirModal = document.querySelectorAll('.abrir-modal')
 const fundoModal = document.querySelector('#fundo-modal')
 const botaoConfirmar = document.querySelector('#botao-confirmar')
 
-botaoAbrirModal.forEach((botao) => {
+botoesAbrirModal.forEach((botao) => {
     botao.addEventListener('click', (e) => {
         e.preventDefault()
         fundoModal.classList.add('open')
