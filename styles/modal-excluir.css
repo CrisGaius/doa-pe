@@ -39,7 +39,8 @@ section#modal div#caixa-botoes {
     justify-content: space-around;
 }
 
-section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
+section#modal div#caixa-botoes a,
+section#modal div#caixa-botoes button#botao-negar {
     color: var(--branco);
     padding: 13px 40px;
     border-radius: 10px;
@@ -90,7 +91,8 @@ section#modal button#botao-fechar-modal {
         text-align: center;
     }
 
-    section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
+    section#modal div#caixa-botoes a,
+    section#modal div#caixa-botoes button#botao-negar {
         font-size: 18px;
         padding: 10px 25px;
     }
@@ -117,7 +119,8 @@ section#modal button#botao-fechar-modal {
         text-align: center;
     }
 
-    section#modal div#caixa-botoes a, section#modal div#caixa-botoes button#botao-negar {
+    section#modal div#caixa-botoes a,
+    section#modal div#caixa-botoes button#botao-negar {
         font-size: 19px;
         padding: 11px 30px;
     }

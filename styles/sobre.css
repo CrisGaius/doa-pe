@@ -72,7 +72,7 @@ div.menu-mobile {
     font-weight: bold;
 }
 
-div.menu-mobile ul#lista{
+div.menu-mobile ul#lista {
     gap: 20px;
     flex-direction: column;
 }

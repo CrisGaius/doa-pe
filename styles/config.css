@@ -33,7 +33,8 @@ body {
     color: var(--branco);
 }
 
-img, a {
+img,
+a {
     user-select: none;
     -webkit-user-drag: none;
 }

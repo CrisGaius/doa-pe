@@ -142,7 +142,8 @@ main form#formulario button#botao-enviar {
         font-size: 20px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
+    main form#formulario input,
+    main form#formulario button#botao-enviar {
         padding: 10px;
         font-size: 13px;
     }
@@ -192,7 +193,8 @@ main form#formulario button#botao-enviar {
         font-size: 23px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
+    main form#formulario input,
+    main form#formulario button#botao-enviar {
         padding: 11px 10px;
         font-size: 14px;
     }
@@ -241,7 +243,8 @@ main form#formulario button#botao-enviar {
         font-size: 25px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
+    main form#formulario input,
+    main form#formulario button#botao-enviar {
         padding: 12px 10px;
         font-size: 15px;
     }
@@ -289,7 +292,8 @@ main form#formulario button#botao-enviar {
         font-size: 27px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
+    main form#formulario input,
+    main form#formulario button#botao-enviar {
         padding: 13px 10px;
         font-size: 16px;
     }
@@ -310,7 +314,8 @@ main form#formulario button#botao-enviar {
         font-size: 28px;
     }
 
-    main form#formulario input, main form#formulario button#botao-enviar {
+    main form#formulario input,
+    main form#formulario button#botao-enviar {
         padding: 13px 10px;
         font-size: 17px;
     }

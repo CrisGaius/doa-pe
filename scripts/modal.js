@@ -11,7 +11,7 @@ botoesAbrirModal.forEach((botao) => {
 })
 
 fundoModal.addEventListener('click', (e) => {
-    if(e.target.id === 'fundo-modal' || e.target.id === 'botao-fechar-modal' || e.target.id === 'botao-negar') {
+    if (e.target.id === 'fundo-modal' || e.target.id === 'botao-fechar-modal' || e.target.id === 'botao-negar') {
         fundoModal.classList.remove('open')
     }
 })
