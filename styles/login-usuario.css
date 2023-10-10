@@ -1,0 +1,133 @@
+@import url(config.css);
+
+header#cabecalho {
+    margin-top: 40px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+header#cabecalho section#caixa-voltar {
+    position: absolute;
+    background-color: var(--rosa);
+    left: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+header#cabecalho section#caixa-voltar:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+header#cabecalho section#caixa-voltar img {
+    width: 16px;
+}
+
+section#sct-principal {
+    margin: auto;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+}
+section#sct-principal h1 {
+    font-size: 60px;
+    margin: 50px 0px 70px 0px;
+}
+
+div.inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+div.inputs label {
+    font-size: 18px;
+}
+
+div.inputs label img {
+    width: 30px;
+    padding: 3px;
+    margin: 0px -3px -9px 0px;
+}
+
+div.inputs label img#cadeado-senha {
+    width: 27px;
+    margin: 0px -2px -5px 1px;
+}
+
+div.inputs input {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 10px solid var(--branco);
+}
+
+button#btn-entrar {
+    width: 400px;
+    height: 40px;
+    background-color: var(--ciano);
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+div#caixa-erro {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+    padding: 10px 0;
+    border: 2px solid var(--branco);
+    border-radius: 8px;
+    color: var(--branco);
+    font-weight: 800;
+    position: relative;
+    width: 400px;
+}
+
+div#caixa-erro i {
+    color: rgb(255, 0, 0);
+}
+
+div#caixa-botao-fechar {
+    background-color: var(--branco);
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+div#caixa-erro i#fechar {
+    color: var(--preto);
+}
+
+span#email-invalido {
+    display: none;
+    margin-right: 71%;
+    color: rgb(226, 0, 0);
+    font-weight: 500;
+}
+
+div#esqueceu-cadastro {
+    justify-content: space-between;
+}
+
+div#esqueceu-cadastro p {
+    font-size: 16px;
+}
+
+div#esqueceu-cadastro p#esqueceu-senha {
+    text-decoration: underline;
+}
+
+button#btn-entrar:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
