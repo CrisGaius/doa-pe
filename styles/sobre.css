@@ -65,7 +65,7 @@ ul#lista img#icone-menu {
 div.menu-mobile {
     display: none;
     position: absolute;
-    background-color: var(--amarelo);
+    background-color: var(--azul-linkedin);
     width: 100%;
     top: 80px;
     padding: 20px 0 20px 0;
