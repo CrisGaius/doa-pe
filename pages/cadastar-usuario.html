@@ -6,12 +6,13 @@
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <title>Cadastrar Usuário</title>
     <link rel="stylesheet" href="../styles/cadastrar-usuario.css">
+    <script src="../scripts/cadastrar-usuario.js" defer></script>
 </head>
 <body>
     <header>
         <a href="#">
             <button id="btn-voltar">
-                <img src="../images/seta-voltar.png" alt="Botão Voltar">voltar
+                <img src="../icons/icone-voltar.svg" alt="Botão Voltar">voltar
             </button>
         </a>
     </header>
@@ -20,28 +21,33 @@
         <section class="flex-container">
             <h1>Cadastre-se aqui!</h1>
 
-            <form action="">
+            <form action="" id="registro-form">
                     <div class="inputs">
                         <label for="ipt-nome">Nome</label>
-                        <input type="text" name="" id="ipt-nome" class="caixa-input" placeholder="Digite o seu nome...">
+                        <input type="text" name="" id="ipt-nome" class="caixa-input" placeholder="Digite o seu nome..." oninput="validateNome()">
+                        <p id="nome-error" class="error"></p>
                     </div>
                 
                     <div class="inputs">
                         <label for="ipt-email">E-mail</label>
-                        <input type="email" name="" id="ipt-email" class="caixa-input" placeholder="Digite seu e-mail...">
+                        <input type="email" name="" id="ipt-email" class="caixa-input" placeholder="Digite seu e-mail..." oninput="validateEmail()">
+                        <p id="email-error" class="error"></p>
                     </div>
                 
                     <div class="inputs">
-                        <label for="ipt-telefone">Telefone</label>
-                        <input type="tel" min="0" name="email" id="ipt-contato" class="caixa-input" placeholder="Digite seu número de telefone...">
+                        <label for="ipt-tel">Telefone</label>
+                        <input type="text" name="telefone" id="ipt-tel" class="caixa-input" placeholder="Digite seu número de telefone..." oninput="validateTelefone()">
+                        <p id="tel-error" class="error"></p>
                     </div>
 
                     <div class="inputs">
                         <label for="ipt-senha">Senha</label>
-                        <input type="password" min="0" name="senha" id="ipt-senha" class="caixa-input" placeholder="Crie uma senha...">
+                        <input type="password"  name="senha" id="ipt-senha" class="caixa-input" placeholder="Crie uma senha..." oninput="validateSenha()">
+                        <p id="senha-error" class="error"></p>
                     </div>
+
                     <div class="btn">
-                        <button type="submit" id="btn-enviar">CRIAR</button>
+                        <button id="btn-enviar" type="submit" disabled>CADASTRAR</button>
                     </div>
             </form>
     </main>
