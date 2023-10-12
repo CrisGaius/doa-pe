@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+/* HEADER */
+header {
+    padding: 0 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+header > section {
+    position: absolute;
+    background-color: var(--rosa);
+    left: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+header > section > img {
+    width: 16px;
+}
+
+header > h1 {
+    font-size: 40px;
+}
+
+/* MAIN */
+main {
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+main > section#mensagem {
+    position: relative;
+    flex-direction: column;
+}
+
+main > section#mensagem > div#div-texto {
+    gap: 20px;
+}
+
+main > section#mensagem > div#div-texto > img {
+    width: 180px;
+}
+
+main > section#mensagem > div#div-texto > p#texto {
+    color: #FF6B00;
+    font-weight: bold;
+    font-size: 35px;
+    width: 750px;
+}
+
+main > section#mensagem > p#texto-extra {
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+    text-align: right;
+    color: var(--branco);
+    font-weight: 500;
+    font-size: 20px;
+    width: 260px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 390px) {
+
+    header {
+        padding: 0 10px;
+        justify-content: space-between;
+    }
+
+    header > section {
+        position: relative;
+        left: auto;
+        font-size: 12px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header > section > img {
+        width: 12px;
+    }
+
+    header > h1 {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    main > section#mensagem > div#div-texto {
+        gap: 10px;
+    }
+
+    main > section#mensagem > div#div-texto > img {
+        width: 70px;
+    }
+
+    main > section#mensagem > div#div-texto > p#texto {
+        font-size: 19px;
+    }
+
+    main > section#mensagem > p#texto-extra {
+        width: 130px;
+        font-size: 14px;
+        bottom: -55px;
+    }
+
+}
+
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header > section {
+        position: relative;
+        left: auto;
+        font-size: 12px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header > section > img {
+        width: 12px;
+    }
+
+    header > h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main > section#mensagem > div#div-texto {
+        gap: 10px;
+    }
+
+    main > section#mensagem > div#div-texto > img {
+        width: 94px;
+    }
+
+    main > section#mensagem > div#div-texto > p#texto {
+        font-size: 23px;
+    }
+
+    main > section#mensagem > p#texto-extra {
+        width: 150px;
+        font-size: 13px;
+        bottom: -55px;
+    }
+}
+
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header > section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 13px;
+        padding: 6px 9px;
+        border-radius: 8px;
+    }
+
+    header > section#caixa-voltar > img {
+        width: 12px;
+    }
+
+    header > h1 {
+        font-size: 27px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main > section#mensagem > div#div-texto {
+        gap: 15px;
+    }
+
+    main > section#mensagem > div#div-texto > img {
+        width: 100px;
+    }
+
+    main > section#mensagem > div#div-texto > p#texto {
+        font-size: 25.5px;
+        width: 350px;
+    }
+
+    main > section#mensagem > p#texto-extra {
+        width: 160px;
+        font-size: 15px;
+        right: 0px;
+        bottom: -62px;
+    }
+}
+
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    header {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header > section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    header > section#caixa-voltar > img {
+        width: 14px;
+    }
+
+    header > h1 {
+        font-size: 31px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main > section#mensagem > div#div-texto > img {
+        width: 145px;
+    }
+
+    main > section#mensagem > div#div-texto > p#texto {
+        font-size: 32px;
+        width: 410px;
+    }
+
+    main > section#mensagem > p#texto-extra {
+        width: 250px;
+        bottom: -55px;
+        right: 0px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    header > section#caixa-voltar {
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    header > section#caixa-voltar > img {
+        width: 15px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    main > section#mensagem > div#div-texto > img {
+        width: 155px;
+    }
+
+    main > section#mensagem > div#div-texto > p#texto {
+        font-size: 32px;
+        width: 550px;
+    }
+
+    main > section#mensagem > p#texto-extra {
+        width: 250px;
+        right: 0px;
+        bottom: -50px;
+    }
+}
