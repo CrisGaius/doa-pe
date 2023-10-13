@@ -111,6 +111,9 @@ div.btn {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    position: relative;
+    left: 50px;
+    width: 80%;
 }
 
 button#btn-enviar {
@@ -126,4 +129,171 @@ button#btn-enviar {
 button#btn-enviar:hover {
     transform: scale(1.03);
     transition: 0.5s;
+}
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    #btn-voltar{
+        cursor: pointer;
+        width: 140px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 35px;
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+    
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 60vh;
+        margin-top: 40px;
+        gap: 40px;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 15px;
+        width: 380px;
+    }
+    
+    label {
+        position: relative;
+        right: 120px;
+        text-align: left;
+        width: 80px;
+    }
+    
+    .caixa-input{
+        width: 350px;
+    }
+    
+    div.btn {
+        left: 20px;
+        width: 90%;
+    }
+
+    button#btn-enviar {
+        width: 350px;
+        font-size: 1.4em;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    #btn-voltar{
+        cursor: pointer;
+        width: 140px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 35px;
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+    
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 60vh;
+        margin-top: 40px;
+        gap: 40px;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 15px;
+        width: 380px;
+    }
+    
+    label {
+        position: relative;
+        right: 120px;
+        text-align: left;
+        width: 80px;
+    }
+    
+    .caixa-input{
+        width: 350px;
+    }
+    
+    div.btn {
+        left: 20px;
+        width: 90%;
+    }
+
+    button#btn-enviar {
+        width: 350px;
+        font-size: 1.4em;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    #btn-voltar{
+        cursor: pointer;
+        width: 140px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 35px;
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+    
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 60vh;
+        margin-top: 40px;
+        gap: 40px;
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        gap: 15px;
+        width: 380px;
+    }
+    
+    label {
+        position: relative;
+        right: 120px;
+        text-align: left;
+        width: 80px;
+    }
+    
+    .caixa-input{
+        width: 350px;
+    }
+    
+    div.btn {
+        left: 20px;
+        width: 90%;
+    }
+
+    button#btn-enviar {
+        width: 350px;
+        font-size: 1.4em;
+    }
 }
