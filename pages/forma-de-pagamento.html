@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/forma-de-pagamento.css">
+    <link rel="stylesheet" href="../styles/config.css">
+    <title>Formas de Pagamento</title>
+</head>
+<body>
+    <header id="cabecalho" class="flex-container">
+        <section id="caixa-voltar" class="flex-container">
+            <img src="../icons/icone-voltar.svg" alt="Ícone de voltar" id="icone-voltar">
+            <p>VOLTAR</p>
+        </section>
+        <div id="titulo-cabecalho" class="flex-container">
+            <h1>FORMAS DE PAGAMENTO</h1>
+            <img src="../icons/icone-dinheiro.svg" alt="Icone de Dinheiro">
+        </div>
+    </header>
+    <main>
+        <section id="sct-pagamento" class="flex-container">
+            <div class="flex-container titulo-forma">
+                <img src="../icons/icone-pix.svg" alt="Iocne Pix">
+                <h1>PIX</h1>
+            </div>
+            <div class="inputs">
+                <label for="chave">Chave</label>
+                <input readonly type="text" name="chave" id="chave" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+                <button id="copiar">Copiar</button>
+            </div>
+            <div class="flex-container titulo-forma">
+                <img src="../icons/icone-banco.svg" alt="Icone Banco">
+                <h1>TRANFERÊNCIA BANCÁRIA</h1>
+            </div>
+            <div class="inputs" id="transf-bank">
+                <label for="instituicao">Instituição</label>
+                <input readonly type="text" name="instituicao" id="instituicao" value="BANCO INTER S.A - 077">
+                <div id="conta-agencia">
+                    <div>
+                        <label for="agencia">Agência</label>
+                        <input readonly type="text" name="agencia" id="agencia" value="0000">
+                    </div>
+                    <div>
+                        <label for="conta">Conta</label>
+                        <input readonly type="text" name="conta" id="conta" value="0000000-0">
+                    </div>
+                </div>
+                <label for="tipo-de-conta">Tipo de Conta</label>
+                <input readonly type="text" name="tipo-de-conta" id="tipo-de-conta" value="CONTA CORRENTE">
+            </div>
+        </section>
+    </main>
+    <script src="../scripts/forma-de-pagamento.js"></script>
+</body>
+</html>

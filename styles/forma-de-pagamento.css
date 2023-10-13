@@ -1,0 +1,81 @@
+header#cabecalho {
+    margin-top: 40px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+header#cabecalho section#caixa-voltar {
+    position: absolute;
+    background-color: var(--rosa);
+    left: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+header#cabecalho section#caixa-voltar:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+header#cabecalho section#caixa-voltar img {
+    width: 16px;
+}
+
+div#titulo-cabecalho {
+    margin-bottom: -10px;
+}
+
+div#titulo-cabecalho img {
+    width: 60px;
+}
+
+section#sct-pagamento {
+    flex-direction: column;
+    width: 600px;
+    margin: 40px auto;
+}
+
+div.titulo-forma {
+    padding: 17px 0px 15px 0px;
+}
+
+div.titulo-forma img {
+    width: 25px;
+    margin-right: 4px;
+}
+
+div.inputs label {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+}
+
+div.inputs input {
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    border: 10px solid var(--branco);
+    margin: 10px 0px;
+}
+
+button#copiar {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+div#transf-bank input {
+    width: 560px;
+    cursor: pointer;
+}
+
+div#transf-bank #conta-agencia {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#transf-bank #conta-agencia input {
+    width: 265px;
+}
