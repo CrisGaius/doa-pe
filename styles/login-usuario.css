@@ -31,9 +31,10 @@ section#sct-principal {
     width: 500px;
     height: 500px;
 }
+
 section#sct-principal h1 {
     font-size: 60px;
-    margin: 50px 0px 70px 0px;
+    margin: 0px 0px 70px 0px;
 }
 
 div.inputs {
@@ -72,6 +73,11 @@ button#btn-entrar {
     font-weight: bold;
     border-radius: 5px;
     margin: 10px 0px;
+}
+
+button#btn-entrar:hover {
+    transform: scale(1.03);
+    transition: 0.5s;
 }
 
 div#caixa-erro {
@@ -127,7 +133,184 @@ div#esqueceu-cadastro p#esqueceu-senha {
     text-decoration: underline;
 }
 
-button#btn-entrar:hover {
-    transform: scale(1.03);
-    transition: 0.5s;
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    header#cabecalho section#caixa-voltar {
+       font-size: 14px;
+    }
+    
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    section#sct-principal {
+        width: 300px;
+        height: 500px;
+    }
+    
+    section#sct-principal h1 {
+        font-size: 34px;
+    }
+    
+    div.inputs label {
+        font-size: 16px;
+    }
+    
+    div.inputs label img {
+        width: 28px;
+        padding: 3px;
+        margin: 0px -3px -8px 0px;
+    }
+    
+    div.inputs label img#cadeado-senha {
+        width: 24px;
+        margin: 0px -2px -5px 1px;
+    }
+    
+    div.inputs input {
+        width: 280px;
+        height: 40px;
+    }
+
+    button#btn-entrar {
+        width: 280px;
+        height: 40px;
+        font-size: 0.9em;
+    }
+
+    div#caixa-erro {
+        display: none;
+        font-weight: 800;
+        width: 280px;
+        font-size: 14px;
+    }
+    
+    span#email-invalido {
+        width: 130px;
+        margin-bottom: -5px;
+        font-size: 14px;
+    }
+    
+    div#esqueceu-cadastro p {
+        font-size: 14px;
+    }
+    
 }
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header#cabecalho section#caixa-voltar {
+        font-size: 16px;
+     }
+     
+     header#cabecalho section#caixa-voltar img {
+         width: 14px;
+     }
+ 
+     section#sct-principal {
+         width: 390px;
+         height: 500px;
+     }
+     
+     section#sct-principal h1 {
+         font-size: 44px;
+     }
+     
+     div.inputs label {
+         font-size: 17px;
+     }
+     
+     div.inputs label img {
+         width: 29px;
+         padding: 3px;
+         margin: 0px -3px -8px 0px;
+     }
+     
+     div.inputs label img#cadeado-senha {
+         width: 25px;
+         margin: 0px -2px -5px 1px;
+     }
+     
+     div.inputs input {
+         width: 340px;
+         height: 40px;
+     }
+ 
+     button#btn-entrar {
+         width: 340px;
+         height: 40px;
+         font-size: 1em;
+     }
+ 
+     div#caixa-erro {
+         display: none;
+         width: 340px;
+         font-size: 14px;
+     }
+     
+     span#email-invalido {
+         width: 130px;
+         margin-bottom: -5px;
+         font-size: 16px;
+     }
+     
+     div#esqueceu-cadastro p {
+         font-size: 16px;
+     }
+     
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header#cabecalho section#caixa-voltar {
+        font-size: 16px;
+     }
+     
+     header#cabecalho section#caixa-voltar img {
+         width: 14px;
+     }
+ 
+     section#sct-principal {
+         width: 400px;
+         height: 500px;
+     }
+     
+     section#sct-principal h1 {
+         font-size: 50px;
+     }
+     
+     div.inputs label {
+         font-size: 18px;
+     }
+     
+     div.inputs input {
+         width: 380px;
+         height: 40px;
+     }
+ 
+     button#btn-entrar {
+         width: 380px;
+         height: 40px;
+         font-size: 1em;
+     }
+ 
+     div#caixa-erro {
+         display: none;
+         width: 380px;
+         font-size: 14px;
+     }
+     
+     span#email-invalido {
+         width: 130px;
+         margin-bottom: -5px;
+         font-size: 16px;
+     }
+     
+     div#esqueceu-cadastro p {
+         font-size: 16px;
+     }
+}
+
