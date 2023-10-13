@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    font-family: var(--inter);
+}
+
+/* HEADER */
+header {
+    background-color: var(--preto);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > section.flex-container {
+    cursor: pointer;
+    width: 90px;
+    height: 25px;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--rosa);
+}
+
+header > section.flex-container:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+header > section.flex-container > img {
+    width: 16px;
+}
+
+header > h1 {
+    position: absolute;
+    padding: 50px;
+    width: 100vw;
+    text-align: center;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    left: 35%;
+}
+
+main > section#flex-container > h2 {
+    font-size: 2.5em;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form > p{
+    width: 570px;
+}
+
+form > label > input {
+    width: 600px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: white;
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+
+div#botoes {
+    margin-top: 35px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+div#botoes > button#aceitar {
+    cursor: pointer;
+    width: 120px;
+    height: 45px;
+    background-color: var(--ciano);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--preto);
+    font-weight: bold;
+}
+
+div#botoes > button#recusar {
+    cursor: pointer;
+    width: 120px;
+    height: 45px;
+    background-color: var(--rosa);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--branco);
+    font-weight: bold;
+}
+
+div#botoes > button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    header {
+        width: 100vw;
+    }
+
+    header > h1 {
+        text-align: center;
+        margin-left: 120px;
+        padding: 20px;
+        font-size: 1.2em;
+        width: 260px;
+    }
+
+    main {
+        width: 100vw;
+        height: 65vh;
+    }
+
+    main > section#flex-container > h2 {
+        font-size: 1.5em;
+        padding-bottom: 70px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 40vh;
+    }
+    
+    form > p{
+        position: relative;
+        width: 50px;
+        right: 130px;
+    }
+    
+    form > label > input {
+        width: 340px;
+        height: 40px;
+        
+    }
+
+    div#botoes {
+        width: 350px;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header {
+        width: 100vw;
+    }
+
+    header > h1 {
+        text-align: center;
+        margin-left: 140px;
+        padding: 20px;
+        font-size: 1.7em;
+        width: 240px;
+    }
+    main {
+        width: 100vw;
+        height: 65vh;
+    }
+
+    main > section#flex-container > h2 {
+        font-size: 2em;
+        margin-top: 100px;
+        margin-bottom: -10px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 40vh;
+    }
+    
+    form > p{
+        position: relative;
+        width: 50px;
+        right: 140px;
+    }
+    
+    form > label > input {
+        width: 360px;
+        height: 40px;
+        
+    }
+
+    div#botoes {
+        width: 350px;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header {
+        width: 100vw;
+    }
+
+    header > h1 {
+        text-align: center;
+        margin-left: 140px;
+        padding: 20px;
+        font-size: 1.7em;
+        width: 60vw;
+    }
+    main {
+        width: 100vw;
+        height: 65vh;
+    }
+
+    main > section#flex-container > h2 {
+        font-size: 2em;
+        margin-top: 100px;
+        margin-bottom: -10px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 40vh;
+    }
+    
+    form > p{
+        position: relative;
+        width: 50px;
+        right: 140px;
+    }
+    
+    form > label > input {
+        width: 360px;
+        height: 40px;
+        
+    }
+
+    div#botoes {
+        width: 350px;
+    }
+}
