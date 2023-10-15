@@ -27,12 +27,14 @@
             </div>
 
             <!-- Formulário -->
-            <form>
+            <form autocomplete="off">
+                <!-- OBS: O Chrome não está aceitando o autocomplete="off" em alguns casos, então uma forma para resolver isso é criar dois inputs, colocar o mesmo id para os dois e colocar o display: none no primeiro. -->
 
                 <!-- Input NOME -->
                 <div class="inputs">
                     <label for="ipt-nome">Nome</label>
-                    <input type="text" id="ipt-nome" class="caixa-input" autocomplete="off" placeholder="Digite o nome da sua ONG...">
+                    <input type="text" id="ipt-nome" style="display: none;">
+                    <input type="text" id="ipt-nome" class="caixa-input" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()">
 
                     <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
                     <span class="prosseguir" id="nome-prosseguir">Tudo Certo &#x2705</span>
@@ -41,7 +43,7 @@
                 <!-- Input ENDEREÇO -->
                 <div class="inputs">
                     <label for="ipt-endereco">Endereço</label>
-                    <input type="text" id="ipt-endereco" class="caixa-input" autocomplete="off" placeholder="Digite o endereço da sua ONG...">
+                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input" placeholder="Digite o endereço da sua ONG...">
 
                     <span class="alerta">Mínimo de 20 caracteres</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
@@ -50,7 +52,7 @@
                 <!-- Input E-MAIL -->
                 <div class="inputs">
                     <label for="ipt-email">E-mail</label>
-                    <input type="text" id="ipt-email" class="caixa-input" autocomplete="off" placeholder="Digite o e-mail da sua ONG...">
+                    <input type="text" id="ipt-email" class="caixa-input" placeholder="Digite o e-mail da sua ONG..." oninput="emailValidate()">
 
                     <span class="alerta">E-mail inválido</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
@@ -59,17 +61,16 @@
                 <!-- Input CONTATO -->
                 <div class="inputs">
                     <label for="ipt-contato">Contato</label>
-                    <input type="text" id="telefone" class="caixa-input" autocomplete="off" placeholder="Digite o número de contato da sua ONG...">
+                    <input type="text" id="telefone" class="caixa-input" maxlength="15" placeholder="Digite o número de contato da sua ONG..." oninput="numeroValidate()">
 
-
-                    <span class="alerta">Lembre-se de colocar o DDD e o 9</span>
+                    <span class="alerta">Número inválido</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
                 <!-- Input CNPJ -->
                 <div class="inputs">
                     <label for="ipt-cnpj">CNPJ</label>
-                    <input type="number" min="0" id="ipt-cnpj" class="caixa-input" autocomplete="off" placeholder="Digite o CNPJ da sua ONG...">
+                    <input type="number" id="ipt-cnpj" class="caixa-input" min="0" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
 
                     <span class="alerta">CNPJ incompleto</span>
                 </div>
@@ -79,11 +80,11 @@
                     <label for="ipt-tipos">Tipo</label>
                     <select id="select-tipo" class="caixa-input">
                         <optgroup label="Escolha">
-                            <option value="">Cuida do meio ambiente</option>
-                            <option value="">Cuida de animais abandonados</option>
-                            <option value="">Cuida de crianças e adolescentes</option>
-                            <option value="">Faz refeição</option>
-                            <option value="">Distribuição de roupas</option>
+                            <option value="#">Cuida do meio ambiente</option>
+                            <option value="#">Cuida de animais abandonados</option>
+                            <option value="#">Cuida de crianças e adolescentes</option>
+                            <option value="#">Faz refeição</option>
+                            <option value="#">Distribuição de roupas</option>
                         </optgroup>
                     </select>
                 </div>
@@ -95,7 +96,7 @@
                         <!-- Pix -->
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" id="ipt-pix" autocomplete="off" placeholder="Digite seu pix...">
+                            <input type="text" id="ipt-pix" placeholder="Digite seu pix...">
                         </div>
 
                         <!-- Linha Divisória -->
@@ -110,14 +111,14 @@
                             <label class="label-pagameto">Conta Bancária</label>
                             <div class="flex">
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" id="ipt-numero" class="ipt-cbancaria" autocomplete="off" placeholder="Número da conta...">
+                                    <input type="text" id="ipt-numero" class="ipt-cbancaria" placeholder="Número da conta...">
 
-                                    <input type="text" id="ipt-agencia" class="ipt-cbancaria" autocomplete="off" placeholder="Agência da conta...">
+                                    <input type="text" id="ipt-agencia" class="ipt-cbancaria" placeholder="Agência da conta...">
                                 </div>
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" id="ipt-instituicao" class="ipt-cbancaria" autocomplete="off" placeholder="Instituição da conta...">
+                                    <input type="text" id="ipt-instituicao" class="ipt-cbancaria" placeholder="Instituição da conta...">
 
-                                    <input type="text" id="ipt-tipconta" class="ipt-cbancaria" autocomplete="off" placeholder="Tipo da conta...">
+                                    <input type="text" id="ipt-tipconta" class="ipt-cbancaria" placeholder="Tipo da conta...">
                                 </div>
                             </div>
                         </div>
@@ -148,7 +149,7 @@
                 <!-- Input DESCRIÇÃO -->
                 <div class="inputs">
                     <label for="ipt-descricao">Descrição</label>
-                    <textarea rows="10" id="ipt-descricao" autocomplete="off" placeholder="Descreva em até 500 caracteres..."></textarea>
+                    <textarea id="ipt-descricao" rows="10" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
 
                     <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
                     <span class="alerta" id="max-carac">Possui mais de 500 caracteres</span>
@@ -176,7 +177,88 @@
     </main>
 
     <footer>
-        <button type="submit" id="btn-enviar">Enviar</button>
+        <button type="submit" id="btn-enviar" onclick="verificar()">Enviar</button>
     </footer>
+
+    <script>
+    const forms       = document.querySelector('form')
+    const campos      = document.querySelectorAll('.caixa-input')
+    const spans       = document.querySelectorAll('.alerta')
+    const emailRegex  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+
+    // Função para mostrar o erro
+    function setError(index){
+        campos[index].style.border  = "2px solid #000"
+        spans [index].style.display = "block" 
+    }
+
+    // Função para remover o erro
+    function removerError(index){
+        campos[index].style.border  = ""
+        spans [index].style.display = "none" 
+    }
+
+    // Função para validar o nome
+    function nameValidate(){
+        if(campos[0].value.length < 3){
+            setError(0)
+        } else{
+            removerError(0)
+        }
+    }
+
+    // Função para validar o email
+    function emailValidate(){
+        if(emailRegex.test(campos[2].value)){
+            removerError(2)
+        } else{
+            setError(2)
+        }
+    }
+
+    // Função para validar o número de contato
+    function numeroValidate(){
+        if(campos[3].value.length < 14){
+            setError(3)
+        } else{
+            removerError(3)
+        }
+    }
+
+    // Função para validar o CNPJ
+    function cnpjValidate(){
+        if(campos[4].value.length < 14){
+            setError(4)
+        } else{
+            removerError(4)
+        }
+    }
+
+    // Função para validar a descrição
+    function descricaoValidate(){
+        const campoTxtArea = document.getElementById('ipt-descricao')
+        const spanMin      = document.querySelector('#min-carac')
+        const spanMax      = document.querySelector('#max-carac')
+        
+        // Caso tenha menos de 20 caracteres
+        if (campoTxtArea.value.length < 20){
+            campoTxtArea.style.border = "2px solid #000"
+            spanMin.style.display = "block"
+        } else{
+            campoTxtArea.style.border = ""
+            spanMin.style.display = "none"
+        }
+
+        // Caso tenha mais de 500 caracteres
+        if(campoTxtArea.value.length > 500){
+            campoTxtArea.style.border = "2px solid #000"
+            spanMax.style.display = "block"
+        } else{
+            campoTxtArea.style.border = ""
+            spanMax.style.display = "none"
+        }
+    } 
+    </script>
 </body>
 </html>
