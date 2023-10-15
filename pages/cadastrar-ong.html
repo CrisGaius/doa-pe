@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
+
     <title>Cadastrar ONG</title>
     <link rel="stylesheet" href="../styles/cadastrar-ong.css">
-    <script src="../scripts/sobre.js" defer></script>
+    <!-- <script src="../scripts/cadastrar-ong.js" defer></script> -->
 </head>
 <body>
     <header>
+        <!-- Voltar pra HOME LOGADO (USER) -->
         <a href="#">
             <button id="btn-voltar">
                 <img src="../images/seta-voltar.png" alt="Botão Voltar">voltar
@@ -20,47 +22,80 @@
 
     <main>
         <section class="flex-container">
-            <h1>Cadastrar ONG</h1>
+            <div id="paragrafo">
+                <h1>Cadastrar ONG</h1>
+            </div>
 
-            <form action="">
+            <!-- Formulário -->
+            <form>
+
+                <!-- Input NOME -->
                 <div class="inputs">
                     <label for="ipt-nome">Nome</label>
-                    <input type="text" name="" id="ipt-nome" class="caixa-input" placeholder="Digite o nome da sua ONG...">
+                    <input type="text" id="ipt-nome" class="caixa-input" autocomplete="off" placeholder="Digite o nome da sua ONG...">
+
+                    <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
+                    <span class="prosseguir" id="nome-prosseguir">Tudo Certo &#x2705</span>
                 </div>
             
+                <!-- Input ENDEREÇO -->
                 <div class="inputs">
                     <label for="ipt-endereco">Endereço</label>
-                    <input type="text" name="" id="ipt-endereco" class="caixa-input" placeholder="Digite o endereço da sua ONG...">
+                    <input type="text" id="ipt-endereco" class="caixa-input" autocomplete="off" placeholder="Digite o endereço da sua ONG...">
+
+                    <span class="alerta">Mínimo de 20 caracteres</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
                 
+                <!-- Input E-MAIL -->
                 <div class="inputs">
                     <label for="ipt-email">E-mail</label>
-                    <input type="text" name="" id="ipt-email" class="caixa-input" placeholder="Digite o e-mail da sua ONG...">
+                    <input type="text" id="ipt-email" class="caixa-input" autocomplete="off" placeholder="Digite o e-mail da sua ONG...">
+
+                    <span class="alerta">E-mail inválido</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
                 
+                <!-- Input CONTATO -->
                 <div class="inputs">
                     <label for="ipt-contato">Contato</label>
-                    <input type="number" min="0" name="" id="ipt-contato" class="caixa-input" placeholder="Digite o número de contato da sua ONG...">
+                    <input type="text" id="telefone" class="caixa-input" autocomplete="off" placeholder="Digite o número de contato da sua ONG...">
+
+
+                    <span class="alerta">Lembre-se de colocar o DDD e o 9</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
+                <!-- Input CNPJ -->
                 <div class="inputs">
                     <label for="ipt-cnpj">CNPJ</label>
-                    <input type="number" min="0" name="" id="ipt-cnpj" class="caixa-input" placeholder="Digite o CNPJ da sua ONG...">
+                    <input type="number" min="0" id="ipt-cnpj" class="caixa-input" autocomplete="off" placeholder="Digite o CNPJ da sua ONG...">
+
+                    <span class="alerta">CNPJ incompleto</span>
                 </div>
 
+                <!-- Input TIPO -->
                 <div class="inputs">
-                    <label for="ipt-tipos">Tipos</label>
-                    <select name="" id="ipt-tipos" class="caixa-input" placeholder="Selecione o tipo da sua ONG...">oi</select>
+                    <label for="ipt-tipos">Tipo</label>
+                    <select id="select-tipo" class="caixa-input">
+                        <optgroup label="Escolha">
+                            <option value="">Cuida do meio ambiente</option>
+                            <option value="">Cuida de animais abandonados</option>
+                            <option value="">Cuida de crianças e adolescentes</option>
+                            <option value="">Faz refeição</option>
+                            <option value="">Distribuição de roupas</option>
+                        </optgroup>
+                    </select>
                 </div>
 
                 <!-- Caixa Formas de Pagamento -->
                 <div class="inputs">
-                    <p>Formas de Pagamentos</p>
+                    <p class="subtitulo">Formas de Pagamentos</p>
                     <div id="ipt-pagamento">
                         <!-- Pix -->
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" name="" id="ipt-pix" placeholder="Digite seu pix...">
+                            <input type="text" id="ipt-pix" autocomplete="off" placeholder="Digite seu pix...">
                         </div>
 
                         <!-- Linha Divisória -->
@@ -75,17 +110,65 @@
                             <label class="label-pagameto">Conta Bancária</label>
                             <div class="flex">
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" name="" id="ipt-numero" class="ipt-cbancaria" placeholder="Número da conta...">
+                                    <input type="text" id="ipt-numero" class="ipt-cbancaria" autocomplete="off" placeholder="Número da conta...">
 
-                                    <input type="text" name="" id="ipt-agencia" class="ipt-cbancaria" placeholder="Agência da conta...">
+                                    <input type="text" id="ipt-agencia" class="ipt-cbancaria" autocomplete="off" placeholder="Agência da conta...">
                                 </div>
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" name="" id="ipt-instituicao" class="ipt-cbancaria" placeholder="Instituição da conta...">
+                                    <input type="text" id="ipt-instituicao" class="ipt-cbancaria" autocomplete="off" placeholder="Instituição da conta...">
 
-                                    <input type="text" name="" id="ipt-tipconta" class="ipt-cbancaria" placeholder="Tipo da conta...">
+                                    <input type="text" id="ipt-tipconta" class="ipt-cbancaria" autocomplete="off" placeholder="Tipo da conta...">
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <span class="alerta">Falta informações na forma de pagamento</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
+                </div>
+
+                <!-- Input REGIÃO-->
+                <div class="inputs">
+                    <label for="selec-regiao">Região</label>
+                    <select id="select-regiao">
+                        <optgroup label="Regiões de PE">
+                            <option value="">Zona da Mata</option>
+                            <option value="">Metropolitana</option>
+                            <option value="">Agreste</option>
+                            <option value="">Sertão</option>
+                            <option value="">São Francisco</option>
+                        </optgroup>
+                    </select>
+
+                    <span class="alerta">Região não informada</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
+                </div>
+                
+
+                <!-- Input DESCRIÇÃO -->
+                <div class="inputs">
+                    <label for="ipt-descricao">Descrição</label>
+                    <textarea rows="10" id="ipt-descricao" autocomplete="off" placeholder="Descreva em até 500 caracteres..."></textarea>
+
+                    <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
+                    <span class="alerta" id="max-carac">Possui mais de 500 caracteres</span>
+                    <span class="prosseguir">Tudo Certo &#x2705</span>
+                </div>
+
+                <!-- Input FOTO -->
+                <div id="area-maior">
+                    <div class="area-menor">
+                        
+                        <div id="caixa-file">
+                            <input type="file" id="file">
+                            <label for="file">Procurar Foto</label>
+                            
+                            <img src="../icons/icone-lupa.svg" alt="Lupa" id="icon-lupa"> 
+                        </div>
+
+                        <div id="escolher-img"></div>
+
+                        <span class="alerta" id="alerta-img">Foto não selecionada</span>
                     </div>
                 </div>
             </form>
