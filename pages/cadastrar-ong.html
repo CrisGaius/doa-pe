@@ -43,7 +43,7 @@
                 <!-- Input ENDEREÇO -->
                 <div class="inputs">
                     <label for="ipt-endereco">Endereço</label>
-                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input" placeholder="Digite o endereço da sua ONG...">
+                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input" placeholder="Digite o endereço da sua ONG..." oninput="enderecoValidate()">
 
                     <span class="alerta">Mínimo de 20 caracteres</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
@@ -65,14 +65,6 @@
 
                     <span class="alerta">Número inválido</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
-                </div>
-
-                <!-- Input CNPJ -->
-                <div class="inputs">
-                    <label for="ipt-cnpj">CNPJ</label>
-                    <input type="number" id="ipt-cnpj" class="caixa-input" min="0" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
-
-                    <span class="alerta">CNPJ incompleto</span>
                 </div>
 
                 <!-- Input TIPO -->
@@ -181,6 +173,7 @@
     </footer>
 
     <script>
+    // Validação
     const forms       = document.querySelector('form')
     const campos      = document.querySelectorAll('.caixa-input')
     const spans       = document.querySelectorAll('.alerta')
@@ -192,19 +185,27 @@
         campos[index].style.border  = "2px solid #000"
         spans [index].style.display = "block" 
     }
-
     // Função para remover o erro
     function removerError(index){
         campos[index].style.border  = ""
         spans [index].style.display = "none" 
     }
-
+    
     // Função para validar o nome
     function nameValidate(){
         if(campos[0].value.length < 3){
             setError(0)
         } else{
             removerError(0)
+        }
+    }
+
+    // Função para validar endereço
+    function enderecoValidate(){
+        if (campos[1].value.length < 20){
+            setError(1)
+        } else{
+            removerError(1)
         }
     }
 
@@ -223,15 +224,6 @@
             setError(3)
         } else{
             removerError(3)
-        }
-    }
-
-    // Função para validar o CNPJ
-    function cnpjValidate(){
-        if(campos[4].value.length < 14){
-            setError(4)
-        } else{
-            removerError(4)
         }
     }
 
@@ -258,7 +250,31 @@
             campoTxtArea.style.border = ""
             spanMax.style.display = "none"
         }
-    } 
+    }
+
+
+
+    // MÁSCARA
+    // Máscara pro contato
+    function mascaraTelefone(event) {
+        const telefoneInput = event.target;
+        let valor = telefoneInput.value.replace(/\D/g, '');
+
+        if (valor.length > 11) {
+            valor = valor.slice(0, 11); // Limita a 11 caracteres
+        }
+
+        if (valor.length <= 10) {
+            // Números residenciais:  (XX) XXXX-XXXX
+            telefoneInput.value = valor.replace(/(\d{2})(\d{0,4})(\d{0,4})/, '($1) $2-$3');
+        } else {
+            // Números pessoais: (XX) XXXXX-XXXX
+            telefoneInput.value = valor.replace(/(\d{2})(\d{0,5})(\d{0,4})/, '($1) $2-$3');
+        }
+    }
+    const inputTelefone = document.getElementById('telefone');
+    // Adicione um ouvinte de evento 'input' para chamar a função
+    inputTelefone.addEventListener('input', mascaraTelefone);
     </script>
 </body>
 </html>
