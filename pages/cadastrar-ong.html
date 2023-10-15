@@ -67,6 +67,14 @@
                     <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
+                <!-- Input CNPJ -->
+                <div class="inputs">
+                    <label for="ipt-cnpj">CNPJ</label>
+                    <input type="text" id="cnpj" class="caixa-input" maxlength="18" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
+
+                    <span class="alerta">CNPJ incompleto</span>
+                </div>
+
                 <!-- Input TIPO -->
                 <div class="inputs">
                     <label for="ipt-tipos">Tipo</label>
@@ -190,7 +198,7 @@
         campos[index].style.border  = ""
         spans [index].style.display = "none" 
     }
-    
+
     // Função para validar o nome
     function nameValidate(){
         if(campos[0].value.length < 3){
@@ -200,7 +208,7 @@
         }
     }
 
-    // Função para validar endereço
+    // Função para validar o endereçco
     function enderecoValidate(){
         if (campos[1].value.length < 20){
             setError(1)
@@ -227,6 +235,15 @@
         }
     }
 
+    // Função para validar o CNPJ
+    function cnpjValidate(){
+        if(campos[4].value.length < 18){
+            setError(4)
+        } else{
+            removerError(4)
+        }
+    }
+
     // Função para validar a descrição
     function descricaoValidate(){
         const campoTxtArea = document.getElementById('ipt-descricao')
@@ -241,7 +258,6 @@
             campoTxtArea.style.border = ""
             spanMin.style.display = "none"
         }
-
         // Caso tenha mais de 500 caracteres
         if(campoTxtArea.value.length > 500){
             campoTxtArea.style.border = "2px solid #000"
@@ -253,8 +269,8 @@
     }
 
 
-
     // MÁSCARA
+
     // Máscara pro contato
     function mascaraTelefone(event) {
         const telefoneInput = event.target;
@@ -275,6 +291,27 @@
     const inputTelefone = document.getElementById('telefone');
     // Adicione um ouvinte de evento 'input' para chamar a função
     inputTelefone.addEventListener('input', mascaraTelefone);
+
+
+    // Máscara pro CNPJ
+    // Estrutura:  XX. XXX. XXX/XXXX-XX
+    const input = document.getElementById('cnpj')
+    input.addEventListener('keypress', () => {
+        let inputLength = input.value.length
+
+        // IF para add o ponto
+        if (inputLength === 2 || inputLength === 6){
+            input.value += '.'
+        }
+        // IF para add a barra
+        if (inputLength === 10){
+            input.value += '/'
+        }
+        // IF para add o traço
+        if (inputLength === 15){
+            input.value += '-'
+        }
+    })
     </script>
 </body>
 </html>
