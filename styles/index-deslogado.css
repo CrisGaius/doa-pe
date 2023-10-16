@@ -1,0 +1,228 @@
+header#cabecalho {
+    background-color: var(--preto);
+}
+
+nav#navbar {
+    justify-content: space-around;
+    padding: 13px;
+}
+
+nav#navbar img#logo-doa-pe {
+    width: 50px;
+}
+
+ul#lista {
+    gap: 25px;
+}
+
+ul#lista a {
+    color: var(--branco);
+}
+
+ul#lista li:hover {
+    transition: .3s ease-in-out;
+    transform: scale(1.1);
+}
+
+ul#lista a:hover {
+    color: var(--rosa);
+}
+
+ul#lista a#atual {
+    color: var(--rosa);
+    text-decoration: underline;
+}
+
+ul#lista li a#botao-cadastrar-ong {
+    font-weight: bold;
+    color: var(--preto);
+    background-color: var(--ciano);
+    border-radius: 8px;
+    padding: 6px;
+}
+
+ul#lista li#botao-logout {
+    background-color: var(--ciano);
+    padding: 6px;
+    border-radius: 8px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+ul#lista li#botao-logout a {
+    color: var(--preto);
+    font-weight: bold;
+}
+
+ul#lista li#botao-logout img {
+    width: 20px;
+}
+
+ul#lista img#icone-menu {
+    display: none;
+}
+
+div.menu-mobile {
+    display: none;
+    position: absolute;
+    background-color: var(--azul-menu);
+    width: 100%;
+    top: 80px;
+    padding: 20px 0 20px 0;
+    font-weight: bold;
+}
+
+div.menu-mobile ul#lista {
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input::placeholder{
+    color: var(--preto);
+    font-weight: 600;
+}
+
+
+.pesquisa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pesquisa input#pesquisa{
+    background: url('../images/lupa.png') no-repeat scroll right 10px center white;
+    background-size: 20px 20px; 
+    width: 500px;
+}
+
+.pesquisa input {
+    width: 200px;
+    padding: 10px 30px 10px 10px; 
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    text-align: left;
+    margin-left: 6px;
+}
+
+.pesquisa select{
+    width: 400px;
+    height: 38px;
+    padding: 10px 30px 10px 10px; 
+    margin: 5px;
+    border-radius: 8px;
+    background-color: rgb(211, 211, 211);
+    
+}
+
+.selects {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: 20px;
+
+}
+
+.botao-filtrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-filtrar button {
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: var(--ciano);
+    color: var(--preto);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+section.ongs{
+    margin-top: 40px;
+
+}
+
+.card-ong {
+    width: 270px;
+    background-color: #00BCC8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.466);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.card-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-conteudo {
+    padding: 10px;
+}
+
+.card-title {
+    color: var(--preto);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card-details {
+    margin: 20px 0;
+    color: var(--preto);
+    font-weight: bold;
+}
+
+.card-botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.botao-doar{
+    width: 90px;
+    padding: 10px 20px;
+    background-color: var(--rosa);
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.botao-voluntariar{
+    width: 120px;
+    padding: 10px 20px;
+    background-color: var(--amarelo);
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+
+
+
+
+
