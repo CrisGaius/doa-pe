@@ -97,6 +97,7 @@
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
                             <input type="text" id="ipt-pix" placeholder="Digite seu pix...">
+                            <span class="alerta">Pix inválido</span>
                         </div>
 
                         <!-- Linha Divisória -->
@@ -111,14 +112,26 @@
                             <label class="label-pagameto">Conta Bancária</label>
                             <div class="flex">
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" id="ipt-numero" class="ipt-cbancaria" placeholder="Número da conta...">
+                                    <div class="ipt-span-vertical">
+                                        <input type="text" id="ipt-numero" class="ipt-cbancaria" placeholder="Número da conta">
+                                        <span class="alerta">Número inválido</span>
+                                    </div>
 
-                                    <input type="text" id="ipt-agencia" class="ipt-cbancaria" placeholder="Agência da conta...">
+                                    <div class="ipt-span-vertical">
+                                        <input type="text" id="ipt-agencia" class="ipt-cbancaria" placeholder="Agência da conta">
+                                        <span class="alerta">Nome inválido</span>
+                                    </div>
                                 </div>
                                 <div class="alinhando-pagamentos">
-                                    <input type="text" id="ipt-instituicao" class="ipt-cbancaria" placeholder="Instituição da conta...">
+                                    <div class="ipt-span-vertical">
+                                        <input type="text" id="ipt-instituicao" class="ipt-cbancaria" placeholder="Instituição da conta">
+                                        <span class="alerta">Instituição inválida</span>
+                                    </div>
 
-                                    <input type="text" id="ipt-tipconta" class="ipt-cbancaria" placeholder="Tipo da conta...">
+                                    <div class="ipt-span-vertical">
+                                        <input type="text" id="ipt-tipconta" class="ipt-cbancaria" placeholder="Tipo da conta">
+                                        <span class="alerta">Tipo inválido</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -140,9 +153,6 @@
                             <option value="">São Francisco</option>
                         </optgroup>
                     </select>
-
-                    <span class="alerta">Região não informada</span>
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
                 
 

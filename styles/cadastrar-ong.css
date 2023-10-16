@@ -85,7 +85,7 @@ form{
 }
 
 span.alerta{
-    display: none;
+    /* display: none; */
     width: 99%;
     margin-left: 1px;
     padding: 5px;
@@ -119,7 +119,7 @@ div.inputs{
     gap: 2px;
 }
 
-.caixa-input:focus{
+.caixa-input:focus, .ipt-cbancaria:focus, #ipt-pix:focus{
     border: 2px solid rgb(0, 166, 255);
 }
 
@@ -209,7 +209,12 @@ div#ipt-pagamento{
 .alinhando-pagamentos{
     display: flex;
     justify-content: space-around;
-    gap: 4px;
+    gap: 20px;
+}
+.ipt-span-vertical{
+    /* Colocando o span logo abaixo o input */
+    display: flex;
+    flex-direction: column;
 }
 
 .ipt-cbancaria{
@@ -290,6 +295,9 @@ div#escolher-img{
     background-color: rgb(224, 211, 211);
 }
 
+#alerta-img{
+    width: 80%;
+}
 
 
 /* FOOTER */
