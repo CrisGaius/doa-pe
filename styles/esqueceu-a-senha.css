@@ -2,6 +2,8 @@ header#cabecalho {
     margin-top: 15px;
     padding: 0 20px;
     font-weight: bold;
+    z-index: 10000;
+    position: relative;
 }
 
 header#cabecalho section#caixa-voltar {
