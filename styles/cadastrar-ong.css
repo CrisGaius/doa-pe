@@ -72,7 +72,6 @@ h1{
 
 .flex-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 40px;
@@ -81,12 +80,37 @@ h1{
 form{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 500px;
     gap: 15px;
+}
+
+span.alerta{
+    display: none;
+    width: 99%;
+    margin-left: 1px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #ff5c64;
+    background-color: black;
+}
+
+span.prosseguir{
+    display: none;
+    font-weight: 500;
+    margin-left: 1px;
+    color: rgb(34, 255, 34);
+}
+
+span#max-carac{
+    padding: 5px;
+    background-color: black;
+    color: rgb(255, 223, 97);
 }
 
 label{
     margin-left: 4px;
+    font-size: 22px;
 }
 
 div.inputs{
@@ -95,16 +119,34 @@ div.inputs{
     gap: 2px;
 }
 
+.caixa-input:focus{
+    border: 2px solid rgb(0, 166, 255);
+}
+
+input::placeholder{
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .caixa-input{
-    width: 400px;
-    padding: 5px 8px;
+    width: 100%;
+    padding: 9px 8px;
+    font-size: 17px;
     border-radius: 5px;
     background-color: rgb(224, 211, 211);
 }
 
+/* Tipo */
+select#select-tipo{
+    font-size: 17px;
+}
+
 /* Formas de Pagamento */
+p.subtitulo{
+    font-size: 22px;
+}
+
 div#ipt-pagamento{
-    width: 400px;
     height: auto;
     padding: 10px;
     border-radius: 5px;
@@ -175,4 +217,104 @@ div#ipt-pagamento{
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
+}
+
+/* Select Região */
+#select-regiao{
+    width: 200px; /* ou width: 50% */
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color: rgb(224, 211, 211);
+}
+
+#select-regiao:focus{
+    border: 2px solid rgb(0, 166, 255);
+}
+
+/* Input Descrição */
+#ipt-descricao{
+    width: 100%;
+    padding: 7px 8px;
+    resize: none;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(224, 211, 211);
+}
+
+#ipt-descricao::placeholder{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#ipt-descricao:focus{
+    border: 2px solid rgb(0, 166, 255);
+}
+
+/* Input Foto */
+.area-menor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+div#caixa-file{
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    margin-top: 5px;
+    
+    border: 2px solid rgb(224, 211, 211);
+    border-radius: 5px;
+}
+
+div#caixa-file > label{
+    cursor: pointer;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#icon-lupa{
+    cursor: pointer;
+    height: 20px;
+    width: 30px;
+}
+
+div#escolher-img{
+    width: 80%;
+    height: 170px;
+    border-radius: 4px;
+    background-color: rgb(224, 211, 211);
+}
+
+
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 60px 0;
+}
+
+#btn-enviar{
+    cursor: pointer;
+    width: 400px;
+    margin-top: 40px;
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: .2s;
+    border-radius: 3px;
+    background-color: var(--ciano);
+}
+
+#btn-enviar:hover{
+    color: var(--ciano);
+    border: 1px solid #00F0FF;
+    background-color: #00868F;
 }
