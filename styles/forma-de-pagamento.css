@@ -28,7 +28,7 @@ div#titulo-cabecalho {
 }
 
 div#titulo-cabecalho img {
-    width: 60px;
+    width: 55px;
 }
 
 section#sct-pagamento {
@@ -78,4 +78,236 @@ div#transf-bank #conta-agencia {
 
 div#transf-bank #conta-agencia input {
     width: 265px;
+}
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    header#cabecalho {
+        margin-top: 20px;
+    }
+    
+    header#cabecalho section#caixa-voltar {
+        margin-bottom: 40px;
+    }
+    
+    header#cabecalho section#caixa-voltar img {
+        width: 10px;
+    }
+
+    header#cabecalho section#caixa-voltar p {
+        font-size: 12px;
+    }
+
+    div#titulo-cabecalho h1 {
+        font-size: 18px;
+        margin-top: 80px;
+    }
+
+    div#titulo-cabecalho img {
+        width: 35px;
+        margin-top: 80px;
+    }
+   
+    section#sct-pagamento {
+        width: 350px;
+        margin: 17px auto;
+    }
+    
+    div.titulo-forma {
+        font-size: 12px;
+    }
+    
+    div.titulo-forma img {
+        width: 22px;
+    }
+    
+    div.inputs label {
+        font-size: 15px;
+    }
+    
+    div.inputs input {
+        width: 255px;
+    }
+    
+    button#copiar {
+        width: 50px;
+    }
+    
+    div#transf-bank input {
+        width: 305px;
+    }
+    
+    div#transf-bank #conta-agencia input {
+        width: 140px;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header#cabecalho {
+        margin-top: 20px;
+    }
+    
+    header#cabecalho section#caixa-voltar {
+        margin-bottom: 40px;
+    }
+    
+    header#cabecalho section#caixa-voltar img {
+        width: 10px;
+    }
+
+    header#cabecalho section#caixa-voltar p {
+        font-size: 14px;
+    }
+
+    div#titulo-cabecalho h1 {
+        font-size: 22px;
+        margin-top: 80px;
+    }
+
+    div#titulo-cabecalho img {
+        width: 38px;
+        margin-top: 80px;
+    }
+   
+    section#sct-pagamento {
+        width: 370px;
+        margin: 17px auto;
+    }
+    
+    div.titulo-forma {
+        font-size: 12px;
+    }
+    
+    div.titulo-forma img {
+        width: 24px;
+    }
+    
+    div.inputs label {
+        font-size: 16px;
+    }
+    
+    div.inputs input {
+        width: 285px;
+    }
+    
+    button#copiar {
+        width: 50px;
+    }
+    
+    div#transf-bank input {
+        width: 335px;
+    }
+    
+    div#transf-bank #conta-agencia input {
+        width: 155px;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header#cabecalho {
+        margin-top: 20px;
+    }
+    
+    header#cabecalho section#caixa-voltar {
+        margin-bottom: 40px;
+    }
+    
+    header#cabecalho section#caixa-voltar img {
+        width: 14px;
+    }
+
+    header#cabecalho section#caixa-voltar p {
+        font-size: 16px;
+    }
+
+    div#titulo-cabecalho h1 {
+        font-size: 24px;
+        margin-top: 80px;
+    }
+
+    div#titulo-cabecalho img {
+        width: 38px;
+        margin-top: 80px;
+    }
+   
+    section#sct-pagamento {
+        width: 420px;
+        margin: 17px auto;
+    }
+    
+    div.titulo-forma {
+        font-size: 14px;
+    }
+    
+    div.inputs input {
+        width: 325px;
+    }
+    
+    button#copiar {
+        width: 50px;
+    }
+    
+    div#transf-bank input {
+        width: 375px;
+    }
+    
+    div#transf-bank #conta-agencia input {
+        width: 170px;
+    }
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    header#cabecalho {
+        margin-top: 20px;
+    }
+    
+    header#cabecalho section#caixa-voltar {
+        margin-bottom: 40px;
+    }
+    
+    header#cabecalho section#caixa-voltar img {
+        width: 15px;
+    }
+
+    div#titulo-cabecalho h1 {
+        font-size: 26px;
+        margin-top: 80px;
+    }
+
+    div#titulo-cabecalho img {
+        width: 42px;
+        margin-top: 80px;
+    }
+   
+    section#sct-pagamento {
+        width: 500px;
+        margin: 17px auto;
+    }
+    
+    div.titulo-forma {
+        font-size: 14px;
+    }
+    
+    div.inputs input {
+        width: 400px;
+    }
+    
+    div#transf-bank input {
+        width: 450px;
+    }
+    
+    div#transf-bank #conta-agencia input {
+        width: 205px;
+    }
+
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+
 }
