@@ -1,9 +1,9 @@
-@import url(config.css);
-
 header#cabecalho {
     margin-top: 40px;
     padding: 0 20px;
     font-weight: bold;
+    z-index: 10000;
+    position: relative;
 }
 
 header#cabecalho section#caixa-voltar {
@@ -23,6 +23,12 @@ header#cabecalho section#caixa-voltar:hover {
 
 header#cabecalho section#caixa-voltar img {
     width: 16px;
+}
+
+main {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
 }
 
 section#sct-principal {
