@@ -71,7 +71,7 @@
                 <!-- Input CNPJ -->
                 <div class="inputs">
                     <label for="ipt-cnpj">CNPJ</label>
-                    <input type="text" id="cnpj" class="caixa-input camps" maxlength="18" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
+                    <input type="text" id="cnpj" class="caixa-input campos" maxlength="18" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
 
                     <span class="alerta">CNPJ incompleto</span>
                 </div>
@@ -100,7 +100,7 @@
                         <!-- Pix -->
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" id="ipt-pix" class="campos" placeholder="Digite seu pix..." oninput="pixValidate()">
+                            <input type="text" id="ipt-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." oninput="pixValidate()">
 
                             <span class="alerta">Pix inválido</span>
                         </div>
@@ -124,7 +124,7 @@
                                     </div>
 
                                     <div class="ipt-span-vertical">
-                                        <input type="text" class="ipt-cbancaria campos" placeholder="Agência da conta" oninput="agenciaValidate()">
+                                        <input type="text" class="ipt-cbancaria campos" placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()">
 
                                         <span class="alerta">Agência inválido</span>
                                     </div>
@@ -173,7 +173,7 @@
                 <!-- Input DESCRIÇÃO -->
                 <div class="inputs">
                     <label for="ipt-descricao">Descrição</label>
-                    <textarea id="ipt-descricao" rows="10" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
+                    <textarea id="ipt-descricao" rows="10" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
 
                     <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
                     <span class="alerta" id="max-carac">Possui mais de 500 caracteres</span>
@@ -286,7 +286,7 @@
 
     // Função para validar o pix
     function pixValidate(){
-        if(campos[5].value.length < 18){
+        if(campos[5].value.length < 32){
             setError(5)
         } else{
             removerError(5)
@@ -364,15 +364,9 @@
             campoTxtArea.style.border = ""
             spanMin.style.display = "none"
         }
-        // Caso tenha mais de 500 caracteres
-        if(campoTxtArea.value.length > 500){
-            campoTxtArea.style.border = "2px solid #000"
-            spanMax.style.display = "block"
-        } else{
-            campoTxtArea.style.border = ""
-            spanMax.style.display = "none"
-        }
     }
+
+
 
 
     // MÁSCARA
