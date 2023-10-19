@@ -81,13 +81,16 @@
                     <label for="ipt-tipos">Tipo</label>
                     <select id="select-tipo" class="caixa-input campos">
                         <optgroup label="Escolha">
-                            <option value="#">Cuida do meio ambiente</option>
-                            <option value="#">Cuida de animais abandonados</option>
-                            <option value="#">Cuida de crianças e adolescentes</option>
-                            <option value="#">Faz refeição</option>
-                            <option value="#">Distribuição de roupas</option>
+                            <option value="TipoONG">Tipo da conta</option>
+                            <option value="cuidaMeioAmb">Cuida do meio ambiente</option>
+                            <option value="cuidaAnimAban">Cuida de animais abandonados</option>
+                            <option value="cuidaCrianAdol">Cuida de crianças e adolescentes</option>
+                            <option value="refeicao">Faz refeição</option>
+                            <option value="distribuiRoupa">Distribuição de roupas</option>
                         </optgroup>
                     </select>
+
+                    <span id="span-TipoONG">Tipo inválido</span>
                 </div>
 
                 <!-- Caixa Formas de Pagamento -->
@@ -141,7 +144,7 @@
                                             <option value="contaPoupanca">Conta poupança</option>
                                         </select>
 
-                                        <span id="span-TipoConta" >Tipo inválido</span>
+                                        <span id="span-TipoConta">Tipo inválido</span>
                                     </div>
                                 </div>
                             </div>
@@ -314,6 +317,21 @@
         } else{ 
             selectPagamento.style.border = "2px solid rgb(0, 166, 255)"
             spanPagamento.style.display = "none"
+        }
+    })
+
+    // Validar o select "Tipo" (de ONG)
+    const selectTipo = document.getElementById('select-tipo')
+    const spanTipo   = document.getElementById('span-TipoONG')
+    
+    selectTipo.addEventListener('click', function() {
+        // Mostrar o erro
+        if (selectTipo.value == 'TipoONG'){
+            selectTipo.style.border = "2px solid #000"
+            spanTipo.style.display = "block"
+        } else{ 
+            selectTipo.style.border = "2px solid rgb(0, 166, 255)"
+            spanTipo.style.display = "none"
         }
     })
 

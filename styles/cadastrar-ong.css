@@ -51,7 +51,7 @@ form{
     gap: 15px;
 }
 
-span.alerta, #span-TipoConta{
+span.alerta, #span-TipoConta, #span-TipoONG{
     display: none;
     width: 99%;
     margin-left: 1px;
@@ -99,7 +99,7 @@ input::placeholder{
     font-weight: 600;
 }
 
-.caixa-input:focus, #ipt-pix:focus, .ipt-cbancaria:focus{
+.caixa-input:focus{
     border: 2px solid rgb(0, 166, 255);
 }
 
@@ -148,6 +148,10 @@ div#ipt-pagamento{
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
 }
+
+#ipt-pix:focus, .ipt-cbancaria:focus{
+    border: 2px solid rgb(0, 166, 255);
+}
 /* Linha Divisória */
 #flex-container-linha{
     display: flex;
@@ -182,6 +186,7 @@ div#ipt-pagamento{
     /* Colocando o span logo abaixo o input */
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 
 .ipt-cbancaria{
@@ -192,7 +197,7 @@ div#ipt-pagamento{
 }
 
 select{
-    color: #7b7b7b;
+    color: #433f3f;
     font-weight: 600;
 }
 
