@@ -90,7 +90,7 @@
                         </optgroup>
                     </select>
 
-                    <span id="span-FinalidadeONG">Tipo inválido</span>
+                    <span id="span-FinalidadeONG">Selecione uma opção</span>
                 </div>
 
                 <!-- Caixa Formas de Pagamento -->
@@ -144,7 +144,7 @@
                                             <option value="contaPoupanca">Conta poupança</option>
                                         </select>
 
-                                        <span id="span-TipoConta">Tipo inválido</span>
+                                        <span id="span-TipoConta">Selecione uma opção</span>
                                     </div>
                                 </div>
                             </div>
@@ -156,16 +156,17 @@
 
                 <!-- Input REGIÃO-->
                 <div class="inputs">
-                    <label for="selec-regiao">Região</label>
+                    <label for="select-regiao">Região</label>
                     <select id="select-regiao">
-                        <optgroup label="Regiões de PE">
-                            <option value="">Zona da Mata</option>
-                            <option value="">Metropolitana</option>
-                            <option value="">Agreste</option>
-                            <option value="">Sertão</option>
-                            <option value="">São Francisco</option>
-                        </optgroup>
+                        <option value="SelecioneRegiao">Selecione uma região</option>
+                        <option value="">Zona da Mata</option>
+                        <option value="">Metropolitana</option>
+                        <option value="">Agreste</option>
+                        <option value="">Sertão</option>
+                        <option value="">São Francisco</option>
                     </select>
+
+                    <span id="span-regiao">Selecione uma opção</span>
                 </div>
                 
 
@@ -269,6 +270,20 @@
         }
     }
 
+    // Validar o select "Finalidade" (de ONG)
+    const spanTipo   = document.getElementById('span-FinalidadeONG')
+    const selectTipo = document.getElementById('select-finalidade')
+    selectTipo.addEventListener('click', function(){
+        // Mostrar o erro
+        if (selectTipo.value == 'FinalidadeONG'){
+            selectTipo.style.border = "2px solid #000"
+            spanTipo.style.display = "block"
+        } else{ 
+            selectTipo.style.border = "none"
+            spanTipo.style.display = "none"
+        }
+    })
+
     // Função para validar o pix
     function pixValidate(){
         if(campos[5].value.length < 18){
@@ -306,10 +321,9 @@
     }
 
     // Validar o select "Tipo de conta"
-    const selectPagamento = document.getElementById('select-conta')
     const spanPagamento   = document.getElementById('span-TipoConta')
-    
-    selectPagamento.addEventListener('click', function() {
+    const selectPagamento = document.getElementById('select-conta')    
+    selectPagamento.addEventListener('click', function(){
         // Mostrar o erro
         if (selectPagamento.value == 'tipoConta'){
             selectPagamento.style.border = "2px solid #000"
@@ -320,18 +334,18 @@
         }
     })
 
-    // Validar o select "Tipo" (de ONG)
-    const selectTipo = document.getElementById('select-finalidade')
-    const spanTipo   = document.getElementById('span-FinalidadeONG')
     
-    selectTipo.addEventListener('click', function() {
+    // Validar select "Região"
+    const spanRegiao   = document.getElementById('span-regiao')
+    const selectRegiao = document.getElementById('select-regiao')
+    selectRegiao.addEventListener('click', function(){
         // Mostrar o erro
-        if (selectTipo.value == 'FinalidadeONG'){
-            selectTipo.style.border = "2px solid #000"
-            spanTipo.style.display = "block"
-        } else{ 
-            selectTipo.style.border = "2px solid rgb(0, 166, 255)"
-            spanTipo.style.display = "none"
+        if(selectRegiao.value == 'SelecioneRegiao'){
+            selectRegiao.style.border = "2px solid #000"
+            spanRegiao.style.display  = "block"
+        } else{
+            selectRegiao.style.border = "none"
+            spanRegiao.style.display  = "none"
         }
     })
 

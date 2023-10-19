@@ -51,7 +51,7 @@ form{
     gap: 15px;
 }
 
-span.alerta, #span-TipoConta, #span-FinalidadeONG{
+span.alerta, #span-TipoConta, #span-FinalidadeONG, #span-regiao{
     display: none;
     width: 99%;
     margin-left: 1px;
@@ -203,7 +203,6 @@ select{
 
 /* Select Região */
 #select-regiao{
-    width: 250px; /* ou width: 50% */
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 17px;
