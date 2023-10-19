@@ -1,36 +1,3 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/*Utilizar @import url('config.css') para incluir esse arquivo nos arquivos css que formos fazendo. Dessa forma, evitamos ter que copiar tudo de novo. Procurem utilizar sempre as variáveis.*/
-
-:root {
-    --inter: 'Inter', sans-serif;
-    --rosa: #F2055C;
-    --roxo: #341FBF;
-    --ciano: #00F0FF;
-    --amarelo: #F29544;
-    --preto: #0D0D0D;
-    --branco: #FFFFFF;
-    --azul-linkedin: #48A3FF;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    list-style-type: none;
-    font-family: var(--inter);
-}
-
-body {
-    background-color: var(--roxo);
-    color: var(--branco);
-}
-
 img, a {
     user-select: none;
     -webkit-user-drag: none;
@@ -85,7 +52,7 @@ form{
 }
 
 span.alerta{
-    /* display: none; */
+    display: none;
     width: 99%;
     margin-left: 1px;
     padding: 5px;
@@ -119,8 +86,12 @@ div.inputs{
     gap: 2px;
 }
 
-.caixa-input:focus, .ipt-cbancaria:focus, #ipt-pix:focus{
-    border: 2px solid rgb(0, 166, 255);
+
+.caixa-input{
+    padding: 9px 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(224, 211, 211);
 }
 
 input::placeholder{
@@ -128,12 +99,8 @@ input::placeholder{
     font-weight: 600;
 }
 
-.caixa-input{
-    width: 100%;
-    padding: 9px 8px;
-    font-size: 17px;
-    border-radius: 5px;
-    background-color: rgb(224, 211, 211);
+.caixa-input:focus, #ipt-pix:focus, .ipt-cbancaria:focus{
+    border: 2px solid rgb(0, 166, 255);
 }
 
 /* Tipo */
@@ -177,7 +144,6 @@ div#ipt-pagamento{
 }
 
 #ipt-pix{
-    width: 100%;
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
@@ -191,6 +157,7 @@ div#ipt-pagamento{
 .linha-vertical{
     width: 3px;
     height: 9px;
+    
     background-color: rgba(148, 147, 147, 0.7);
 }
 
@@ -222,6 +189,11 @@ div#ipt-pagamento{
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
+}
+
+select{
+    color: #7b7b7b;
+    font-weight: 600;
 }
 
 /* Select Região */
