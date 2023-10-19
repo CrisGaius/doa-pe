@@ -123,7 +123,7 @@
                                     <div class="ipt-span-vertical">
                                         <input type="text" class="ipt-cbancaria campos" placeholder="Agência da conta" oninput="agenciaValidate()">
 
-                                        <span class="alerta">Nome inválido</span>
+                                        <span class="alerta">Agência inválido</span>
                                     </div>
                                 </div>
                                 <div class="alinhando-pagamentos">
@@ -134,20 +134,20 @@
                                     </div>
 
                                     
-                                    <div class="ipt-span-vertica">
-                                        <select id="select-conta" class="ipt-cbancaria campos">
-                                            <option id="option-fisrt-conta">Tipo da conta</option>
-                                            <option>Conta corrente</option>
-                                            <option>Conta poupança</option>
+                                    <div class="ipt-span-vertical">
+                                        <select id="select-conta" class="ipt-cbancaria">
+                                            <option id="option-fisrt-conta" value="tipoConta">Tipo da conta</option>
+                                            <option value="contaCorrente">Conta corrente</option>
+                                            <option value="contaPoupanca">Conta poupança</option>
                                         </select>
-                                        <span class="alerta" style="display: block;">Selecione o tipo de conta</span>
+
+                                        <span id="span-TipoConta" >Tipo inválido</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <span class="alerta">Falta informações na forma de pagamento</span>
                     <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
@@ -302,28 +302,20 @@
         }
     }
 
-    // Função para deixar o primeiro option com a cor do placeholder
-    function tipoConta(){
-        let selectConta = document.getElementById('select-conta')
-        let firstOption = document.getElementById('option-fisrt-conta')
-
-        // Colocar a cor do primeiro option como se fosse o placeholder
-        function setColor(){
-            firstOption.style.color = "#000"
+    // Validar o select "Tipo de conta"
+    const selectPagamento = document.getElementById('select-conta')
+    const spanPagamento   = document.getElementById('span-TipoConta')
+    
+    selectPagamento.addEventListener('click', function() {
+        // Mostrar o erro
+        if (selectPagamento.value == 'tipoConta'){
+            selectPagamento.style.border = "2px solid #000"
+            spanPagamento.style.display = "block"
+        } else{ 
+            selectPagamento.style.border = "2px solid rgb(0, 166, 255)"
+            spanPagamento.style.display = "none"
         }
-        // Remove a cor do primeiro option para que identifique marcou algo
-        function removerColor(){
-            firstOption.style.color = "#7b7b7b"
-        }
-
-        selectConta.addEventListener('click', () => {
-            if (selectConta.value == firstOption){
-                setColor()
-            } else{
-                removerColor()
-            }
-        })        
-        }
+    })
 
 
     // Função para validar a descrição
