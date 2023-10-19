@@ -78,10 +78,10 @@
 
                 <!-- Input TIPO -->
                 <div class="inputs">
-                    <label for="ipt-tipos">Tipo</label>
-                    <select id="select-tipo" class="caixa-input campos">
+                    <label for="ipt-tipos">Finalidade</label>
+                    <select id="select-finalidade" class="caixa-input campos">
                         <optgroup label="Escolha">
-                            <option value="TipoONG">Tipo da conta</option>
+                            <option value="FinalidadeONG">Finalidade da ONG</option>
                             <option value="cuidaMeioAmb">Cuida do meio ambiente</option>
                             <option value="cuidaAnimAban">Cuida de animais abandonados</option>
                             <option value="cuidaCrianAdol">Cuida de crianças e adolescentes</option>
@@ -90,7 +90,7 @@
                         </optgroup>
                     </select>
 
-                    <span id="span-TipoONG">Tipo inválido</span>
+                    <span id="span-FinalidadeONG">Tipo inválido</span>
                 </div>
 
                 <!-- Caixa Formas de Pagamento -->
@@ -321,12 +321,12 @@
     })
 
     // Validar o select "Tipo" (de ONG)
-    const selectTipo = document.getElementById('select-tipo')
-    const spanTipo   = document.getElementById('span-TipoONG')
+    const selectTipo = document.getElementById('select-finalidade')
+    const spanTipo   = document.getElementById('span-FinalidadeONG')
     
     selectTipo.addEventListener('click', function() {
         // Mostrar o erro
-        if (selectTipo.value == 'TipoONG'){
+        if (selectTipo.value == 'FinalidadeONG'){
             selectTipo.style.border = "2px solid #000"
             spanTipo.style.display = "block"
         } else{ 

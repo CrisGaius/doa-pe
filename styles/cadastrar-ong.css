@@ -51,7 +51,7 @@ form{
     gap: 15px;
 }
 
-span.alerta, #span-TipoConta, #span-TipoONG{
+span.alerta, #span-TipoConta, #span-FinalidadeONG{
     display: none;
     width: 99%;
     margin-left: 1px;
