@@ -35,43 +35,39 @@
                 <div class="inputs">
                     <label for="ipt-nome">Nome</label>
                     <input type="text" id="ipt-nome" style="display: none;">
-                    <input type="text" id="ipt-nome" class="caixa-input campos" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()">
+                    <input type="text" id="ipt-nome" class="caixa-input campos" maxlength="255" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()">
 
                     <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
-                    <span class="prosseguir" id="nome-prosseguir">Tudo Certo &#x2705</span>
                 </div>
             
                 <!-- Input ENDEREÇO -->
                 <div class="inputs">
                     <label for="ipt-endereco">Endereço</label>
-                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input campos" placeholder="Digite o endereço da sua ONG..." oninput="enderecoValidate()">
+                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input campos" placeholder="Ex: Rua Padre Inglês, 356 - Boa Vista, Recife" oninput="enderecoValidate()">
 
                     <span class="alerta">Mínimo de 20 caracteres</span>
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
                 
                 <!-- Input E-MAIL -->
                 <div class="inputs">
                     <label for="ipt-email">E-mail</label>
-                    <input type="text" id="ipt-email" class="caixa-input campos" placeholder="Digite o e-mail da sua ONG..." oninput="emailValidate()">
+                    <input type="text" id="ipt-email" class="caixa-input campos" maxlength="345" placeholder="Ex: email@gmail.com" oninput="emailValidate()">
 
                     <span class="alerta">E-mail inválido</span>
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
                 
                 <!-- Input CONTATO -->
                 <div class="inputs">
                     <label for="ipt-contato">Contato</label>
-                    <input type="text" id="telefone" class="caixa-input campos" maxlength="15" placeholder="Digite o número de contato da sua ONG..." oninput="numeroValidate()">
+                    <input type="text" id="telefone" class="caixa-input campos" maxlength="15" placeholder="Número de contato da ONG..." oninput="numeroValidate()">
 
                     <span class="alerta">Número inválido</span>
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
                 <!-- Input CNPJ -->
                 <div class="inputs">
                     <label for="ipt-cnpj">CNPJ</label>
-                    <input type="text" id="cnpj" class="caixa-input campos" maxlength="18" placeholder="Digite o CNPJ da sua ONG..." oninput="cnpjValidate()">
+                    <input type="text" id="cnpj" class="caixa-input campos" maxlength="18" placeholder="Ex: xx.xxx.xxx/xxxx-xx" oninput="cnpjValidate()">
 
                     <span class="alerta">CNPJ incompleto</span>
                 </div>
@@ -100,7 +96,7 @@
                         <!-- Pix -->
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" id="ipt-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." oninput="pixValidate()">
+                            <input type="text" id="ipt-pix" class="campos"  maxlength="32" placeholder="Digite seu pix..." oninput="pixValidate()">
 
                             <span class="alerta">Pix inválido</span>
                         </div>
@@ -118,7 +114,7 @@
                             <div class="flex">
                                 <div class="alinhando-pagamentos">
                                     <div class="ipt-span-vertical">
-                                        <input type="text" class="ipt-cbancaria campos" placeholder="Número da conta" oninput="numcontaValidate()">
+                                        <input type="text" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" oninput="numcontaValidate()">
 
                                         <span class="alerta">Número inválido</span>
                                     </div>
@@ -151,7 +147,6 @@
                         </div>
                     </div>
 
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
                 <!-- Input REGIÃO-->
@@ -173,11 +168,10 @@
                 <!-- Input DESCRIÇÃO -->
                 <div class="inputs">
                     <label for="ipt-descricao">Descrição</label>
-                    <textarea id="ipt-descricao" rows="10" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
+                    <textarea id="ipt-descricao" rows="10" minlength="20" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
 
                     <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
                     <span class="alerta" id="max-carac">Possui mais de 500 caracteres</span>
-                    <span class="prosseguir">Tudo Certo &#x2705</span>
                 </div>
 
                 <!-- Input FOTO -->
@@ -295,7 +289,7 @@
 
     // Função para validar o número (conta bancária)
     function numcontaValidate(){
-        if(campos[6].value.length < 8){
+        if(campos[6].value.length < 7){
             setError(6)
         } else{
             removerError(6)
