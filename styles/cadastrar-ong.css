@@ -53,26 +53,12 @@ form{
 
 span.alerta, #span-TipoConta, #span-FinalidadeONG, #span-regiao{
     display: none;
-    width: 99%;
     margin-left: 1px;
     padding: 5px;
     border-radius: 3px;
     font-size: 14px;
     color: #ff5c64;
     background-color: black;
-}
-
-span.prosseguir{
-    display: none;
-    font-weight: 500;
-    margin-left: 1px;
-    color: rgb(34, 255, 34);
-}
-
-span#max-carac{
-    padding: 5px;
-    background-color: black;
-    color: rgb(255, 223, 97);
 }
 
 label{
@@ -104,13 +90,14 @@ input::placeholder{
 }
 
 /* Tipo */
-select#select-tipo{
+select#select-finalidade{
     font-size: 17px;
 }
 
 /* Formas de Pagamento */
 p.subtitulo{
     font-size: 22px;
+    margin-left: 4px;
 }
 
 div#ipt-pagamento{
@@ -302,3 +289,194 @@ footer{
     border: 1px solid #00F0FF;
     background-color: #00868F;
 }
+
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 390px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 32px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 85%;
+    }
+    
+    label{
+        font-size: 20px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    input::placeholder{
+        font-size: 12px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 20px;
+    }
+
+    div#ipt-pagamento{
+        gap: 20px;
+    }
+
+    /* Linha Divisória */
+    #linha-divisoria{
+        width: 230px;
+    }
+
+    /* Conta Bancária */
+    .alinhando-pagamentos{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .ipt-cbancaria{
+        width: 190px;
+    }
+    
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 180px;
+    }
+}
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 35px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 365px;
+    }
+    
+    label{
+        font-size: 22px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 22px;
+    }
+
+    div#ipt-pagamento{
+        gap: 20px;
+    }
+
+    /* Pix */
+    .flex-container-pagamento:first-child > label{
+        width: 100%;
+        margin-left: 8px;
+        text-align: left;
+    }
+
+    .label-pagameto{
+        font-weight: 800;
+        color: var(--preto);
+    }
+
+    /* Linha Divisória */
+    #linha-divisoria{
+        width: 300px;
+    }
+
+    /* Conta Bancária */
+    .ipt-cbancaria{
+        width: 155px;
+    }
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 280px;
+    }
+}
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 35px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 425px;
+    }
+    
+    label{
+        font-size: 22px;
+    }
+    
+    .caixa-input{
+        font-size: 15px;
+    }
+    
+    input::placeholder{
+        font-size: 12px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 22px;
+    }
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 280px;
+    }
+}
+@media only screen and (min-width: 599px) and (max-width: 767px) {}
+@media only screen and (min-width: 767px) and (max-width: 992px) {}

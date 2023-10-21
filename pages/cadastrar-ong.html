@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
 
-    <title>Cadastrar ONG</title>
+    <title>Doa PE</title>
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="stylesheet" href="../styles/cadastrar-ong.css">
     <!-- <script src="../scripts/cadastrar-ong.js" defer></script> -->
@@ -171,7 +171,6 @@
                     <textarea id="ipt-descricao" rows="10" minlength="20" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"></textarea>
 
                     <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
-                    <span class="alerta" id="max-carac">Possui mais de 500 caracteres</span>
                 </div>
 
                 <!-- Input FOTO -->
@@ -348,7 +347,6 @@
     function descricaoValidate(){
         const campoTxtArea = document.getElementById('ipt-descricao')
         const spanMin      = document.querySelector('#min-carac')
-        const spanMax      = document.querySelector('#max-carac')
         
         // Caso tenha menos de 20 caracteres
         if (campoTxtArea.value.length < 20){
