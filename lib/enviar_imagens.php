@@ -8,7 +8,7 @@ function enviar_imagens($error, $size, $name, $tmp_name) {
         die('Arquivo muito grande! Máx: 10MB');
     }
 
-    $pasta = __DIR__ . "/../fotos-ongs/";
+    $pasta = "fotos-ongs/";
     $novo_nome_do_arquivo = uniqid();
     $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 
