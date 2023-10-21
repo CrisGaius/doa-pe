@@ -1,36 +1,3 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/*Utilizar @import url('config.css') para incluir esse arquivo nos arquivos css que formos fazendo. Dessa forma, evitamos ter que copiar tudo de novo. Procurem utilizar sempre as variáveis.*/
-
-:root {
-    --inter: 'Inter', sans-serif;
-    --rosa: #F2055C;
-    --roxo: #341FBF;
-    --ciano: #00F0FF;
-    --amarelo: #F29544;
-    --preto: #0D0D0D;
-    --branco: #FFFFFF;
-    --azul-linkedin: #48A3FF;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    list-style-type: none;
-    font-family: var(--inter);
-}
-
-body {
-    background-color: var(--roxo);
-    color: var(--branco);
-}
-
 img, a {
     user-select: none;
     -webkit-user-drag: none;
@@ -84,28 +51,14 @@ form{
     gap: 15px;
 }
 
-span.alerta{
+span.alerta, #span-TipoConta, #span-FinalidadeONG, #span-regiao{
     display: none;
-    width: 99%;
     margin-left: 1px;
     padding: 5px;
     border-radius: 3px;
     font-size: 14px;
     color: #ff5c64;
     background-color: black;
-}
-
-span.prosseguir{
-    display: none;
-    font-weight: 500;
-    margin-left: 1px;
-    color: rgb(34, 255, 34);
-}
-
-span#max-carac{
-    padding: 5px;
-    background-color: black;
-    color: rgb(255, 223, 97);
 }
 
 label{
@@ -119,8 +72,12 @@ div.inputs{
     gap: 2px;
 }
 
-.caixa-input:focus{
-    border: 2px solid rgb(0, 166, 255);
+
+.caixa-input{
+    padding: 9px 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(224, 211, 211);
 }
 
 input::placeholder{
@@ -128,22 +85,19 @@ input::placeholder{
     font-weight: 600;
 }
 
-.caixa-input{
-    width: 100%;
-    padding: 9px 8px;
-    font-size: 17px;
-    border-radius: 5px;
-    background-color: rgb(224, 211, 211);
+.caixa-input:focus{
+    border: 2px solid rgb(0, 166, 255);
 }
 
 /* Tipo */
-select#select-tipo{
+select#select-finalidade{
     font-size: 17px;
 }
 
 /* Formas de Pagamento */
 p.subtitulo{
     font-size: 22px;
+    margin-left: 4px;
 }
 
 div#ipt-pagamento{
@@ -177,10 +131,13 @@ div#ipt-pagamento{
 }
 
 #ipt-pix{
-    width: 100%;
     padding: 5px 8px;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
+}
+
+#ipt-pix:focus, .ipt-cbancaria:focus{
+    border: 2px solid rgb(0, 166, 255);
 }
 /* Linha Divisória */
 #flex-container-linha{
@@ -191,6 +148,7 @@ div#ipt-pagamento{
 .linha-vertical{
     width: 3px;
     height: 9px;
+    
     background-color: rgba(148, 147, 147, 0.7);
 }
 
@@ -209,7 +167,13 @@ div#ipt-pagamento{
 .alinhando-pagamentos{
     display: flex;
     justify-content: space-around;
-    gap: 4px;
+    gap: 20px;
+}
+.ipt-span-vertical{
+    /* Colocando o span logo abaixo o input */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .ipt-cbancaria{
@@ -219,9 +183,13 @@ div#ipt-pagamento{
     background-color: rgb(247, 247, 247);
 }
 
+select{
+    color: #433f3f;
+    font-weight: 600;
+}
+
 /* Select Região */
 #select-regiao{
-    width: 200px; /* ou width: 50% */
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 17px;
@@ -234,9 +202,9 @@ div#ipt-pagamento{
 
 /* Input Descrição */
 #ipt-descricao{
-    width: 100%;
     padding: 7px 8px;
     resize: none;
+    text-align: justify;
     font-size: 17px;
     border-radius: 5px;
     background-color: rgb(224, 211, 211);
@@ -290,6 +258,14 @@ div#escolher-img{
     background-color: rgb(224, 211, 211);
 }
 
+img#imagemPreview{
+    width: 100%;
+    height: 100%;
+}
+
+#alerta-img{
+    width: 80%;
+}
 
 
 /* FOOTER */
@@ -318,3 +294,194 @@ footer{
     border: 1px solid #00F0FF;
     background-color: #00868F;
 }
+
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 390px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 32px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 85%;
+    }
+    
+    label{
+        font-size: 20px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    input::placeholder{
+        font-size: 12px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 20px;
+    }
+
+    div#ipt-pagamento{
+        gap: 20px;
+    }
+
+    /* Linha Divisória */
+    #linha-divisoria{
+        width: 230px;
+    }
+
+    /* Conta Bancária */
+    .alinhando-pagamentos{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .ipt-cbancaria{
+        width: 190px;
+    }
+    
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 180px;
+    }
+}
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 35px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 365px;
+    }
+    
+    label{
+        font-size: 22px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 22px;
+    }
+
+    div#ipt-pagamento{
+        gap: 20px;
+    }
+
+    /* Pix */
+    .flex-container-pagamento:first-child > label{
+        width: 100%;
+        margin-left: 8px;
+        text-align: left;
+    }
+
+    .label-pagameto{
+        font-weight: 800;
+        color: var(--preto);
+    }
+
+    /* Linha Divisória */
+    #linha-divisoria{
+        width: 300px;
+    }
+
+    /* Conta Bancária */
+    .ipt-cbancaria{
+        width: 155px;
+    }
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 280px;
+    }
+}
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    /* HEADER */
+    #btn-voltar{
+        height: 30px;
+        margin: 20px 0 0 10px;
+    }
+    
+    
+    
+    /* MAIN */
+    h1{
+        font-size: 35px;
+    }
+    
+    .flex-container {
+        margin-top: 30px;
+    }
+    
+    form{
+        width: 425px;
+    }
+    
+    label{
+        font-size: 22px;
+    }
+    
+    .caixa-input{
+        font-size: 15px;
+    }
+    
+    input::placeholder{
+        font-size: 12px;
+    }
+    
+    /* Tipo */
+    select#select-finalidade{
+        font-size: 15px;
+    }
+    
+    /* Formas de Pagamento */
+    p.subtitulo{
+        font-size: 22px;
+    }
+    
+    
+    /* FOOTER */
+    #btn-enviar{
+        width: 280px;
+    }
+}
+@media only screen and (min-width: 599px) and (max-width: 767px) {}
+@media only screen and (min-width: 767px) and (max-width: 992px) {}

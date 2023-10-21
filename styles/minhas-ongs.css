@@ -62,8 +62,23 @@ ul#lista img#icone-menu {
     display: none;
 }
 
+div.menu-mobile {
+    display: none;
+    position: absolute;
+    background-color: var(--azul-menu);
+    width: 100%;
+    top: 80px;
+    padding: 20px 0 20px 0;
+    font-weight: bold;
+}
+
+div.menu-mobile ul#lista {
+    gap: 20px;
+    flex-direction: column;
+}
+
 main h1#titulo {
-    font-size: 40px;
+    font-size: 45px;
     text-align: center;
     margin: 20px 0px 40px 0px
 }
@@ -116,14 +131,190 @@ main div.box-layout div.logo-imagem {
    background-color: var(--branco);
    width: 600px;
    height: 250px;
-   border-top-left-radius: 20px;
-   border-top-right-radius: 20px;
+   border-radius: 20px 20px 0px 0px;
 }
 
 main div.box-layout div.logo-imagem img{
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/* MEDIA QUERIES */
+
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main h1#titulo {
+        font-size: 35px;
+    }
+    
+    main div.box-layout {
+        width: 300px;
+        height: 230px;
+    }
+    
+    main div.box-layout h1{
+        font-size: 18px;
+    }
+
+    main div.box-layout div.botoes button{
+        width: 120px;
+        height: 25px;
+    }
+    
+    main div.box-layout div.logo-imagem {
+       width: 300px;
+       height: 125px;
+    }
+
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main h1#titulo {
+        font-size: 35px;
+    }
+    
+    main div.box-layout {
+        width: 350px;
+        height: 250px;
+    }
+    
+    main div.box-layout h1{
+        font-size: 18px;
+    }
+
+    main div.box-layout div.botoes button{
+        width: 140px;
+        height: 25px;
+        margin-top: 5px;
+    }
+    
+    main div.box-layout div.logo-imagem {
+       width: 350px;
+       height: 145px;
+    }
+
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main h1#titulo {
+        font-size: 38px;
+    }
+    
+    main div.box-layout {
+        width: 390px;
+        height: 260px;
+    }
+    
+    main div.box-layout h1{
+        font-size: 18px;
+    }
+
+    main div.box-layout div.botoes button{
+        width: 155px;
+        height: 25px;
+    }
+    
+    main div.box-layout div.logo-imagem {
+       width: 390px;
+       height: 155px;
+    }
+
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main h1#titulo {
+        font-size: 42px;
+    }
+    
+    main div.box-layout {
+        width: 460px;
+        height: 280px;
+    }
+    
+    main div.box-layout h1{
+        font-size: 20px;
+    }
+
+    main div.box-layout div.botoes button{
+        width: 185px;
+        height: 30px;
+    }
+    
+    main div.box-layout div.logo-imagem {
+       width: 460px;
+       height: 170px;
+    }
+
+}
+
+/* Menu mobile */
+@media only screen and (max-width: 767px) {
+    header nav ul#lista li {
+        display: none;
+    }
+
+    ul#lista img#icone-menu {
+        cursor: pointer;
+        display: block;
+    }
+
+    div.menu-mobile.open {
+        display: block;
+    }
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    main h1#titulo {
+        font-size: 43px;
+    }
+    
+    main div.box-layout {
+        width: 520px;
+        height: 300px;
+    }
+    
+    main div.box-layout h1{
+        font-size: 20px;
+    }
+
+    main div.box-layout div.botoes button{
+        width: 200px;
+        height: 30px;
+    }
+    
+    main div.box-layout div.logo-imagem {
+       width: 520px;
+       height: 190px;
+    }
+
 }
