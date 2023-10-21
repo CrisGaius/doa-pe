@@ -176,7 +176,6 @@
                 <!-- Input FOTO -->
                 <div id="area-maior">
                     <div class="area-menor">
-                        
                         <div id="caixa-file">
                             <input type="file" id="file">
                             <label for="file">Procurar Foto</label>
@@ -184,7 +183,9 @@
                             <img src="../icons/icone-lupa.svg" alt="Lupa" id="icon-lupa"> 
                         </div>
 
-                        <div id="escolher-img"></div>
+                        <div id="escolher-img">
+                            <img id="imagemPreview" src="" alt="Prévia da imagem">
+                        </div>
 
                         <span class="alerta" id="alerta-img">Foto não selecionada</span>
                     </div>
@@ -200,6 +201,35 @@
     </footer>
 
     <script>
+    const inputImg  = document.getElementById('file');
+    const previaImg = document.getElementById('imagemPreview');
+    // Deixa vázia a caixa da imagem, sem aparecer o ícone de quando uma imagem não é selecionada
+    previaImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"; 
+
+    inputImg.addEventListener('change', function () {
+        const file = inputImg.files[0]; // Obtém o arquivo selecionado
+
+        if (file) {
+            const reader = new FileReader();
+
+            // Define uma função para ser executada quando o arquivo for lido
+            reader.onload = function (e) {
+                previaImg.src = e.target.result; // Define o src da tag <img> com o conteúdo da imagem
+            };
+
+            // Lê o arquivo como uma URL de dados
+            reader.readAsDataURL(file);
+        } else {
+            // Define a imagem de espaço reservado vazia se nenhum arquivo for selecionado
+            previaImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        }
+    });
+
+
+
+
+
+
     // Validação
     const forms       = document.querySelector('form')
     const campos      = document.querySelectorAll('.campos')
