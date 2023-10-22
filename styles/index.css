@@ -1,5 +1,5 @@
 body{
-    background-color: #1A1254;
+    background-color: var(--azul-escuro);
 }
 header#cabecalho {
     background-color: var(--preto);
