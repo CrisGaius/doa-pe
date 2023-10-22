@@ -268,6 +268,19 @@ img#imagemPreview{
 }
 
 
+div#aviso{
+    width: 320px;
+    text-align: justify;
+}
+
+div#aviso > p{
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    line-height: 20px;
+    color: var(--amarelo);
+}
+
 /* FOOTER */
 footer{
     display: flex;
@@ -357,12 +370,20 @@ footer{
     .ipt-cbancaria{
         width: 190px;
     }
-    
+
+    div#aviso{
+        width: 280px;
+        text-align: justify;
+    }
+    div#aviso > p{
+        font-size: 11px;
+    }
     
     
     /* FOOTER */
     #btn-enviar{
         width: 180px;
+        padding: 5px 0;
     }
 }
 @media only screen and (min-width: 390px) and (max-width: 459px) {
