@@ -84,7 +84,7 @@ main h1#titulo {
 }
 
 main div.box-layout {
-    background-color: #00bcc8;
+    background-color: var(--ciano-escuro);
     width: 600px;
     height: 360px;
     border-radius: 20px;
