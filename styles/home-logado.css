@@ -81,6 +81,12 @@ div.menu-mobile ul#lista {
     flex-direction: column;
 }
 
+.flex-container-card2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .container {
     text-align: center;
@@ -244,7 +250,170 @@ section.ongs{
     font-weight: 500;
 }
 
+@media screen and (max-width: 390px) {
 
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    .pesquisa input#pesquisa {
+        width: 300px;
+    }
+
+    .pesquisa select{
+        width: 150px;
+        
+    }
+
+    .selects{
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .botao-filtrar button {
+        width: 220px;
+    }
+
+    .flex-container-card2{
+        flex-direction: column;
+    }
+
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    .pesquisa input#pesquisa {
+        width: 300px;
+    }
+
+    .pesquisa select{
+        width: 150px;
+        
+    }
+
+    .selects{
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .botao-filtrar button {
+        width: 220px;
+    }
+
+    .flex-container-card2{
+        flex-direction: column;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    .pesquisa input#pesquisa {
+        width: 350px;
+    }
+
+    .pesquisa select{
+        width: 180px;
+        
+    }
+
+    .selects{
+        gap: 40px;
+        margin-top: 5px;
+    }
+
+    .botao-filtrar button {
+        width: 280px;
+    }
+
+    .flex-container-card2{
+        flex-direction: column;
+    }
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    .pesquisa input#pesquisa {
+        width: 400px;
+    }
+
+    .pesquisa select{
+        width: 230px;
+        
+    }
+
+    .selects{
+        gap: 40px;
+        margin-top: 5px;
+    }
+
+    .botao-filtrar button {
+        width: 300px;
+    }
+
+    .flex-container-card2{
+        flex-direction: column;
+    }
+}
+
+/* Menu mobile */
+@media only screen and (max-width: 767px) {
+    header nav ul#lista li {
+        display: none;
+    }
+
+    ul#lista img#icone-menu {
+        cursor: pointer;
+        display: block;
+    }
+
+    div.menu-mobile.open {
+        display: block;
+    }
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    nav#navbar {
+        justify-content: space-between;
+        padding: 13px 30px 13px 30px;
+    }
+
+    .pesquisa input#pesquisa {
+        width: 500px;
+    }
+
+    .pesquisa select{
+        width: 280px;
+        
+    }
+
+    .selects{
+        gap: 40px;
+        margin-top: 5px;
+    }
+
+    .botao-filtrar button {
+        width: 300px;
+        margin-top: 10px;
+    }
+
+}
 
 
 
