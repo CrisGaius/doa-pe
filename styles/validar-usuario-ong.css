@@ -7,8 +7,9 @@ header#cabecalho {
     background: var(--preto);
 }
 
-header#cabecalho section#caixa-voltar{
+section#caixa-voltar a{
     display: flex;
+    align-items: center;
     position: absolute;
     background-color: var(--rosa);
     left: 20px;
@@ -16,6 +17,10 @@ header#cabecalho section#caixa-voltar{
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
+}
+
+a{
+    color: var(--branco);
 }
 
 header#cabecalho section#caixa-voltar img {
@@ -72,6 +77,7 @@ div.buttons > button:hover {
 }
 
 div.buttons .btn-aceitar{
+    cursor: pointer;
     background-color: var(--ciano);
     border-radius: 5px;
     width: 80px;
@@ -80,6 +86,7 @@ div.buttons .btn-aceitar{
 }
 
 div.buttons .btn-recusar{
+    cursor: pointer;
     background-color: var(--rosa);
     border-radius: 5px;
     width: 80px;
@@ -92,7 +99,6 @@ div.sub-titulo h2{
 }
 
 /* MEDIA QUERIES */
-
 /*TELA DE IPHONE 5 E MENORES*/
 @media screen and (max-width: 390px) {
     header#cabecalho {
@@ -101,8 +107,6 @@ div.sub-titulo h2{
     }
 
     header#cabecalho section#caixa-voltar {
-        position: relative;
-        left: auto;
         font-size: 10px;
         padding: 6px 6px;
         border-radius: 8px;
@@ -113,12 +117,12 @@ div.sub-titulo h2{
     }
 
     header#cabecalho h1 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     main.flex-container{
         height: 85vh;
-        gap: 50px;
+        gap: 20px;
     }
     
     div.container-maior{
@@ -129,7 +133,6 @@ div.sub-titulo h2{
     div.container-menor{
         display: flex;
         padding: 10px 0;
-        border-radius: 5px;
     }
     
     div.flex-vertical{
@@ -141,18 +144,17 @@ div.sub-titulo h2{
 
     main.flex-container{
         height: 85vh;
-        gap: 50px;
+        gap: 15px;
     }
     
     div.container-maior{
-        width: 150px;
+        width: 140px;
         text-align: center;
     }
     
     div.container-menor{
         display: flex;
         padding: 10px 0;
-        border-radius: 5px;
     }
     
     div.flex-vertical{
@@ -166,6 +168,24 @@ div.sub-titulo h2{
         font-size: 14px;
         padding-bottom: 10px;
     }
+
+    div.buttons .btn-aceitar{
+        cursor: pointer;
+        background-color: var(--ciano);
+        border-radius: 5px;
+        width: 70px;
+        height: 30px;
+        font-weight: bold;
+    }
+    
+    div.buttons .btn-recusar{
+        cursor: pointer;
+        background-color: var(--rosa);
+        border-radius: 5px;
+        width: 70px;
+        height: 30px;
+        font-weight: bold;
+    }
 }
 
 /*Celulares muito pequenos*/
@@ -176,8 +196,6 @@ div.sub-titulo h2{
     }
 
     header#cabecalho section#caixa-voltar {
-        position: relative;
-        left: auto;
         font-size: 12px;
         padding: 6px 6px;
         border-radius: 8px;
@@ -193,18 +211,17 @@ div.sub-titulo h2{
 
     main.flex-container{
         height: 85vh;
-        gap: 50px;
+        gap: 25px;
     }
     
     div.container-maior{
-        width: 150px;
+        width: 170px;
         text-align: center;
     }
     
     div.container-menor{
         display: flex;
-        padding: 10px 0;
-        border-radius: 5px;
+        padding: 15px 0;
     }
     
     div.flex-vertical{
@@ -247,6 +264,33 @@ div.sub-titulo h2{
         font-size: 16px;
         padding-bottom: 10px;
     }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 30px;
+    }
+    
+    div.container-maior{
+        width: 200px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 15px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
 }
 
 /*Celulares pequenos*/
@@ -270,6 +314,34 @@ div.sub-titulo h2{
     header#cabecalho h1 {
         font-size: 31px;
     }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 40px;
+    }
+    
+    div.container-maior{
+        width: 250px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 15px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
 }
 
 /*TABLETS*/
