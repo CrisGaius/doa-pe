@@ -1,4 +1,6 @@
-
+body{
+    background-color: #1A1254;
+}
 header#cabecalho {
     background-color: var(--preto);
 }
