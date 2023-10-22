@@ -88,34 +88,55 @@ input::placeholder{
     font-weight: 600;
 }
 
-
 .pesquisa {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
 }
 
-.pesquisa input#pesquisa{
-    background: url('../images/lupa.png') no-repeat scroll right 10px center white;
-    background-size: 20px 20px; 
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+}
+
+#search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.pesquisa input#pesquisa {
     width: 500px;
-}
-
-.pesquisa input {
-    width: 200px;
-    padding: 10px 30px 10px 10px; 
+    padding: 10px 30px 10px 10px;
     margin: 5px;
     border: 1px solid #ccc;
     border-radius: 8px;
+}
+
+.pesquisa select{
+    width: 400px;
+    height: 38px;
+    padding: 10px 30px 10px 10px; 
+    margin: 5px;
+    border-radius: 8px;
+    background-color: rgb(211, 211, 211);
     
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
 }
 
-label{
+label {
     text-align: left;
     margin-left: 6px;
 }
@@ -137,7 +158,6 @@ label{
     margin-top: 20px;
 
 }
-
 .botao-filtrar {
     display: flex;
     align-items: center;
@@ -147,14 +167,12 @@ label{
 .botao-filtrar button {
     width: 300px;
     margin-top: 10px;
-    margin-left: 10px;
     padding: 10px 20px;
     background-color: var(--ciano);
     color: var(--preto);
     font-weight: bold;
     border-radius: 5px;
 }
-
 section.ongs{
     margin-top: 40px;
 

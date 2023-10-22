@@ -38,35 +38,43 @@
 
     <main>
         <div class="container">
-            <div class="pesquisa">
-                <input id="pesquisa" type="text" placeholder="Pesquisar">
-            </div>
-            <div class="pesquisa">
-                <div class="selects">
-                    <div class="column">
-                        <label for="slc-tipo-ong">Tipo da ONG:</label>
-                        <select name="slc-tipo-ong" id="slc-tipo-ong">
-                            <option disabled selected>Geral</option>
-                            <option value="Animal">Animal</option>
-                            <option value="Ajuda">Ajuda</option>
-                        </select>
-                    </div>
-                    <div class="column">
-                        <label for="regiao-ong">Região da ONG:</label>
-                        <select name="regiao-ong" id="regiao-ong">
-                            <option disabled selected>Regiões</option>
-                            <option value="RMR">Região Metropolitana</option>
-                            <option value="AGR">Agreste</option>
-                            <option value="ZDM">Zona da Mata</option>
-                            <option value="SRT">Sertão</option>
-                        </select>
+            <form action="" method="post">
+                <div class="pesquisa">
+                    <div class="input-container">
+                        <input id="pesquisa" type="text" placeholder="Pesquisar">
+                        <button type="submit" id="search-button">
+                            <img src="../images/lupa.png" alt="Pesquisar">
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div class="botao-filtrar">
-                <button>FILTRAR</button>
-            </div>
+                <div class="pesquisa">
+                    <div class="selects">
+                        <div class="column">
+                            <label for="slc-tipo-ong">Tipo da ONG:</label>
+                            <select name="slc-tipo-ong" id="slc-tipo-ong">
+                                <option disabled selected>Geral</option>
+                                <option value="Animal">Animal</option>
+                                <option value="Ajuda">Ajuda</option>
+                            </select>
+                        </div>
+                        <div class="column">
+                            <label for="regiao-ong">Região da ONG:</label>
+                            <select name="regiao-ong" id="regiao-ong">
+                                <option disabled selected>Regiões</option>
+                                <option value="RMR">Região Metropolitana</option>
+                                <option value="AGR">Agreste</option>
+                                <option value="ZDM">Zona da Mata</option>
+                                <option value="SRT">Sertão</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="botao-filtrar">
+                    <button type="submit">FILTRAR</button>
+                </div>
+            </form>
         </div>
+        
 
         <section class="ongs">
             <div class="flex-container">
