@@ -100,15 +100,16 @@ input::placeholder{
     position: relative;
 }
 
-#search-button {
+#botao-procurar {
     background: none;
     border: none;
     cursor: pointer;
     position: absolute;
-    right: 5px;
+    right: 20px;
+    top: 14px;
 }
 
-#search-button img {
+#botao-procurar img {
     width: 20px;
     height: 20px;
 }
