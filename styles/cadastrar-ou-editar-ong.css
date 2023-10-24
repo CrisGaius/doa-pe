@@ -12,7 +12,7 @@ img, a {
     width: 100px;
     height: 30px;
     margin: 20px 0 0 30px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-transform: uppercase;
     font-weight: 600;
     color: var(--branco);
@@ -21,12 +21,13 @@ img, a {
 
 #btn-voltar:hover{
     transition: 0.4s;
-    scale: 1.05;
-    box-shadow: 1px 1px 3px var(--rosa);
+    scale: 1.03;
     background-color: #e90055;
 }
 
-#btn-voltar > img{
+#seta-voltar{
+    width: 16px;
+    height: 18px;
     margin-left: -10px;
 }
 
