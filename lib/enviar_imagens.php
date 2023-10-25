@@ -4,8 +4,8 @@ function enviar_imagens($error, $size, $name, $tmp_name) {
         die('Falha ao enviar arquivo.');
     }
 
-    if ($size > 1e+7) {
-        die('Arquivo muito grande! Máx: 10MB');
+    if ($size > 2e+6) {
+        die('Arquivo muito grande! Máx: 2MB');
     }
 
     $pasta = "fotos-ongs/";
