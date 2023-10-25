@@ -1,30 +1,32 @@
 @charset "UTF-8";
 
-/* HEADER */
-header {
-    padding: 0 20px;
+header#cabecalho {
     margin-top: 15px;
+    padding: 0 20px;
     font-weight: bold;
+    z-index: 10000;
+    position: relative;
 }
 
-header > section {
+header#cabecalho section#caixa-voltar {
     position: absolute;
     background-color: var(--rosa);
     left: 20px;
     padding: 5px 15px;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
 }
 
-header > section > img {
+header#cabecalho section#caixa-voltar img {
     width: 16px;
 }
 
-header > h1 {
+header#cabecalho h1 {
     font-size: 40px;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
 }
 
-/* MAIN */
 main {
     flex-direction: column;
     position: fixed;
@@ -34,47 +36,48 @@ main {
     left: 0;
 }
 
-main > section#mensagem {
-    position: relative;
+main section#mensagem {
     flex-direction: column;
+    position: relative;
 }
 
-main > section#mensagem > div#div-texto {
+main section#mensagem div#caixa-texto-principal {
     gap: 20px;
 }
 
-main > section#mensagem > div#div-texto > img {
+main section#mensagem div#caixa-texto-principal img {
     width: 180px;
 }
 
-main > section#mensagem > div#div-texto > p#texto {
-    color: #FF6B00;
+main section#mensagem div#caixa-texto-principal p#texto-principal {
+    color: var(--laranja);
     font-weight: bold;
     font-size: 35px;
-    width: 750px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.158);
 }
 
-main > section#mensagem > p#texto-extra {
+main section#mensagem p#texto-complementar {
     position: absolute;
-    right: 50px;
-    bottom: 10px;
+    right: 0;
+    bottom: -30px;
     text-align: right;
     color: var(--branco);
     font-weight: 500;
     font-size: 20px;
-    width: 260px;
+    width: 245px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.112);
 }
 
 /* MEDIA QUERIES */
 
+/*TELA DE IPHONE 5 E MENORES*/
 @media screen and (max-width: 390px) {
-
-    header {
+    header#cabecalho {
         padding: 0 10px;
         justify-content: space-between;
     }
 
-    header > section {
+    header#cabecalho section#caixa-voltar {
         position: relative;
         left: auto;
         font-size: 12px;
@@ -82,11 +85,11 @@ main > section#mensagem > p#texto-extra {
         border-radius: 8px;
     }
 
-    header > section > img {
+    header#cabecalho section#caixa-voltar img {
         width: 12px;
     }
 
-    header > h1 {
+    header#cabecalho h1 {
         font-size: 20px;
     }
 
@@ -94,33 +97,33 @@ main > section#mensagem > p#texto-extra {
         padding: 0 15px;
     }
 
-    main > section#mensagem > div#div-texto {
+    main section#mensagem div#caixa-texto-principal {
         gap: 10px;
     }
 
-    main > section#mensagem > div#div-texto > img {
+    main section#mensagem div#caixa-texto-principal img {
         width: 70px;
     }
 
-    main > section#mensagem > div#div-texto > p#texto {
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
         font-size: 19px;
     }
 
-    main > section#mensagem > p#texto-extra {
+    main section#mensagem p#texto-complementar {
         width: 130px;
-        font-size: 14px;
-        bottom: -55px;
+        font-size: 13px;
+        bottom: -75px;
     }
-
 }
 
+/*Celulares muito pequenos*/
 @media only screen and (min-width: 390px) and (max-width: 459px) {
-    header {
+    header#cabecalho {
         padding: 0 20px;
         justify-content: space-between;
     }
 
-    header > section {
+    header#cabecalho section#caixa-voltar {
         position: relative;
         left: auto;
         font-size: 12px;
@@ -128,11 +131,11 @@ main > section#mensagem > p#texto-extra {
         border-radius: 8px;
     }
 
-    header > section > img {
+    header#cabecalho section#caixa-voltar img {
         width: 12px;
     }
 
-    header > h1 {
+    header#cabecalho h1 {
         font-size: 24px;
     }
 
@@ -140,32 +143,33 @@ main > section#mensagem > p#texto-extra {
         padding: 0 20px;
     }
 
-    main > section#mensagem > div#div-texto {
+    main section#mensagem div#caixa-texto-principal {
         gap: 10px;
     }
 
-    main > section#mensagem > div#div-texto > img {
-        width: 94px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 204px;
     }
 
-    main > section#mensagem > div#div-texto > p#texto {
-        font-size: 23px;
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 22px;
     }
 
-    main > section#mensagem > p#texto-extra {
+    main section#mensagem p#texto-complementar {
         width: 150px;
         font-size: 13px;
-        bottom: -55px;
+        bottom: -75px;
     }
 }
 
+/*Transição entre celulares muito pequenos e pequenos*/
 @media only screen and (min-width: 459px) and (max-width: 599px) {
-    header {
+    header#cabecalho {
         padding: 0 20px;
         justify-content: space-between;
     }
 
-    header > section#caixa-voltar {
+    header#cabecalho section#caixa-voltar {
         position: relative;
         left: auto;
         font-size: 13px;
@@ -173,11 +177,11 @@ main > section#mensagem > p#texto-extra {
         border-radius: 8px;
     }
 
-    header > section#caixa-voltar > img {
+    header#cabecalho section#caixa-voltar img {
         width: 12px;
     }
 
-    header > h1 {
+    header#cabecalho h1 {
         font-size: 27px;
     }
 
@@ -185,45 +189,44 @@ main > section#mensagem > p#texto-extra {
         padding: 0 20px;
     }
 
-    main > section#mensagem > div#div-texto {
+    main section#mensagem div#caixa-texto-principal {
         gap: 15px;
     }
 
-    main > section#mensagem > div#div-texto > img {
-        width: 100px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 254px;
     }
 
-    main > section#mensagem > div#div-texto > p#texto {
-        font-size: 25.5px;
-        width: 350px;
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 28.5px;
     }
 
-    main > section#mensagem > p#texto-extra {
+    main section#mensagem p#texto-complementar {
         width: 160px;
         font-size: 15px;
-        right: 0px;
-        bottom: -62px;
+        bottom: -75px;
     }
 }
 
+/*Celulares pequenos*/
 @media only screen and (min-width: 599px) and (max-width: 767px) {
-    header {
+    header#cabecalho {
         padding: 0 20px;
         justify-content: space-between;
     }
 
-    header > section#caixa-voltar {
+    header#cabecalho section#caixa-voltar {
         position: relative;
         left: auto;
         font-size: 14px;
         border-radius: 8px;
     }
 
-    header > section#caixa-voltar > img {
+    header#cabecalho section#caixa-voltar img {
         width: 14px;
     }
 
-    header > h1 {
+    header#cabecalho h1 {
         font-size: 31px;
     }
 
@@ -231,30 +234,29 @@ main > section#mensagem > p#texto-extra {
         padding: 0 20px;
     }
 
-    main > section#mensagem > div#div-texto > img {
-        width: 145px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 185px;
     }
 
-    main > section#mensagem > div#div-texto > p#texto {
-        font-size: 32px;
-        width: 410px;
+    main section#mensagem div#caixa-texto-principal p#texto-principal {
+        font-size: 34px;
     }
 
-    main > section#mensagem > p#texto-extra {
-        width: 250px;
-        bottom: -55px;
-        right: 0px;
+    main section#mensagem p#texto-complementar {
+        width: 170px;
+        bottom: -85px;
         font-size: 17px;
     }
 }
 
+/*TABLETS*/
 @media only screen and (min-width: 767px) and (max-width: 992px) {
-    header > section#caixa-voltar {
+    header#cabecalho section#caixa-voltar {
         font-size: 15px;
         border-radius: 10px;
     }
 
-    header > section#caixa-voltar > img {
+    header#cabecalho section#caixa-voltar img {
         width: 15px;
     }
 
@@ -262,18 +264,11 @@ main > section#mensagem > p#texto-extra {
         padding: 0 20px;
     }
 
-    main > section#mensagem > div#div-texto > img {
-        width: 155px;
+    main section#mensagem div#caixa-texto-principal img {
+        width: 165px;
     }
 
-    main > section#mensagem > div#div-texto > p#texto {
-        font-size: 32px;
-        width: 550px;
-    }
-
-    main > section#mensagem > p#texto-extra {
-        width: 250px;
-        right: 0px;
-        bottom: -50px;
+    main section#mensagem p#texto-complementar {
+        bottom: -95px;
     }
 }

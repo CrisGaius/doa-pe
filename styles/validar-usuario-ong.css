@@ -1,0 +1,357 @@
+body{
+    background-color: var(--roxo);
+}
+header#cabecalho {
+    padding: 35px 20px;
+    font-weight: bold;
+    background: var(--preto);
+}
+
+section#caixa-voltar a{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: var(--rosa);
+    left: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+a{
+    color: var(--branco);
+}
+
+header#cabecalho section#caixa-voltar img {
+    width: 16px;
+}
+
+header#cabecalho h1 {
+    font-size: 30px;
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.273);
+}
+
+/* MAIN */
+main.flex-container{
+    height: 85vh;
+    gap: 150px;
+}
+
+div.container-maior{
+    width: 300px;
+    text-align: center;
+}
+
+div.container-menor{
+    display: flex;
+    padding: 20px 0;
+    border-radius: 15px;
+    background-color: var(--cinza);
+}
+
+div.flex-vertical{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div.flex-vertical a{
+    color: var(--preto);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+div.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-evenly;
+
+}
+
+div.buttons > button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+div.buttons .btn-aceitar{
+    cursor: pointer;
+    background-color: var(--ciano);
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+}
+
+div.buttons .btn-recusar{
+    cursor: pointer;
+    background-color: var(--rosa);
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+}
+
+div.sub-titulo h2{
+    padding-bottom: 10px;
+}
+
+/* MEDIA QUERIES */
+/*TELA DE IPHONE 5 E MENORES*/
+@media screen and (max-width: 390px) {
+    header#cabecalho {
+        padding: 25px 10px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        font-size: 10px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 19px;
+    }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 20px;
+    }
+    
+    div.container-maior{
+        width: 100px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 10px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 15px;
+    }
+    
+    div.container-maior{
+        width: 140px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 10px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+
+    div.buttons .btn-aceitar{
+        cursor: pointer;
+        background-color: var(--ciano);
+        border-radius: 5px;
+        width: 70px;
+        height: 30px;
+        font-weight: bold;
+    }
+    
+    div.buttons .btn-recusar{
+        cursor: pointer;
+        background-color: var(--rosa);
+        border-radius: 5px;
+        width: 70px;
+        height: 30px;
+        font-weight: bold;
+    }
+}
+
+/*Celulares muito pequenos*/
+@media only screen and (min-width: 390px) and (max-width: 459px) {
+    header#cabecalho {
+        padding: 25px 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        font-size: 12px;
+        padding: 6px 6px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 24px;
+    }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 25px;
+    }
+    
+    div.container-maior{
+        width: 170px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 15px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+}
+
+/*Transição entre celulares muito pequenos e pequenos*/
+@media only screen and (min-width: 459px) and (max-width: 599px) {
+    header#cabecalho {
+        padding: 25px 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 13px;
+        padding: 6px 9px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 12px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 27px;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 30px;
+    }
+    
+    div.container-maior{
+        width: 200px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 15px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    header#cabecalho {
+        padding: 25px 20px;
+        justify-content: space-between;
+    }
+
+    header#cabecalho section#caixa-voltar {
+        position: relative;
+        left: auto;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 14px;
+    }
+
+    header#cabecalho h1 {
+        font-size: 31px;
+    }
+
+    main.flex-container{
+        height: 85vh;
+        gap: 40px;
+    }
+    
+    div.container-maior{
+        width: 250px;
+        text-align: center;
+    }
+    
+    div.container-menor{
+        display: flex;
+        padding: 15px 0;
+    }
+    
+    div.flex-vertical{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    div.sub-titulo h2{
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+    header#cabecalho section#caixa-voltar {
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    header#cabecalho section#caixa-voltar img {
+        width: 15px;
+    }
+}

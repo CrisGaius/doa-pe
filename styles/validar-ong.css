@@ -1,14 +1,20 @@
 body{
     background-color: var(--roxo);
 }
+
+a{
+    color: var(--branco);
+}
+
 header#cabecalho {
-    padding: 15px 20px;
+    padding: 35px 20px;
     font-weight: bold;
     background: var(--preto);
 }
 
-header#cabecalho section#caixa-voltar{
+section#caixa-voltar a{
     display: flex;
+    align-items: center;
     position: absolute;
     background-color: var(--rosa);
     left: 20px;
@@ -38,7 +44,7 @@ header#cabecalho h1 {
 .content {
     display: flex;  
     max-height: 100%;
-    width: 768px;
+    width: 760px;
     justify-content: center;
     background-color: var(--roxo-validação);
     border-radius: 20px;
@@ -56,7 +62,7 @@ header#cabecalho h1 {
 }
 
 .conteudo .titulo{
-    font-size: 1.8em;
+    font-size: 1.3em;
     font-weight: bolder;
     color: var(--branco);
     padding-bottom: 15px;
@@ -82,13 +88,13 @@ header#cabecalho h1 {
 }
 
 .conteudo .formulario p{
-    padding-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .conteudo p{
     font-size: 1em;
     color: var(--branco);
-    padding-top: 10px;
+    margin-top: 20px;
 }
 
 .conteudo img{
@@ -134,6 +140,80 @@ header#cabecalho h1 {
     color: var(--preto);
 }
 
+/* Formas de Pagamento */
+div#ipt-pagamento{
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--branco);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-container-pagamento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+}
+/* Pix */
+.flex-container-pagamento:first-child > label{
+    width: 100%;
+    margin-left: 8px;
+    text-align: center;
+}
+
+.label-pagameto{
+    font-weight: 800;
+    color: var(--preto);
+}
+
+#ipt-pix{
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: var(--cinza);
+}
+/* Linha Divisória */
+#flex-container-linha{
+    display: flex;
+    align-items: center;
+}
+
+.linha-vertical{
+    width: 3px;
+    height: 9px;
+    background-color: var(--cinza);
+}
+
+#linha-divisoria{
+    width: 370px;
+    height: 2px;
+    background-color: var(--cinza);
+}
+
+/* Conta Bancária */
+.flex{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alinhando-pagamentos{
+    display: flex;
+    justify-content: space-around;
+    gap: 4px;
+}
+
+.ipt-cbancaria{
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background-color: var(--cinza) !important;
+}
 
 /* MEDIA QUERIES */
 
@@ -153,13 +233,11 @@ header#cabecalho h1 {
 /*TELA DE IPHONE 5 E MENORES*/
 @media screen and (max-width: 390px) {
     header#cabecalho {
-        padding: 0 10px;
+        padding: 25px 10px;
         justify-content: space-between;
     }
 
     header#cabecalho section#caixa-voltar {
-        position: relative;
-        left: auto;
         font-size: 10px;
         padding: 6px 6px;
         border-radius: 8px;
@@ -170,7 +248,21 @@ header#cabecalho h1 {
     }
 
     header#cabecalho h1 {
-        font-size: 20px;
+        font-size: 19px;
+    }
+
+    .content {
+        display: flex;  
+        max-height: 100%;
+        width: 300px;
+        justify-content: center;
+        background-color: var(--roxo-validação);
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    #linha-divisoria{
+        width: 220px;
     }
 
 }
@@ -178,13 +270,11 @@ header#cabecalho h1 {
 /*Celulares muito pequenos*/
 @media only screen and (min-width: 390px) and (max-width: 459px) {
     header#cabecalho {
-        padding: 0 20px;
+        padding: 25px 20px;
         justify-content: space-between;
     }
 
     header#cabecalho section#caixa-voltar {
-        position: relative;
-        left: auto;
         font-size: 12px;
         padding: 6px 6px;
         border-radius: 8px;
@@ -197,12 +287,26 @@ header#cabecalho h1 {
     header#cabecalho h1 {
         font-size: 24px;
     }
+
+    .content {
+        display: flex;  
+        max-height: 100%;
+        width: 350px;
+        justify-content: center;
+        background-color: var(--roxo-validação);
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    #linha-divisoria{
+        width: 280px;
+    }
 }
 
 /*Transição entre celulares muito pequenos e pequenos*/
 @media only screen and (min-width: 459px) and (max-width: 599px) {
     header#cabecalho {
-        padding: 0 20px;
+        padding: 25px 20px;
         justify-content: space-between;
     }
 
@@ -221,12 +325,22 @@ header#cabecalho h1 {
     header#cabecalho h1 {
         font-size: 27px;
     }
+
+    .content {
+        display: flex;  
+        max-height: 100%;
+        width: 450px;
+        justify-content: center;
+        background-color: var(--roxo-validação);
+        border-radius: 20px;
+        padding: 10px;
+    }
 }
 
 /*Celulares pequenos*/
 @media only screen and (min-width: 599px) and (max-width: 767px) {
     header#cabecalho {
-        padding: 0 20px;
+        padding: 25px 20px;
         justify-content: space-between;
     }
 
@@ -244,6 +358,16 @@ header#cabecalho h1 {
     header#cabecalho h1 {
         font-size: 31px;
     }
+
+    .content {
+        display: flex;  
+        max-height: 100%;
+        width: 500px;
+        justify-content: center;
+        background-color: var(--roxo-validação);
+        border-radius: 20px;
+        padding: 10px;
+    }
 }
 
 /*TABLETS*/
@@ -255,5 +379,15 @@ header#cabecalho h1 {
 
     header#cabecalho section#caixa-voltar img {
         width: 15px;
+    }
+
+    .content {
+        display: flex;  
+        max-height: 100%;
+        width: 700px;
+        justify-content: center;
+        background-color: var(--roxo-validação);
+        border-radius: 20px;
+        padding: 10px;
     }
 }

@@ -15,6 +15,7 @@
 /* HEADER */
 header {
     background-color: var(--preto);
+    width: 100%;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -42,9 +43,9 @@ header > section.flex-container > img {
 }
 
 header > h1 {
-    position: absolute;
-    padding: 50px;
-    width: 100vw;
+    margin: auto;
+    padding: 10px;
+    padding-right: 110px;
     text-align: center;
 }
 
@@ -121,17 +122,28 @@ div#botoes > button:hover {
 /* MEDIA QUERIES */
 
 /*TELA DE IPHONE 5 E MENORES*/
-@media screen and (max-width: 390px) {
-    header {
-        width: 100vw;
+@media screen and (max-width: 390px) {   
+    header > h1 {
+        width: 400px;
+        height: 40px;
+        padding-right: 10px;
+        font-size: 1.3em;
+        text-align: right;
+
     }
 
-    header > h1 {
-        text-align: center;
-        margin-left: 120px;
-        padding: 20px;
-        font-size: 1.2em;
-        width: 260px;
+    header > section.flex-container {
+        width: 80px;
+        height: 10px;
+        font-size: 15px;
+        padding: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: var(--rosa);
+    }
+
+    header > section.flex-container > img {
+        width: 12px;
     }
 
     main {
@@ -141,9 +153,9 @@ div#botoes > button:hover {
 
     main > section#flex-container > h2 {
         font-size: 1.5em;
-        padding-bottom: 70px;
+        margin-top: 100px;
+        margin-bottom: -10px;
         margin-right: 15px;
-        text-align: center;
     }
 
     form {
@@ -173,25 +185,36 @@ div#botoes > button:hover {
 }
 
 /*Celulares muito pequenos*/
-@media only screen and (min-width: 390px) and (max-width: 459px) {
-    header {
-        width: 100vw;
+@media only screen and (min-width: 391px) and (max-width: 459px) {
+    header > h1 {
+        width: 400px;
+        height: 40px;
+        padding-right: 10px;
+        font-size: 1.4em;
+        text-align: right;
     }
 
-    header > h1 {
-        text-align: center;
-        margin-left: 140px;
-        padding: 20px;
-        font-size: 1.7em;
-        width: 240px;
+    header > section.flex-container {
+        width: 90px;
+        height: 20px;
+        font-size: 15px;
+        padding: 17px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: var(--rosa);
     }
+
+    header > section.flex-container > img {
+        width: 12px;
+    }
+
     main {
         width: 100vw;
         height: 65vh;
     }
 
     main > section#flex-container > h2 {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-top: 100px;
         margin-bottom: -10px;
         margin-right: 15px;
@@ -225,27 +248,38 @@ div#botoes > button:hover {
 }
 
 /*Transição entre celulares muito pequenos e pequenos*/
-@media only screen and (min-width: 459px) and (max-width: 599px) {
-    header {
-        width: 100vw;
+@media only screen and (min-width: 460px) and (max-width: 599px) {
+    header > h1 {
+        width: 400px;
+        height: 40px;
+        padding-right: 10px;
+        font-size: 1.6em;
+        text-align: right;
     }
 
-    header > h1 {
-        text-align: center;
-        margin-left: 140px;
-        padding: 20px;
-        font-size: 1.7em;
-        width: 60vw;
+    header > section.flex-container {
+        width: 95px;
+        height: 25px;
+        font-size: 17px;
+        padding: 19px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: var(--rosa);
     }
+
+    header > section.flex-container > img {
+        width: 12px;
+    }
+
     main {
         width: 100vw;
         height: 65vh;
     }
 
     main > section#flex-container > h2 {
-        font-size: 2em;
+        font-size: 1.8em;
         margin-top: 100px;
-        margin-bottom: -10px;
+        margin-bottom: 10px;
         margin-right: 15px;
         text-align: center;
     }
@@ -266,12 +300,139 @@ div#botoes > button:hover {
     }
     
     form > label > input {
-        width: 360px;
+        width: 390px;
         height: 40px;
         
     }
 
     div#botoes {
         width: 350px;
+    }
+}
+
+/*Celulares pequenos*/
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    header > h1 {
+        width: 400px;
+        height: 40px;
+        padding-right: 5px;
+        padding-bottom: 45px;
+        font-size: 1.8em;
+        text-align: right;
+    }
+
+    header > section.flex-container {
+        width: 95px;
+        height: 25px;
+        font-size: 17px;
+        padding: 19px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: var(--rosa);
+    }
+
+    header > section.flex-container > img {
+        width: 12px;
+    }
+
+    main {
+        width: 100vw;
+        height: 65vh;
+    }
+
+    main > section#flex-container > h2 {
+        font-size: 2em;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 40vh;
+    }
+    
+    form > p{
+        position: relative;
+        width: 50px;
+        right: 190px;
+    }
+    
+    form > label > input {
+        width: 500px;
+        height: 40px;
+        
+    }
+
+    div#botoes {
+        width: 350px;
+    }
+}
+
+/*TABLETS*/
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    header > h1 {
+        width: 400px;
+        height: 40px;
+        padding-right: 5px;
+        padding-bottom: 45px;
+        font-size: 1.8em;
+        text-align: right;
+    }
+
+    header > section.flex-container {
+        width: 95px;
+        height: 25px;
+        font-size: 17px;
+        padding: 19px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: var(--rosa);
+    }
+
+    header > section.flex-container > img {
+        width: 12px;
+    }
+
+    main {
+        width: 100vw;
+        height: 65vh;
+    }
+
+    main > section#flex-container > h2 {
+        font-size: 2em;
+        margin-top: 100px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 40vh;
+    }
+    
+    form > p{
+        position: relative;
+        width: 50px;
+        right: 220px;
+    }
+    
+    form > label > input {
+        width: 540px;
+        height: 40px;
+    }
+
+    div#botoes {
+        width: 400px;
     }
 }

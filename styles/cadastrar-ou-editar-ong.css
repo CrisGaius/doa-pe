@@ -12,7 +12,7 @@ img, a {
     width: 100px;
     height: 30px;
     margin: 20px 0 0 30px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-transform: uppercase;
     font-weight: 600;
     color: var(--branco);
@@ -21,12 +21,13 @@ img, a {
 
 #btn-voltar:hover{
     transition: 0.4s;
-    scale: 1.05;
-    box-shadow: 1px 1px 3px var(--rosa);
+    scale: 1.03;
     background-color: #e90055;
 }
 
-#btn-voltar > img{
+#seta-voltar{
+    width: 16px;
+    height: 18px;
     margin-left: -10px;
 }
 
@@ -268,6 +269,19 @@ img#imagemPreview{
 }
 
 
+div#aviso{
+    width: 320px;
+    text-align: justify;
+}
+
+div#aviso > p{
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    line-height: 20px;
+    color: var(--amarelo);
+}
+
 /* FOOTER */
 footer{
     display: flex;
@@ -357,12 +371,20 @@ footer{
     .ipt-cbancaria{
         width: 190px;
     }
-    
+
+    div#aviso{
+        width: 280px;
+        text-align: justify;
+    }
+    div#aviso > p{
+        font-size: 11px;
+    }
     
     
     /* FOOTER */
     #btn-enviar{
         width: 180px;
+        padding: 5px 0;
     }
 }
 @media only screen and (min-width: 390px) and (max-width: 459px) {
