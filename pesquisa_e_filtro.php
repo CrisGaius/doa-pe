@@ -176,7 +176,7 @@ if(isset($total_ongs)) {
     <main>
         <form action="" id="formulario" class="flex-container">
             <section action="" id="secao-pesquisa" class="flex-container">
-                <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..." value="<?php if (isset($_GET['pesquisa']) && strlen($_GET['pesquisa']) > 0) echo $_GET['pesquisa'] ?>">
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Nome, tipo ou região da ong..." value="<?php if (isset($_GET['pesquisa']) && strlen($_GET['pesquisa']) > 0) echo $_GET['pesquisa'] ?>">
                 <img id="icone-lupa" src="icons/icone-lupa.svg" alt="ícone de lupa de pesquisa" onclick="
                 const form = document.querySelector('form#formulario') 
                 form.submit()
@@ -241,6 +241,9 @@ if(isset($total_ongs)) {
                             <summary>Descrição</summary>
                             <p><?php echo $descricao; ?></p>
                         </details>
+                        <br>
+                        <a href="<?php echo "editar_ong.php?id=$id"?>">Editar ONG</a>
+                        <a href="<?php echo "excluir_ong.html?id=$id"?>">Deletar ONG</a>
                     </div> <br>
                 <?php } ?>
             <?php } else { ?>

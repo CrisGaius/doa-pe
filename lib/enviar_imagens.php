@@ -17,7 +17,7 @@ function enviar_imagens($error, $size, $name, $tmp_name) {
     }
 
     $caminho = $pasta . $novo_nome_do_arquivo . "." . $extensao;
-    $deu_certo = move_uploaded_file($tmp_name, $caminho);
+    $deu_certo = move_uploaded_file($tmp_name, "../" . $caminho);
 
     if (isset($deu_certo)) {
         return $caminho;
