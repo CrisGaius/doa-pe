@@ -58,8 +58,8 @@ span.alerta, #span-TipoConta, #span-FinalidadeONG, #span-regiao{
     padding: 5px;
     border-radius: 3px;
     font-size: 14px;
-    color: #ff5c64;
-    background-color: black;
+    font-weight: bold;
+    color: var(--amarelo)
 }
 
 label{
@@ -191,7 +191,7 @@ select{
 
 /* Select Região */
 #select-regiao{
-    padding: 5px 8px;
+    padding: 9px 8px;
     border-radius: 5px;
     font-size: 17px;
     background-color: rgb(224, 211, 211);
