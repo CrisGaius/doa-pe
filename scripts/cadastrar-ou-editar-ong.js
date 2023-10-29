@@ -7,7 +7,7 @@ const emailRegex  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 // Função para mostrar o erro
 function setError(index){
-    campos[index].style.border  = "2px solid #000"
+    campos[index].style.border  = "2px solid var(--amarelo)"
     spans [index].style.display = "block" 
 }
 // Função para remover o erro
@@ -67,7 +67,7 @@ const selectTipo = document.getElementById('select-finalidade')
 selectTipo.addEventListener('click', function(){
     // Mostrar o erro
     if (selectTipo.value == 'FinalidadeONG'){
-        selectTipo.style.border = "2px solid #000"
+        selectTipo.style.border = "2px solid var(--amarelo)"
         spanTipo.style.display = "block"
     } else{ 
         selectTipo.style.border = "none"
@@ -117,7 +117,7 @@ const selectPagamento = document.getElementById('select-conta')
 selectPagamento.addEventListener('click', function(){
     // Mostrar o erro
     if (selectPagamento.value == 'tipoConta'){
-        selectPagamento.style.border = "2px solid #000"
+        selectPagamento.style.border = "2px solid var(--amarelo)"
         spanPagamento.style.display = "block"
     } else{ 
         selectPagamento.style.border = "2px solid rgb(0, 166, 255)"
@@ -132,7 +132,7 @@ const selectRegiao = document.getElementById('select-regiao')
 selectRegiao.addEventListener('click', function(){
     // Mostrar o erro
     if(selectRegiao.value == 'SelecioneRegiao'){
-        selectRegiao.style.border = "2px solid #000"
+        selectRegiao.style.border = "2px solid var(--amarelo)"
         spanRegiao.style.display  = "block"
     } else{
         selectRegiao.style.border = "none"
@@ -148,7 +148,7 @@ function descricaoValidate(){
     
     // Caso tenha menos de 20 caracteres
     if (campoTxtArea.value.length < 20){
-        campoTxtArea.style.border = "2px solid #000"
+        campoTxtArea.style.border = "2px solid var(--amarelo)"
         spanMin.style.display = "block"
     } else{
         campoTxtArea.style.border = ""

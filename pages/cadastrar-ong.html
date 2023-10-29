@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex"> <!-- Esse meta serva para  -->
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
 
-    <title>Doa PE</title>
+    <title>Cadastrar ONG | Doa PE</title>
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="stylesheet" href="../styles/cadastrar-ou-editar-ong.css">
     <script src="../scripts/cadastrar-ou-editar-ong.js" defer></script>
@@ -28,13 +28,11 @@
             </div>
 
             <!-- Formulário -->
-            <form autocomplete="off">
-                <!-- OBS: O Chrome não está aceitando o autocomplete="off" em alguns casos, então uma forma para resolver isso é criar dois inputs, colocar o mesmo id para os dois e colocar o display: none no primeiro. -->
+            <form>
 
                 <!-- Input NOME -->
                 <div class="inputs">
                     <label for="ipt-nome">Nome</label>
-                    <input type="text" id="ipt-nome" style="display: none;">
                     <input type="text" id="ipt-nome" class="caixa-input campos" maxlength="255" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()">
 
                     <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
