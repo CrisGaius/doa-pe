@@ -89,11 +89,13 @@ if (isset($_GET['id'])) {
                                     if (unlink($caminho_antigo)) {
                                         $erro = false;
                                     } else {
-                                        die("A imagem antiga com caminho igual a $caminho_antigo não foi removida do sistema. Comunique ao <a href='https://www.instagram.com/04_cristiano/'>suporte</a> para corrigir isso. Obs: passe o caminho para ele.");
+                                        die("A imagem antiga com caminho igual a $caminho_antigo não foi removida do sistema. Comunique ao <a href='https://www.instagram.com/04_cristiano/'>suporte</a> para corrigir isso. Obs: passe o caminho para ele. Caminho novo da imagem: $caminho.");
                                     }
                                 } else {
-                                    die("Erro ao selecionar o caminho antigo da imagem.");
+                                    die("Não foi possível atualizar o caminho no banco de dados. Caminho antigo é: $caminho_antigo e o novo caminho era pra ser: $caminho");
                                 }
+                            } else {
+                                die("Erro ao selecionar o caminho antigo da imagem. Caminho novo: $caminho.");
                             }
                         } else {
                             die("ERRO AO enviar imagem");
@@ -156,6 +158,8 @@ if (isset($_GET['id'])) {
         $sql_query_select_info_ongs = $pdo->prepare($sql_code_select_info_ongs);
         $sql_query_select_info_ongs->execute() or die("Erro ao consultar as informações da ONG no banco de dados.");
     }
+} else {
+    die("<h1>Ong não cadastrada no sistema.</h1>");
 }
 ?>
 
