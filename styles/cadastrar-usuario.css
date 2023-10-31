@@ -83,6 +83,7 @@ label {
     right: 140px;
     text-align: left;
     width: 80px;
+    font-size: 18px;
 }
 
 div.inputs{
@@ -94,14 +95,15 @@ div.inputs{
 
 .caixa-input{
     width: 400px;
+    height: 40px;
     padding: 5px 8px;
     border-radius: 5px;
-    background-color: rgb(224, 211, 211);
+    background-color: var(--cinza);
 }
 
-p.error {
+p.erro {
     font-weight: bolder;
-    color: var(--rosa);
+    color: var(--amarelo);
     font-size: 0.9em;
 }
 
@@ -119,7 +121,7 @@ div.btn {
 button#btn-enviar {
     cursor: pointer;
     width: 400px;
-    height: 45px;
+    height: 40px;
     border-radius: 5px;
     background-color: var(--ciano);
     font-weight: bolder;

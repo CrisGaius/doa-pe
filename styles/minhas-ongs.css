@@ -106,27 +106,31 @@ main div.box-layout div.botoes{
     margin-top: 25px;
 }
 
-main div.box-layout div.botoes button{
+main div.box-layout div.botoes a{
+    display: inline-block;
     width: 250px;
-    height: 30px;
+    height: 30px; 
     border-radius: 10px;
     color: var(--branco);
+    text-align: center;
+    padding: 5px;
+    text-decoration: none; 
 }
 
-main div.box-layout div.botoes button.btn-editar{
+main div.box-layout div.botoes a.btn-editar{
     background-color: var(--amarelo);
 }
 
-main div.box-layout div.botoes button.btn-editar:hover{
+main div.box-layout div.botoes a.btn-editar:hover{
     transition: .3s ease-in-out;
     transform: scale(1.1);
 }
 
-main div.box-layout div.botoes button.btn-excluir{
+main div.box-layout div.botoes a.btn-excluir{
     background-color: var(--rosa);
 }
 
-main div.box-layout div.botoes button.btn-excluir:hover{
+main div.box-layout div.botoes a.btn-excluir:hover{
     transition: .3s ease-in-out;
     transform: scale(1.1);
 }
@@ -166,9 +170,10 @@ main div.box-layout div.logo-imagem img{
         font-size: 18px;
     }
 
-    main div.box-layout div.botoes button{
+    main div.box-layout div.botoes a{
         width: 120px;
         height: 25px;
+        font-size: 12px;
     }
     
     main div.box-layout div.logo-imagem {
@@ -198,10 +203,10 @@ main div.box-layout div.logo-imagem img{
         font-size: 18px;
     }
 
-    main div.box-layout div.botoes button{
+    main div.box-layout div.botoes a{
         width: 140px;
         height: 25px;
-        margin-top: 5px;
+        font-size: 12px;
     }
     
     main div.box-layout div.logo-imagem {
@@ -231,9 +236,10 @@ main div.box-layout div.logo-imagem img{
         font-size: 18px;
     }
 
-    main div.box-layout div.botoes button{
+    main div.box-layout div.botoes a{
         width: 155px;
         height: 25px;
+        font-size: 14px;
     }
     
     main div.box-layout div.logo-imagem {
@@ -263,7 +269,7 @@ main div.box-layout div.logo-imagem img{
         font-size: 20px;
     }
 
-    main div.box-layout div.botoes button{
+    main div.box-layout div.botoes a{
         width: 185px;
         height: 30px;
     }
@@ -311,7 +317,7 @@ main div.box-layout div.logo-imagem img{
         font-size: 20px;
     }
 
-    main div.box-layout div.botoes button{
+    main div.box-layout div.botoes a{
         width: 200px;
         height: 30px;
     }

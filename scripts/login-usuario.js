@@ -20,8 +20,11 @@ function validarErroEmail() {
 
     if(validarEmail(email)){
         emailInvalido.style.display = "none";
+        inputEmail.style.border = "none";
     } else {
         emailInvalido.style.display = "block";
+        inputEmail.style.border = "1px solid #FF6B00";
+        inputEmail.style.padding = "8px";
     }
 }
 
@@ -44,5 +47,6 @@ function fecharCaixaErro() {
     emailInvalido.style.display = "none";
     document.getElementById('email').value = "";
     document.getElementById('senha').value = "";
+    inputEmail.style.border = "none";
 }
 
