@@ -261,7 +261,6 @@ if (isset($_GET['id'])) {
                 reader.readAsDataURL(inputFile.files[0])
             } else {
                 img.src = srcAntigo
-                console.log("tá passando aqui");
             }
         })
     </script>
