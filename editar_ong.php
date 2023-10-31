@@ -2,10 +2,7 @@
 //quando for abrir a tela de editar, informar que a ong irá para análise novamente após a edição. (Atualizar status para "analise" novamente)
 
 require_once("lib/conexao.php");
-require_once("lib/enviar_imagens.php");
-require_once("lib/formatar_numero.php");
-require_once("lib/formatar_cnpj.php");
-require_once("lib/formatar_conta.php");
+require_once("lib/funcoes_uteis.php");
 
 if (isset($_GET['id'])) {
     $id_ong = intval($_GET['id']);
@@ -90,7 +87,7 @@ if (isset($_GET['id'])) {
 
                                 if ($sql_query_update_foto->execute()) {
                                     if (unlink($caminho_antigo)) {
-                                        echo "Foto atualizada.";
+                                        $erro = false;
                                     } else {
                                         die("A imagem antiga com caminho igual a $caminho_antigo não foi removida do sistema. Comunique ao <a href='https://www.instagram.com/04_cristiano/'>suporte</a> para corrigir isso. Obs: passe o caminho para ele.");
                                     }
@@ -135,7 +132,7 @@ if (isset($_GET['id'])) {
                         $sql_query_update_info_bancarias->bindValue(":tipo_conta", $tipo_conta, PDO::PARAM_STR);
 
                         if ($sql_query_update_info_bancarias->execute()) {
-                            echo "Todas as informações foram atualizadas.";
+                            $erro = false;
                         } else {
                             die("As informações financeiras da ONG não foi atualizada.");
                         }
@@ -143,6 +140,8 @@ if (isset($_GET['id'])) {
                         die("Não foi possível atualizar as informações da ONG.");
                     }
                     // se der erro no update, guardar o caminho (se ele estiver definido e mostrar o caminho no erro e mandar enviar para o suporte que a imagem foi enviada, mas houve um erro no update).
+                } else {
+                    die("Algo deu errado no preenchimento dos dados.");
                 }
             }
         }
@@ -235,9 +234,6 @@ if (isset($_GET['id'])) {
                                                                     } else {
                                                                         echo "Análise";
                                                                     } ?>" disabled>
-                <?php if (isset($erro) && $erro) { ?>
-                    <p>Algo deu errado.</p>
-                <?php } ?>
                 <p><strong>Adendo:</strong> ao clicar no botão <strong>ATUALIZAR</strong>, a ong será enviada para análise novamente.</p>
             <?php } ?>
             <button name="botao">Atualizar</button>
