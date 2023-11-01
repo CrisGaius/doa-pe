@@ -3,7 +3,7 @@ require_once "../lib/conexao.php";
 
 $id_usuario = 1;
 
-$query = "SELECT * FROM ongs WHERE id_usuario = :id_usuario";
+$query = "SELECT id_ong, nome, foto FROM ongs WHERE id_usuario = :id_usuario";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
 $stmt->execute();
@@ -18,6 +18,8 @@ $stmt->execute();
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="stylesheet" href="../styles/minhas-ongs.css">
     <link rel="stylesheet" href="../styles/modal-excluir.css">
+    <script src="../scripts/menu-mobile.js" defer></script>
+    <script src="../scripts/modal.js" defer></script>
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <title>Minhas Ongs | DOA PE</title>
 </head>
@@ -80,7 +82,5 @@ $stmt->execute();
             </section>
         </section>
     </main>
-    <script src="../scripts/menu-mobile.js"></script>
-    <script src="../scripts/modal.js"></script>
 </body>
 </html>
