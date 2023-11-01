@@ -13,7 +13,7 @@ input{
 }
 p.error {
     font-weight: bolder;
-    color: var(--rosa);
+    color: var(--amarelo);
     font-size: 0.9em;
 }
 

@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
         // testando para ver se o botão foi clicado.
         if (isset($_POST['botao'])) {
             $erro = false;
-            if (strlen($_POST['nome']) >= 3 && strlen($_POST['endereco']) > 3 && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['contato']) && !empty($_POST['cnpj']) && in_array($_POST['tipo-ong'], $id_tipos_ongs) && strlen($_POST['chave-pix']) >= 11 && !empty($_POST['conta']) && in_array($_POST['tipo-conta'], $tipos_de_contas) && strlen($_POST['instituicao']) > 5 && strlen($_POST['agencia']) === 4 && in_array($_POST['regiao-ong'], $id_regioes) && strlen($_POST['descricao']) <= 500) {
+            if (strlen($_POST['nome']) >= 3 && strlen($_POST['endereco']) > 20 && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['contato']) && !empty($_POST['cnpj']) && in_array($_POST['tipo-ong'], $id_tipos_ongs) && strlen($_POST['chave-pix']) >= 11 && !empty($_POST['conta']) && in_array($_POST['tipo-conta'], $tipos_de_contas) && strlen($_POST['instituicao']) > 5 && strlen($_POST['agencia']) === 4 && in_array($_POST['regiao-ong'], $id_regioes) && strlen($_POST['descricao']) <= 500) {
 
                 $contato = preg_replace("/[^0-9]/", "", $_POST['contato']);
                 if (strlen($contato) < 10 || strlen($contato) > 11) {

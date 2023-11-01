@@ -1,23 +1,22 @@
 
-function formatarTelefone() {
-    var input = document.getElementById("ipt-tel");
-    var value = input.value.replace(/\D/g, '');
-    var formattedValue = '';
+function mascaraTelefone() {
+    const telefoneInput = event.target;
+    let valorTelefone = telefoneInput.value.replace(/\D/g, '');
 
-    if (value.length > 0) {
-        formattedValue = '(' + value;
+    if (valorTelefone.length > 11) {
+        valorTelefone = valorTelefone.slice(0, 11); // Limita a 11 caracteres
     }
 
-    if (value.length > 2) {
-        formattedValue = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+    if (valorTelefone.length <= 10) {
+        // Números residenciais:  (XX) XXXX-XXXX
+        telefoneInput.value = valorTelefone.replace(/(\d{2})(\d{0,4})(\d{0,4})/, '($1) $2-$3');
+    } else {
+        // Números pessoais: (XX) XXXXX-XXXX
+        telefoneInput.value = valorTelefone.replace(/(\d{2})(\d{0,5})(\d{0,4})/, '($1) $2-$3');
     }
-
-    if (value.length > 7) {
-        formattedValue = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
-    }
-
-    input.value = formattedValue;
 }
+const inputTelefone = document.getElementById('ipt-tel');
+inputTelefone.addEventListener('input', mascaraTelefone);
 
 var telefoneInput = document.getElementById("ipt-tel");
 telefoneInput.addEventListener("input", formatarTelefone);

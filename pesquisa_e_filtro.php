@@ -244,6 +244,7 @@ if(isset($total_ongs)) {
                         <br>
                         <a href="<?php echo "editar_ong.php?id=$id"?>">Editar ONG</a>
                         <a href="<?php echo "excluir_ong.html?id=$id"?>">Deletar ONG</a>
+                        <a href="<?php echo "pages/formulario_voluntario.php?id=$id"?>">Voluntariar-se</a>
                     </div> <br>
                 <?php } ?>
             <?php } else { ?>
