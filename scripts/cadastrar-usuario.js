@@ -68,9 +68,9 @@ function validateSenha() {
   const senhaInput = document.getElementById('ipt-senha');
   const erroSenha = document.getElementById('erroSenha');
 
-  if (senhaInput.value.length < 8 || senhaInput.value.length > 30) {
+  if (senhaInput.value.length < 6 || senhaInput.value.length > 20) {
       senhaInput.style.border = '2.3px solid var(--amarelo)';
-      erroSenha.textContent = 'A senha deve ter entre 8 e 30 caracteres';
+      erroSenha.textContent = 'A senha deve ter entre 6 e 20 caracteres';
   } else {
       senhaInput.style.border = '';
       erroSenha.textContent = '';
@@ -92,6 +92,7 @@ function validateForm() {
       alert('Por favor, corrija os erros no formulário antes de enviar.');
   } else {
       document.getElementById('registro-form').submit();
+      window.location.href = 'analise-dados-usuario.html';
   }
 }
 

@@ -18,6 +18,10 @@ body {
 }
 
 /* HEADER */
+header {
+    width: 0px;
+}
+
 #btn-voltar{
     cursor: pointer;
     display: flex;

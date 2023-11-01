@@ -22,7 +22,7 @@ header {
     align-items: center;
 }
 
-header > section.flex-container {
+header > a > section.flex-container {
     cursor: pointer;
     width: 90px;
     height: 25px;
@@ -30,15 +30,16 @@ header > section.flex-container {
     margin-left: 20px;
     border-radius: 5px;
     font-weight: bold;
+    color: var(--branco);
     background-color: var(--rosa);
 }
 
-header > section.flex-container:hover {
+header > a > section.flex-container:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
 
-header > section.flex-container > img {
+header > a > section.flex-container > img {
     width: 16px;
 }
 
@@ -92,7 +93,7 @@ div#botoes {
     justify-content: space-around;
 }
 
-div#botoes > button#aceitar {
+div#botoes > a > button#aceitar {
     cursor: pointer;
     width: 120px;
     height: 45px;
@@ -103,7 +104,7 @@ div#botoes > button#aceitar {
     font-weight: bold;
 }
 
-div#botoes > button#recusar {
+div#botoes > a > button#recusar {
     cursor: pointer;
     width: 120px;
     height: 45px;
