@@ -1,0 +1,34 @@
+
+#pag {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul.pagina {
+    list-style: none;
+    padding: 0;
+}
+
+li.item-pagina {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+a.link-pagina {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    background-color: #fff;
+}
+
+li.item-pagina.disabled a.link-pagina {
+    pointer-events: none;
+    color: #999;
+}
+
+a#pagina-anterior, a#pagina-proxima {
+    font-weight: bold;
+}
