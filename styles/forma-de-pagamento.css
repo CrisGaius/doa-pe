@@ -40,6 +40,12 @@ main {
     height: 100vh;
 }
 
+h1#erro {
+    margin-top: 60px; 
+    text-transform: uppercase;
+    text-align: center;
+}
+
 section#sct-pagamento {
     flex-direction: column;
     width: 600px;
@@ -63,7 +69,7 @@ div.inputs label {
 
 div.inputs input {
     width: 500px;
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
     border: 10px solid var(--branco);
     margin: 10px 0px;
@@ -71,8 +77,9 @@ div.inputs input {
 
 button#copiar {
     width: 60px;
-    height: 30px;
+    height: 35px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 div#transf-bank input {
@@ -124,7 +131,12 @@ div#transf-bank #conta-agencia input {
         width: 30px;
         margin-top: 0;
     }
-   
+
+    h1#erro {
+        font-size: 16px;
+        padding: 0px 20px;
+    }
+
     section#sct-pagamento {
         width: 320px;
         margin: 17px auto;
@@ -187,7 +199,12 @@ div#transf-bank #conta-agencia input {
         width: 38px;
         margin-top: 80px;
     }
-   
+
+    h1#erro {
+        font-size: 20px;
+        padding: 0px 20px;
+    }
+
     section#sct-pagamento {
         width: 370px;
         margin: 17px auto;
@@ -249,7 +266,12 @@ div#transf-bank #conta-agencia input {
         width: 38px;
         margin-top: 80px;
     }
-   
+
+    h1#erro {
+        font-size: 23px;
+        padding: 0px 20px;
+    }
+
     section#sct-pagamento {
         width: 420px;
         margin: 17px auto;
@@ -299,7 +321,12 @@ div#transf-bank #conta-agencia input {
         width: 42px;
         margin-top: 80px;
     }
-   
+
+    h1#erro {
+        font-size: 25px;
+        padding: 0px 25px;
+    }
+
     section#sct-pagamento {
         width: 500px;
         margin: 17px auto;

@@ -72,7 +72,7 @@ div.inputs input {
     border: 10px solid var(--cinza);
 }
 
-a#btn-entrar {
+button#btn-entrar {
     display: inline-block;
     width: 400px; 
     height: 40px; 
@@ -84,10 +84,10 @@ a#btn-entrar {
     text-align: center; 
     line-height: 40px; 
     text-decoration: none;
-    color: var(--preto)
+    color: var(--preto);
 }
 
-a#btn-entrar:hover {
+button#btn-entrar:hover {
     transform: scale(1.03);
     transition: 0.5s;
 }
@@ -187,7 +187,7 @@ div#esqueceu-cadastro p#esqueceu-senha {
         height: 40px;
     }
 
-    a#btn-entrar {
+    button#btn-entrar {
         width: 280px;
         height: 40px;
         font-size: 0.9em;
@@ -251,7 +251,7 @@ div#esqueceu-cadastro p#esqueceu-senha {
          height: 40px;
      }
  
-     a#btn-entrar {
+     button#btn-entrar {
          width: 340px; 
          height: 40px; 
          font-size: 1em;
@@ -303,7 +303,7 @@ div#esqueceu-cadastro p#esqueceu-senha {
          height: 40px;
      }
  
-     a#btn-entrar {
+     button#btn-entrar {
          width: 380px; 
          height: 40px; 
          font-size: 1em;
