@@ -38,19 +38,19 @@ function formatar_conta($conta) {
 }
 
 function formatar_numero($contato) {
-    return preg_replace('/(\d{2})(\d{4,5})(\d{4})/', '$1 $2-$3', $contato);
+    return preg_replace('/^(\d{2})(\d{4,5})(\d{4})$/', '($1) $2-$3', $contato);
 }
 
 # projeto usando .env também seria uma boa
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function enviar_email($destinario, $assunto, $mensagem_html) {
-    require_once '../vendor/autoload.php';
+function enviar_email($caminho_vendor, $destinario, $assunto, $mensagem_html) {
+    require_once("$caminho_vendor");
 
     $email = new PHPMailer(true);
     $email->isSMTP();
-    $email->SMTPDebug = 2;
+    $email->SMTPDebug = 0;
     $email->Host = 'smtp.office365.com';
     $email->Port = 587;
     $email->SMTPAuth = true;
@@ -61,7 +61,7 @@ function enviar_email($destinario, $assunto, $mensagem_html) {
     $email->isHTML(true);
     $email->CharSet = "UTF-8";
 
-    $email->setFrom("cristianocris12@hotmail.com", "Doa PE");
+    $email->setFrom("doape.testes@outlook.com", "Doa PE");
     $email->addAddress($destinario);
     $email->Subject = $assunto;
 

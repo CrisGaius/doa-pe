@@ -4,6 +4,10 @@ h1{
     text-align: center;
 }
 
+h2#nome-ong {
+    text-align: center;
+}
+
 input{
     width: 694px;
     height: 30px;
@@ -63,7 +67,28 @@ p.error {
     margin-top: 40px;
 }
 
+section#acerto {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+}
 
+section#acerto div#conteudo-acerto {
+    background-color: var(--verde);
+    padding: 16px 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+section#acerto div#conteudo-acerto img {
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    background-color: var(--vermelho);
+    border-radius: 50px;
+    cursor: pointer;
+    height: 23px;
+}
 
 @media screen and (max-width: 390px) {
 
