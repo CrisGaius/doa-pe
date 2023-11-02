@@ -1,3 +1,102 @@
+    <?php
+
+
+    require_once("lib/conexao.php");
+
+
+    if(count($_POST) > 0){
+
+        $erro = false;
+
+        $nome = $_POST['nome'];
+        $endereco = $_POST['endereco'];
+        $email = $_POST['email'];
+        $contato = $_POST['contato'];
+        $cnpj = $_POST['cnpj'];
+        $tipoOng = $_POST['tipo-ong'];
+        $pix = $_POST['pix'];
+        $numeroConta = $_POST['numero-conta'];
+        $agenciaConta = $_POST['agencia-conta'];
+        $instituicao = $_POST['instituicao'];
+        $tipoConta = $_POST['tipo-conta'];
+        $regiao = $_POST['regiao'];
+        $descricao = $_POST['descricao'];
+        $foto = $_FILES['foto'];
+
+
+        if (empty($nome) || empty($endereco) || empty($email) || empty($contato) || empty($cnpj) || $tipoOng === "FinalidadeONG" ||
+            empty($pix) || empty($numeroConta) || empty($agenciaConta) || empty($instituicao) || $tipoConta === "tipoConta" || $regiao === "SelecioneRegiao" || empty($descricao)) {
+            $erro = true;
+        }
+
+        if(strlen($nome) < 5){
+            $erro = true;
+        }
+
+        if(strlen($contato) < 11){
+            $erro = true;
+        }
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $erro = true;
+        }
+
+        if (empty($_FILES['foto']['name'])) {
+            $erro = true;
+        }
+
+        $stmtCnpj = $pdo->prepare("SELECT cnpj FROM ongs WHERE cnpj = :cnpj");
+        $stmtCnpj->bindParam(':cnpj', $cnpj, PDO::PARAM_STR);
+        $stmtCnpj->execute();
+        $rowCountCnpj = $stmtCnpj->rowCount();
+
+        if ($rowCountCnpj > 0) {
+            $erro = true;
+            echo "CNPJ já cadastrado no sistema.";
+        }
+
+
+        if(!erro || !$rowCountCnpj > 0){
+            $stmtInfoBancarias = $pdo->prepare("INSERT INTO informacoes_bancarias(chave_pix, conta, agencia, instituicao, tipo_de_conta) VALUES (:chave_pix, :conta, :agencia, :instituicao, :tipo_de_conta)");
+                
+                $stmtInfoBancarias->bindParam(':chave_pix', $pix, PDO::PARAM_STR);
+                $stmtInfoBancarias->bindParam(':conta', $numeroConta, PDO::PARAM_STR);
+                $stmtInfoBancarias->bindParam(':agencia', $agenciaConta, PDO::PARAM_STR);
+                $stmtInfoBancarias->bindParam(':instituicao', $instituicao, PDO::PARAM_STR);
+                $stmtInfoBancarias->bindParam(':tipo_de_conta', $tipoConta, PDO::PARAM_STR);
+
+                $stmtInfoBancarias->execute();
+
+            $stmtRegiao = $pdo->prepare("INSERT INTO regioes(nome_regiao) VALUES (:nome_regiao)");
+                
+                $stmtRegiao->bindParam(':nome_regiao', $regiao, PDO::PARAM_STR);
+                $stmtRegiao->execute();
+
+            $stmtTipoOng = $pdo->prepare("INSERT INTO tipos_de_ongs(tipo) VALUES (:tipo)");
+                
+                $stmtTipoOng->bindParam(':tipo', $tipoOng, PDO::PARAM_STR);
+                $stmtTipoOng->execute();
+
+            $stmtOng = $pdo->prepare("INSERT INTO ongs (nome, endereco, contato, email, descricao, cnpj) 
+                VALUES (:nome, :endereco, :contato, :email, :descricao, :cnpj)");
+
+                $stmtOng->bindParam(':nome', $nome, PDO::PARAM_STR);
+                $stmtOng->bindParam(':endereco', $endereco, PDO::PARAM_STR);
+                $stmtOng->bindParam(':contato', $contato, PDO::PARAM_STR);
+                $stmtOng->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmtOng->bindParam(':descricao', $descricao, PDO::PARAM_STR);
+                $stmtOng->bindParam(':cnpj', $cnpj, PDO::PARAM_STR);
+                $stmtOng->execute();
+            
+        }
+
+        if($erro){
+            echo "<p>Preencha corretamente os campos corretamente.<p>";
+        } else{
+            header("Location: caminho.php");
+        }
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
