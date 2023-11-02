@@ -6,7 +6,6 @@ var inputEmail = document.getElementById('email');
 
 botaoFechar.addEventListener("click", fecharCaixaErro);
 inputEmail.addEventListener("input", validarErroEmail);
-botaoEntrar.addEventListener("click", entrar);
 
 function validarEmail(email) {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -14,11 +13,9 @@ function validarEmail(email) {
 }
 
 function validarErroEmail() {
-    const emailInput = document.getElementById('email');
-    const email = emailInput.value;
-    var senha = document.getElementById('senha').value;
-
-    if(validarEmail(email)){
+    var email = inputEmail.value;
+    
+    if (validarEmail(email)) {
         emailInvalido.style.display = "none";
         inputEmail.style.border = "none";
     } else {
@@ -26,27 +23,9 @@ function validarErroEmail() {
         inputEmail.style.border = "1px solid #FF6B00";
         inputEmail.style.padding = "8px";
     }
-}
-
-// function entrar(event) {
-//     event.preventDefault()
-//     var email = document.getElementById('email').value;
-//     var senha = document.getElementById('senha').value;
-
-//     if(validarErroEmail) {
-//         if (email == "admin@gmail.com" && senha == "admin"){
-//             location.href = "teste.html";
-//         } else {
-//             caixaErro.style.display = "flex";
-//         }
-//     }
-// }
+}   
 
 function fecharCaixaErro() {
     caixaErro.style.display = "none";
     emailInvalido.style.display = "none";
-    document.getElementById('email').value = "";
-    document.getElementById('senha').value = "";
-    inputEmail.style.border = "none";
 }
-

@@ -44,6 +44,7 @@ if (count($_POST) > 0) {
     <link rel="stylesheet" href="../styles/login-usuario.css">
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
+    <script src="../scripts/login-usuario.js" defer></script>
     <script src="https://kit.fontawesome.com/c687b2a461.js" crossorigin="anonymous" defer></script>
     <title>Login | DOA PE</title>
 </head>
@@ -87,7 +88,5 @@ if (count($_POST) > 0) {
             </form>
         </section>
     </main>
-    <script src="../scripts/login-usuario.js"></script>
 </body>
-
 </html>
