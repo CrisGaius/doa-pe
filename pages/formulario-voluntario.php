@@ -87,7 +87,6 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="1">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/formulario-voluntario.css">
     <link rel="stylesheet" href="../styles/config.css">
