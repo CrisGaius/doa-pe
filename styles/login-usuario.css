@@ -72,7 +72,7 @@ div.inputs input {
     border: 10px solid var(--cinza);
 }
 
-a#btn-entrar {
+button#btn-entrar {
     display: inline-block;
     width: 400px; 
     height: 40px; 
@@ -84,7 +84,7 @@ a#btn-entrar {
     text-align: center; 
     line-height: 40px; 
     text-decoration: none;
-    color: var(--preto)
+    color: var(--preto);
 }
 
 a#btn-entrar:hover {

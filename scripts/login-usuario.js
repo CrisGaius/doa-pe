@@ -28,19 +28,19 @@ function validarErroEmail() {
     }
 }
 
-function entrar(event) {
-    event.preventDefault()
-    var email = document.getElementById('email').value;
-    var senha = document.getElementById('senha').value;
+// function entrar(event) {
+//     event.preventDefault()
+//     var email = document.getElementById('email').value;
+//     var senha = document.getElementById('senha').value;
 
-    if(validarErroEmail) {
-        if (email == "admin@gmail.com" && senha == "admin"){
-            location.href = "teste.html";
-        } else {
-            caixaErro.style.display = "flex";
-        }
-    }
-}
+//     if(validarErroEmail) {
+//         if (email == "admin@gmail.com" && senha == "admin"){
+//             location.href = "teste.html";
+//         } else {
+//             caixaErro.style.display = "flex";
+//         }
+//     }
+// }
 
 function fecharCaixaErro() {
     caixaErro.style.display = "none";
