@@ -9,8 +9,7 @@ formulario.addEventListener('submit', function verificarCampo(e) {
     const emailValido = validarEmail()
 
     if (emailValido) {
-        // formulario.submit()
-        console.log('passou.')
+        formulario.submit()
     }
 })
 
