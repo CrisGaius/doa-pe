@@ -160,7 +160,7 @@ function descricaoValidate(){
 const inputImg  = document.getElementById('file');
 const previaImg = document.getElementById('imagemPreview');
 // Deixa vázia a caixa da imagem, sem aparecer o ícone de quando uma imagem não é selecionada
-previaImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"; 
+const srcAntigo = previaImg.src 
 
 inputImg.addEventListener('change', function () {
     const file = inputImg.files[0]; // Obtém o arquivo selecionado
@@ -177,7 +177,7 @@ inputImg.addEventListener('change', function () {
         reader.readAsDataURL(file);
     } else {
         // Define a imagem de espaço reservado vazia se nenhum arquivo for selecionado
-        previaImg.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        previaImg.src = srcAntigo
     }
 });
 

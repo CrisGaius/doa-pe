@@ -1,5 +1,5 @@
 <?php 
-function enviar_imagens($error, $size, $name, $tmp_name) {
+function enviar_imagens($caminho_mover_imagem, $error, $size, $name, $tmp_name) {
     if ($error) {
         die('Falha ao enviar arquivo.');
     }
@@ -15,11 +15,22 @@ function enviar_imagens($error, $size, $name, $tmp_name) {
     if ($extensao !== "jpeg" && $extensao !== "jpg" && $extensao !== "png") {
         die("Tipo de arquivo inválido!");
     }
+    
+    $voltar_uma_pasta = "";
+    
+    if($caminho_mover_imagem) {
+        $voltar_uma_pasta = "../";
+    }
 
-    $caminho = $pasta . $novo_nome_do_arquivo . "." . $extensao;
+    $caminho = $voltar_uma_pasta . $pasta . $novo_nome_do_arquivo . "." . $extensao;
+
     $deu_certo = move_uploaded_file($tmp_name, $caminho);
 
-    if (isset($deu_certo)) {
+    if (isset($deu_certo) && $deu_certo) {
+        if(strpos($caminho, "../") !== false) {
+            $caminho = str_replace("../", "", $caminho);
+        }
+
         return $caminho;
     } else {
         return false;
