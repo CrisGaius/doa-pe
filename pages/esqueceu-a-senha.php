@@ -1,5 +1,6 @@
 <?php
 require_once "../lib/conexao.php";
+require_once "../lib/funcoes_uteis.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -22,6 +23,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 }
+
+if(count($_POST) > 0) {
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $email = $_POST['email'];
+
+        $sql_code_select_email = "SELECT email, senha FROM usuarios WHERE email = :email LIMIT 1";
+        $sql_query_select_email = $pdo->prepare($sql_code_select_email);
+        $sql_query_select_email->execute() or die("Erro ao selecionar email no banco de dados");
+
+        if($sql_query_select_email->rowCount() > 0) {
+            $dados = $sql_query_select_email->fetch(PDO::FETCH_ASSOC);
+            if(isset($dados)) {
+                $senha = $dados['senha'];
+                $envio_email = enviar_email("../vendor/autoload.php", $email, "Redefinição de senha - Doa PE", 
+                "<h1>Link para redefinir essa senha no software da Doa PE.</h1>
+                <a href='localhost/doa-pe/pages/nova_senha.php?senha=$senha'></a>")
+            }
+        } else {
+            header("Location: email-erro.html");
+        }
+    } else {
+        header("Location: email-erro.html");
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,9 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </label>
             </div>
             <div id="caixa-input">
-                <input type="email" name="email" id="email" placeholder="Digite seu email..." required>
+                <input type="email" name="email" id="email" placeholder="Digite seu email..." value="<?php if(isset($_POST['email'])) echo $_POST['email']?>" required>
             </div>
-            <span class="texto-erro"><?php echo $mensagemErro; ?></span>
+            <span class="texto-erro">Email inválido.</span>
             <button type="submit" id="botao-enviar">ENVIAR</button>
         </form>
     </main>
