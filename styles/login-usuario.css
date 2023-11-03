@@ -65,11 +65,16 @@ div.inputs label img#cadeado-senha {
 }
 
 div.inputs input {
-    background-color: var(--cinza);;
+    background-color: var(--cinza);
     width: 400px;
     height: 40px;
     border-radius: 5px;
-    border: 10px solid var(--cinza);
+    /* border: 10px solid var(--cinza); */
+    padding-left: 10px;
+}
+
+div.inputs input#email.erro {
+    border: 2.3px solid var(--amarelo);
 }
 
 button#btn-entrar {
@@ -85,6 +90,7 @@ button#btn-entrar {
     line-height: 40px; 
     text-decoration: none;
     color: var(--preto);
+    cursor: pointer;
 }
 
 button#btn-entrar:hover {
@@ -131,6 +137,10 @@ span#email-invalido {
     margin-right: 71%;
     color: var(--laranja);
     font-weight: 500;
+}
+
+span#email-invalido.mostrar {
+    display: block;
 }
 
 div#esqueceu-cadastro {

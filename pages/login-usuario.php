@@ -28,6 +28,8 @@ if (count($_POST) > 0) {
             } else {
                 $erro = true;
             }
+        } else {
+            $erro = true;
         }
     } else {
         $erro = true;
@@ -41,6 +43,7 @@ if (count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="1"> -->
     <link rel="stylesheet" href="../styles/login-usuario.css">
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
@@ -79,6 +82,14 @@ if (count($_POST) > 0) {
                         </div>
                     </div>
                 <?php } ?>
+                
+                <div id="caixa-erro">
+                        <i class="fa-solid fa-xmark"></i>
+                        <p>Email ou senha Incorretos!</p>
+                        <div class="flex-container" id="caixa-botao-fechar">
+                            <i class="fa-solid fa-xmark" id="fechar"></i>
+                        </div>
+                </div>
 
                 <button id="btn-entrar" name="btn-entrar">Entrar</button>
                 <div id="esqueceu-cadastro" class="flex-container">
