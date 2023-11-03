@@ -3,9 +3,10 @@
         session_start();
     }
 
-    if(!isset($_SESSION['id_usuario'])) {
-        header("Location: ../index-deslogado.html");
-    }
+    // if(!isset($_SESSION['id_usuario'])) {
+    //     // header("Location: ../index-deslogado.html");
+    // }
+
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +26,25 @@
             <ul id="lista" class="flex-container">
                 <li><a href="../pages/home-logado.html" id="atual">Início</a></li>
                 <li><a href="../pages/sobre.html">Sobre</a></li>
+                <?php if(isset($_SESSION)) {
+                    if(isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário?>
                 <li><a href="../pages/minhas-ongs.html">Minha ONG</a></li>
                 <li><a href="../pages/cadastrar-ong.html" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
                 <li id="botao-logout" class="flex-container">
                     <a href="../logout.php">Logout</a>
                     <img src="../icons/icone-logout.svg" alt="ícone de logout">
                 </li>
+                <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { }// coloca as coisas do adm 
+                    else {} // coloca a navbar da pessoa deslogada
+
+                 
+                }?>
+                <?php if(!$_SESSION){ ?>
+                <li id="botao-login" class="flex-container">
+                    <a href="">Login</a>
+                    <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                </li>
+                <?php }?>
                 <img src="../icons/icone-menu.svg" alt="ícone do menu" id="icone-menu">
             </ul>
         </nav>
