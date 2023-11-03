@@ -43,7 +43,6 @@ if (count($_POST) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="1"> -->
     <link rel="stylesheet" href="../styles/login-usuario.css">
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
@@ -65,12 +64,12 @@ if (count($_POST) > 0) {
             <form action="" method="post">
                 <div class="inputs">
                     <label for="email"><img src="../icons/icone-email-login.svg" alt="Icone Email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="Digite seu e-mail" value="<?php if(isset($_POST['email'])) echo $_POST['email']?>">
+                    <input type="text" name="email" id="email" placeholder="Digite seu e-mail" value="<?php if (isset($_POST['email'])) echo $_POST['email'] ?>">
                     <span id="email-invalido">Email inválido.</span>
                 </div>
                 <div class="inputs">
                     <label for="senha"><img id="cadeado-senha" src="../icons/icone-senha-login.svg" alt="Icone Senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" value="<?php if(isset($_POST['senha'])) echo $_POST['senha']?>">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" value="<?php if (isset($_POST['senha'])) echo $_POST['senha'] ?>">
                 </div>
 
                 <?php if (isset($erro) && $erro) { ?>
@@ -81,15 +80,15 @@ if (count($_POST) > 0) {
                             <i class="fa-solid fa-xmark" id="fechar"></i>
                         </div>
                     </div>
-                <?php } ?>
-                
-                <div id="caixa-erro">
+                <?php } else { ?>
+                    <div id="caixa-erro">
                         <i class="fa-solid fa-xmark"></i>
                         <p>Email ou senha Incorretos!</p>
                         <div class="flex-container" id="caixa-botao-fechar">
                             <i class="fa-solid fa-xmark" id="fechar"></i>
                         </div>
-                </div>
+                    </div>
+                <?php } ?>
 
                 <button id="btn-entrar" name="btn-entrar">Entrar</button>
                 <div id="esqueceu-cadastro" class="flex-container">
@@ -100,4 +99,5 @@ if (count($_POST) > 0) {
         </section>
     </main>
 </body>
+
 </html>
