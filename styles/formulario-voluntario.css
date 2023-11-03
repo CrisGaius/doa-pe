@@ -90,6 +90,12 @@ p.error {
   margin-top: 40px;
 }
 
+section#acerto {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+}
+
 section#acerto div#conteudo-acerto {
   background-color: var(--verde);
   padding: 16px 15px;

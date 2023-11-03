@@ -137,6 +137,13 @@ if (isset($_GET['id'])) {
                                 <img id="botao-fechar" src="../icons/icone-fechar.svg" alt="ícone de fechar">
                             </div>
                         </section>
+                    <?php } else if (isset($envio_email) && !$envio_email){ ?>
+                        <section id="acerto" class="flex-container">
+                            <div id="conteudo-acerto" style="background-color: var(--vermelho);">
+                                <p ><strong>Erro ao enviar dados!</strong></p>
+                                <img id="botao-fechar" src="../icons/icone-fechar.svg" alt="ícone de fechar">
+                            </div>
+                        </section>
                     <?php }?>
 
                 </div>
