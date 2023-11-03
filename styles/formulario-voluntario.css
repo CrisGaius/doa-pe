@@ -18,6 +18,10 @@ label {
   float: left;
 }
 
+.titulo{
+  margin-top: 20px;
+}
+
 p.error {
   font-weight: bolder;
   color: var(--amarelo);
