@@ -1,17 +1,31 @@
 <?php
 require_once "../lib/conexao.php";
 
-$id_usuario = 1;
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-$query = "SELECT id_ong, nome, foto FROM ongs WHERE id_usuario = :id_usuario";
-$stmt = $pdo->prepare($query);
-$stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
-$stmt->execute();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: login-usuario.php");
+} else {
+    $id_usuario = intval($_SESSION['id_usuario']);
+}
+
+if (isset($id_usuario)) {
+    // $id_usuario = 1; // $_SESSION['id_usuario'];
+
+    $query = "SELECT id_ong, nome, foto FROM ongs WHERE id_usuario = :id_usuario";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
+    $stmt->execute();
+}
+
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +37,14 @@ $stmt->execute();
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <title>Minhas Ongs | DOA PE</title>
 </head>
+
 <body>
     <header id="cabecalho">
         <nav id="navbar" class="flex-container">
             <a href=""><img src="../images/logo.png" alt="Logo da Doa PE" id="logo-doa-pe"></a>
             <ul id="lista" class="flex-container">
                 <li><a href="">Início</a></li>
-                <li><a href="" >Sobre</a></li>
+                <li><a href="">Sobre</a></li>
                 <li><a href="" id="atual">Minhas ONGs</a></li>
                 <li><a href="" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
                 <li id="botao-logout" class="flex-container">
@@ -54,8 +69,8 @@ $stmt->execute();
     </header>
     <main>
         <h1 id="titulo">Minhas ONGs</h1>
-        <?php if ($stmt->rowCount() > 0): ?>
-            <?php foreach($stmt as $ong): ?>
+        <?php if ($stmt->rowCount() > 0) : ?>
+            <?php foreach ($stmt as $ong) : ?>
                 <div class="box-layout">
                     <div class="logo-imagem flex-container">
                         <img src="<?= $ong['foto'] ?>" alt="">
@@ -67,7 +82,7 @@ $stmt->execute();
                     </div>
                 </div>
             <?php endforeach; ?>
-        <?php else: ?>
+        <?php else : ?>
             <div class="flex-container">Você não possui ONGs cadastradas!</div>
         <?php endif; ?>
 
@@ -83,4 +98,5 @@ $stmt->execute();
         </section>
     </main>
 </body>
+
 </html>
