@@ -10,7 +10,7 @@ if(count($_POST) > 0) {
         $sql_query_select_email = $pdo->prepare($sql_code_select_email);
 
         $sql_query_select_email->bindValue(":email", $email, PDO::PARAM_STR);
-        $sql_query_select_email->execute() or die("Erro ao selecionar email no banco de dados");
+        $sql_query_select_email->execute() or die("Erro ao selecionar email no banco de dados.");
 
         if($sql_query_select_email->rowCount() > 0) {
             $dados = $sql_query_select_email->fetch(PDO::FETCH_ASSOC);
@@ -18,7 +18,7 @@ if(count($_POST) > 0) {
             if(isset($dados)) {
                 $senha = $dados['senha'];
                 $envio_email = enviar_email("../vendor/autoload.php", $email, "Redefinição de senha - Doa PE", 
-                "<h1>Link para redefinir essa senha no software da Doa PE.</h1> <a href='http://localhost/doa-pe/pages/nova_senha.php?pass=$senha'>Clique aqui</a>");
+                "<h1>Link para redefinir essa senha no software da Doa PE.</h1> <a href='http://localhost/doa-pe/pages/nova-senha.php?pass=$senha'>Clique aqui</a>");
 
                 if($envio_email) {
                     header("Location: email-sucesso.html");

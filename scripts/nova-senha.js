@@ -9,13 +9,12 @@ formulario.addEventListener('submit', function verificarCampo(e) {
     const senhaValida = validarSenha()
 
     if (senhaValida) {
-        // formulario.submit()
-        console.log('passou.')
+        formulario.submit()
     }
 })
 
 function validarSenha() {
-    if (inputSenha.value.length < 6 || inputSenha.value.length >= 20) {
+    if (inputSenha.value.length < 6 || inputSenha.value.length > 20) {
         inputSenha.classList.add('erro')
         textoErro.classList.add('mostrar')
         return false
