@@ -149,7 +149,7 @@ if (isset($_GET['id'])) {
                 </div>
             </section>
         <?php } else { ?>
-            <h1 style="margin-top: 20px;">Algo deu errado.</h1>
+            <h1 class="titulo">Algo deu errado.</h1>
         <?php } ?>
     </main>
 
