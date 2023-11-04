@@ -101,7 +101,7 @@ div.menu-mobile ul#lista {
 .flex-container-card2{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 }
 
 
@@ -200,6 +200,7 @@ label {
     color: var(--preto);
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
 }
 section.ongs{
     margin-top: 40px;
@@ -208,6 +209,8 @@ section.ongs{
 
 .card-ong {
     width: 270px;
+    min-height: 400px;
+    max-height: fit-content;
     background-color: #00BCC8;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.466);
     border-radius: 10px;
@@ -215,14 +218,18 @@ section.ongs{
     margin: 20px;
 }
 
-.card-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+
+img.card-img {
+    width: 100%;
+    height: 200px;
 }
 
 .card-conteudo {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
 }
 
 .card-title {
@@ -265,6 +272,28 @@ section.ongs{
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: 500;
+}
+
+p#paragrafo-paginas {
+    text-align: center;
+}
+
+div#links-paginacao {
+    margin: 10px 0;
+    gap: 10px;
+}
+
+div#links-paginacao a {
+    background-color: var(--azul-menu);
+    color: var(--branco);
+    padding: 5px;
+    font-weight: 500;
+    border-radius: 2px;
+}
+
+div#links-paginacao a:hover {
+    transform: scale(1.1);
+    transition: .3s ease-in-out;
 }
 
 @media screen and (max-width: 390px) {
