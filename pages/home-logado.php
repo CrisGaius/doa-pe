@@ -123,28 +123,63 @@ if (isset($total_ongs)) {
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="stylesheet" href="../styles/home-logado.css">
+    <script src="../scripts/menu-mobile.js" defer></script>
     <title>Doa PE</title>
 </head>
 
 <body>
     <header id="cabecalho">
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul id="lista" class="flex-container">
+                <li><a href="home-logado.php" id="atual">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <?php if (isset($_SESSION)) {
+                    if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário mobile
+                ?>
+                        <li><a href="minhas-ongs.php">Minha ONG</a></li>
+                        <li><a href="cadastrar-ong.php" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm mobile
+                    ?>
+                        <li><a href="validar-usuario-ong.html">Validação</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else { //coloca a navbar da pessoa deslogada mobile
+                    ?>
+                        <li id="botao-login" class="flex-container">
+                            <a href="login-usuario.php">Login</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                        </li>
+                <?php }
+                } ?>
+            </ul>
+        </div>
+        <!-- Menu principal -->
         <nav id="navbar" class="flex-container">
             <a href=""><img src="../images/logo.png" alt="Logo da Doa PE" id="logo-doa-pe"></a>
             <ul id="lista" class="flex-container">
-                <li><a href="../pages/home-logado.php" id="atual">Início</a></li>
-                <li><a href="../pages/sobre.html">Sobre</a></li>
+                <li><a href="home-logado.php" id="atual">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                </div>
+
                 <?php if (isset($_SESSION)) {
                     if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário
                 ?>
-                        <li><a href="../pages/minhas-ongs.php">Minha ONG</a></li>
-                        <li><a href="../pages/cadastrar-ong.php" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
+                        <li><a href="minhas-ongs.php">Minha ONG</a></li>
+                        <li><a href="cadastrar-ong.php" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
                         <li id="botao-logout" class="flex-container">
                             <a href="../logout.php">Logout</a>
                             <img src="../icons/icone-logout.svg" alt="ícone de logout">
                         </li>
                     <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm 
                     ?>
-                        <li><a href="../pages/validar-usuario-ong.html">Validação</a></li>
+                        <li><a href="validar-usuario-ong.html">Validação</a></li>
                         <li id="botao-logout" class="flex-container">
                             <a href="../logout.php">Logout</a>
                             <img src="../icons/icone-logout.svg" alt="ícone de logout">
@@ -152,7 +187,7 @@ if (isset($total_ongs)) {
                     <?php } else { //coloca a navbar da pessoa deslogada 
                     ?>
                         <li id="botao-login" class="flex-container">
-                            <a href="../pages/login-usuario.php">Login</a>
+                            <a href="login-usuario.php">Login</a>
                             <img src="../icons/icone-logout.svg" alt="ícone de Login">
                         </li>
                 <?php }
@@ -160,18 +195,6 @@ if (isset($total_ongs)) {
                 <img src="../icons/icone-menu.svg" alt="ícone do menu" id="icone-menu">
             </ul>
         </nav>
-        <div class="menu-mobile">
-            <ul id="lista" class="flex-container">
-                <li><a href="" id="atual">Início</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Minha ONG</a></li>
-                <li><a href="" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
-                <li id="botao-logout" class="flex-container">
-                    <a href="">Logout</a>
-                    <img src="../icons/icone-logout.svg" alt="ícone de logout">
-                </li>
-            </ul>
-        </div>
     </header>
 
     <main> <!-- colocar p na tag details -->
@@ -223,12 +246,12 @@ if (isset($total_ongs)) {
         <?php if (isset($sql_query_select_ongs) && $sql_query_select_ongs->rowCount() > 0) {
         ?>
             <section class="ongs">
-            <?php foreach ($sql_query_select_ongs as $ong) {
-                $id = intval($ong['id_ong']);
-                $foto = $ong['foto'];
-                $nome = $ong['nome'];
-                $descricao = $ong['descricao'];
-            ?>
+                <?php foreach ($sql_query_select_ongs as $ong) {
+                    $id = intval($ong['id_ong']);
+                    $foto = $ong['foto'];
+                    $nome = $ong['nome'];
+                    $descricao = $ong['descricao'];
+                ?>
                     <?php if ($contador === 0) { ?>
                         <div class="flex-container-card2">
                         <?php } ?>
@@ -253,7 +276,8 @@ if (isset($total_ongs)) {
                         <?php $contador = $contador + 1 ?>
                         <?php if ($contador === 3) { ?>
                         </div>
-                    <?php $contador = 0; } ?>
+                    <?php $contador = 0;
+                        } ?>
                 <?php } ?>
             <?php } else { ?>
                 <h1>Nenhum resultado encontrado...</h1>
@@ -261,37 +285,37 @@ if (isset($total_ongs)) {
             <?php if ($contador != 0) { ?>
                 </div>
             <?php } ?>
-        </section>
-                <?php if ($sql_query_select_ongs->rowCount() > 0) { ?>
-                    <p id="paragrafo-paginas"><?php echo "Página: $pagina | Total de páginas: $numero_de_paginas" ?></p>
-                    <div id="links-paginacao" class="flex-container">
-                        <?php if (isset($_GET['pesquisa']) && isset($_GET['tipo-ong']) && isset($_GET['regiao-ong'])) {
-                            $pesquisa = trim($_GET['pesquisa']);
-                            $tipo_ong = $_GET['tipo-ong'];
-                            $regiao_ong = $_GET['regiao-ong']; ?>
-                            <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=1" ?>">[<<]</a>
-                                    <?php
-                                    $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
-                                    $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
+            </section>
+            <?php if ($sql_query_select_ongs->rowCount() > 0) { ?>
+                <p id="paragrafo-paginas"><?php echo "Página: $pagina | Total de páginas: $numero_de_paginas" ?></p>
+                <div id="links-paginacao" class="flex-container">
+                    <?php if (isset($_GET['pesquisa']) && isset($_GET['tipo-ong']) && isset($_GET['regiao-ong'])) {
+                        $pesquisa = trim($_GET['pesquisa']);
+                        $tipo_ong = $_GET['tipo-ong'];
+                        $regiao_ong = $_GET['regiao-ong']; ?>
+                        <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=1" ?>">[<<]< /a>
+                                <?php
+                                $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
+                                $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
 
-                                    for ($p = $primeira_pagina; $p <= $ultima_pagina; $p++) {
-                                    ?>
-                                        <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=$p" ?>"><?php echo "[$p]"; ?></a>
-                                    <?php } ?>
-                                    <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=$numero_de_paginas" ?>">[>>]</a>
-                                <?php } else { ?>
-                                    <a href="?pagina=1">[<<]</a>
-                                            <?php
-                                            $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
-                                            $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
-                                            for ($p = $primeira_pagina; $p <= $ultima_pagina; $p++) {
-                                            ?>
-                                                <a href="<?php echo "?pagina=$p" ?>"><?php echo "[$p]" ?></a>
-                                            <?php } ?>
-                                            <a href="<?php echo "?pagina=$numero_de_paginas" ?>">[>>]</a>
+                                for ($p = $primeira_pagina; $p <= $ultima_pagina; $p++) {
+                                ?>
+                                    <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=$p" ?>"><?php echo "[$p]"; ?></a>
+                                <?php } ?>
+                                <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=$numero_de_paginas" ?>">[>>]</a>
+                            <?php } else { ?>
+                                <a href="?pagina=1">[<<]< /a>
+                                        <?php
+                                        $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
+                                        $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
+                                        for ($p = $primeira_pagina; $p <= $ultima_pagina; $p++) {
+                                        ?>
+                                            <a href="<?php echo "?pagina=$p" ?>"><?php echo "[$p]" ?></a>
                                         <?php } ?>
-                                        </p>
+                                        <a href="<?php echo "?pagina=$numero_de_paginas" ?>">[>>]</a>
                                     <?php } ?>
+                                    </p>
+                                <?php } ?>
     </main>
 </body>
 
