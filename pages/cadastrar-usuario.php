@@ -132,18 +132,17 @@ if (count($_POST) > 0) {
                         <img id="botao-fechar" src="../icons/icone-fechar.svg" alt="ícone de fechar">
                     </div>
                 </section>
+                <script>
+                    const botaoFecharCaixaAcerto = document.querySelector("img#botao-fechar")
+
+                    botaoFecharCaixaAcerto.addEventListener('click', () => {
+                        const sectionAcerto = document.querySelector('section#acerto')
+
+                        sectionAcerto.style.display = 'none'
+                    })
+                </script>
             <?php } ?>
-
     </main>
-    <script>
-        const botaoFecharCaixaAcerto = document.querySelector("img#botao-fechar")
-
-        botaoFecharCaixaAcerto.addEventListener('click', () => {
-            const sectionAcerto = document.querySelector('section#acerto')
-
-            sectionAcerto.style.display = 'none'
-        })
-    </script>
 </body>
 
 </html>

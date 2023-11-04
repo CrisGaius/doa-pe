@@ -271,7 +271,8 @@ img#imagemPreview{
 
 div#aviso{
     width: 320px;
-    text-align: justify;
+    text-align: center;
+    margin: auto;
 }
 
 div#aviso > p{
@@ -301,12 +302,38 @@ footer{
     transition: .2s;
     border-radius: 3px;
     background-color: var(--ciano);
+    margin: auto;
+    margin-bottom: 60px;
 }
 
 #btn-enviar:hover{
     color: var(--ciano);
     border: 1px solid #00F0FF;
     background-color: #00868F;
+}
+
+section#acerto {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    display: flex;
+}
+
+section#acerto div#conteudo-acerto {
+    background-color: var(--verde);
+    padding: 16px 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+section#acerto div#conteudo-acerto img {
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    background-color: var(--vermelho);
+    border-radius: 50px;
+    cursor: pointer;
+    height: 23px;
 }
 
 

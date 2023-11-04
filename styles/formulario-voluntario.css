@@ -95,7 +95,7 @@ p.error {
 }
 
 section#acerto {
-  position: absolute;
+  position: fixed;
   bottom: 60px;
   right: 20px;
 }
