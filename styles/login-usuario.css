@@ -147,6 +147,10 @@ div#esqueceu-cadastro {
     justify-content: space-between;
 }
 
+div#esqueceu-cadastro a {
+    color: var(--branco);
+}
+
 div#esqueceu-cadastro p {
     font-size: 16px;
 }

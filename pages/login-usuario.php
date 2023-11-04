@@ -92,8 +92,12 @@ if (count($_POST) > 0) {
 
                 <button id="btn-entrar" name="btn-entrar">Entrar</button>
                 <div id="esqueceu-cadastro" class="flex-container">
-                    <p id="esqueceu-senha">Esqueceu a senha?</p>
-                    <p>Cadastre-se</p>
+                    <a href="esqueceu-a-senha.php" target="_blank">
+                        <p id="esqueceu-senha">Esqueceu a senha?</p>
+                    </a>
+                    <a href="cadastrar-usuario.php" target="_blank">
+                        <p>Cadastre-se</p>
+                    </a>
                 </div>
             </form>
         </section>
