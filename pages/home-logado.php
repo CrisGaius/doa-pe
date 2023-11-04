@@ -293,7 +293,7 @@ if (isset($total_ongs)) {
                         $pesquisa = trim($_GET['pesquisa']);
                         $tipo_ong = $_GET['tipo-ong'];
                         $regiao_ong = $_GET['regiao-ong']; ?>
-                        <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=1" ?>">[<<]< /a>
+                        <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=1" ?>">[<<]</a>
                                 <?php
                                 $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
                                 $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
@@ -304,7 +304,7 @@ if (isset($total_ongs)) {
                                 <?php } ?>
                                 <a href="<?php echo "?pesquisa=$pesquisa&tipo-ong=$tipo_ong&regiao-ong=$regiao_ong&pagina=$numero_de_paginas" ?>">[>>]</a>
                             <?php } else { ?>
-                                <a href="?pagina=1">[<<]< /a>
+                                <a href="?pagina=1">[<<]</a>
                                         <?php
                                         $primeira_pagina = max($pagina - $intervalo_das_paginas, 1);
                                         $ultima_pagina = min($numero_de_paginas, $pagina + $intervalo_das_paginas);
