@@ -91,6 +91,7 @@ div.menu-mobile {
     top: 80px;
     padding: 20px 0 20px 0;
     font-weight: bold;
+    z-index: 1000;
 }
 
 div.menu-mobile ul#lista {
