@@ -92,7 +92,7 @@ function validateForm() {
       alert('Por favor, corrija os erros no formulário antes de enviar.');
   } else {
       document.getElementById('registro-form').submit();
-      window.location.href = 'analise-dados-usuario.html';
+    //   window.location.href = 'analise-dados-usuario.html';
   }
 }
 

@@ -137,6 +137,30 @@ button#btn-enviar:hover {
     transition: 0.5s;
 }
 
+section#acerto {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    display: flex;
+}
+
+section#acerto div#conteudo-acerto {
+    background-color: var(--verde);
+    padding: 16px 15px;
+    border-radius: 8px;
+    position: relative;
+}
+
+section#acerto div#conteudo-acerto img {
+    position: absolute;
+    right: -8px;
+    top: -10px;
+    background-color: var(--vermelho);
+    border-radius: 50px;
+    cursor: pointer;
+    height: 23px;
+}
+
 /* MEDIA QUERIES */
 
 /*TELA DE IPHONE 5 E MENORES*/
