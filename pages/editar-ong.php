@@ -296,9 +296,9 @@ if (isset($_GET['id'])) {
                         <!-- Pix -->
                         <div class="flex-container-pagamento">
                             <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" id="ipt-pix" name="chave-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." oninput="pixValidate()" value="<?php echo $chave_pix?>">
+                            <input type="text" id="ipt-pix" name="chave-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." value="<?php echo $chave_pix?>">
 
-                            <span class="alerta">Pix inválido</span>
+                            <span class="alerta" id="spanPix">Pix inválido</span>
                         </div>
 
                         <!-- Linha Divisória -->
@@ -314,22 +314,25 @@ if (isset($_GET['id'])) {
                             <div class="flex">
                                 <div class="alinhando-pagamentos">
                                     <div class="ipt-span-vertical">
-                                        <input type="text" name="conta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" oninput="numcontaValidate()" value="<?php echo $conta ?>">
+                                        <!-- Número da conta -->
+                                        <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php echo $conta ?>">
 
-                                        <span class="alerta">Número inválido</span>
+                                        <span class="alerta" id="spanNumConta">Número inválido</span>
                                     </div>
 
                                     <div class="ipt-span-vertical">
-                                        <input type="text" name="agencia" class="ipt-cbancaria campos" placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()" value="<?php echo $agencia ?>">
+                                        <!-- Agência -->
+                                        <input type="text" name="agencia" id="ipt-agencia" class="ipt-cbancaria campos"placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()" value="<?php echo $agencia ?>">
 
-                                        <span class="alerta">Agência inválido</span>
+                                        <span class="alerta" id="spanAgencia">Agência inválida</span>
                                     </div>
                                 </div>
                                 <div class="alinhando-pagamentos">
                                     <div class="ipt-span-vertical">
-                                        <input type="text" name="instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" oninput="instituicaoValidate()" value="<?php echo $instituicao ?>">
+                                    <!-- Instituição -->
+                                    <input type="text" name="instituicao" id="ipt-Instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" oninput="instituicaoValidate()" value="<?php echo $instituicao ?>">
 
-                                        <span class="alerta">Instituição inválida</span>
+                                        <span class="alerta" id="spanInstituicao">Instituição inválida</span>
                                     </div>
 
 
