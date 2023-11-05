@@ -6,6 +6,8 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: home-logado.php");
     die();
+} else {
+    $id_usuario = intval($_SESSION['id_usuario']);
 }
 
 require_once("../lib/conexao.php");
@@ -13,10 +15,8 @@ require_once("../lib/funcoes_uteis.php");
 
 if (isset($_GET['id'])) {
     $id_ong = intval($_GET['id']);
-    $id_usuario = intval(1); // substituir por $_SESSION['id_usuario']
 
     $sql_code_select_usuario = "SELECT nome, telefone, email FROM usuarios WHERE id_usuario = $id_usuario LIMIT 1";
-    // WHERE $id_usuario = $_SESSION['id_usuario']
 
     $sql_query_select_usuario = $pdo->prepare($sql_code_select_usuario);
     $sql_query_select_usuario->execute() or die("Erro ao selecionar as informações do usuário.");
