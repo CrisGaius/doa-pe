@@ -268,8 +268,14 @@ if (isset($total_ongs)) {
                                     </details>
                                 </div>
                                 <div class="card-botoes">
-                                    <a href="forma-de-pagamento.php?id=<?php echo $id ?>" class="botao-doar">DOAR</a>
-                                    <a href="formulario-voluntario.php?id=<?php echo $id ?>" class="botao-voluntariar">Voluntariar</a>
+                                    <?php if (isset($_SESSION)) { ?>
+                                        <a href="forma-de-pagamento.php?id=<?php echo $id ?>" class="botao-doar">DOAR</a>
+                                        <?php if (isset($_SESSION['funcao']) && !$_SESSION['funcao']) { ?>
+                                            <a href="formulario-voluntario.php?id=<?php echo $id ?>" class="botao-voluntariar">Voluntariar</a>
+                                        <?php } else if (isset($_SESSION['funcao']) && $_SESSION['funcao']) { ?>
+                                            <a href="deletar-ong.php?id=<?php echo $id ?>" class="botao-voluntariar">DELETAR</a>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
