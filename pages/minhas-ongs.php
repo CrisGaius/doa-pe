@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: login-usuario.php");
+    header("Location: home-logado.php");
     die();
 } else {
     $id_usuario = intval($_SESSION['id_usuario']);

@@ -46,7 +46,7 @@ div.container-maior{
 div.container-menor{
     display: flex;
     padding: 20px 0;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     background-color: var(--cinza);
 }
 
@@ -68,10 +68,13 @@ div.buttons{
     flex-direction: column;
     gap: 5px;
     justify-content: space-evenly;
-
 }
 
-div.buttons > button:hover {
+div.buttons a {
+    text-decoration: none;
+}
+
+div.buttons > a:hover {
     transform: scale(1.1);
     transition: 0.3s;
 }
