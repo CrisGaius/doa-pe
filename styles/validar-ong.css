@@ -79,7 +79,7 @@ header#cabecalho h1 {
     height: 35px;
     border-radius: 5px;
     text-align: center;
-    color: var(--branco);
+    color: var(--preto);
     background-color: var(--branco);
 }
 

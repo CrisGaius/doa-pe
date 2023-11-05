@@ -14,7 +14,11 @@
 
     $sql_query_select_usuarios_analise = $pdo->prepare($sql_code_select_usuarios_analise);
     $sql_query_select_usuarios_analise->execute() or die ("Erro ao selecionar o id dos usuários no banco de dados.");
-?>
+
+    $sql_code_select_ongs_analise = "SELECT id_ong FROM ongs WHERE status = 'analise' ";
+
+    $sql_query_select_ongs_analise = $pdo->prepare($sql_code_select_ongs_analise);
+    $sql_query_select_ongs_analise->execute() or die("Erro ao selecionar o id da ong no banco de dados.");?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -65,17 +69,22 @@
             <div class="sub-titulo">
                 <h2>VALIDAR ONG</h2>
             </div>
+            <?php if($sql_query_select_ongs_analise->rowCount() > 0) {?>
+                <?php foreach($sql_query_select_ongs_analise as $ong) {?>
+                    <div class="container-menor">
+                        <div class="flex-vertical">
+                            <a href="validar-ong.php?id=<?php echo $ong['id_ong'] ?>">#<?php echo $ong['id_ong'] ?></a >
 
-            <div class="container-menor">
-                <div class="flex-vertical">
-                    <a href="validar-ong.html">#ID</a >
-
-                    <div class="buttons">
-                        <a class="btn-aceitar flex-container">Aceitar</a>
-                        <a class="btn-recusar flex-container">Recusar</a>
+                            <div class="buttons">
+                                <a href="aceitar_ong_admin.php?id=<?php echo $ong['id_ong']?>" class="btn-aceitar flex-container">Aceitar</a>
+                                <a href="deletar_ong_admin.php?id=<?php echo $ong['id_ong']?>" class="btn-recusar flex-container">Recusar</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                <?php }?>
+            <?php } else { ?>
+                <h3><strong>Nenhuma ONG em validação!</strong></h3>
+            <?php }?>
         </div>
     </main>
 </body>

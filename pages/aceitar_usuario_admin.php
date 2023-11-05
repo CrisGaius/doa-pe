@@ -29,7 +29,7 @@ if(isset($_GET['id'])) {
             
             if($sql_query_update_status_usuario->execute()) {
                 $envio_email = enviar_email("../vendor/autoload.php", $email_usuario, "Aprovado no web app da Doa PE Ticket (" . uniqid() . ")", "<p>Felizmente, você foi <strong>aprovado</strong> no web app da Doa PE! <strong>Boas-vindas!</strong></p>
-                <p>Efetu seu login clicando <a href='http://localhost/doa-pe/pages/login-usuario.php'>AQUI</a>.</p>");
+                <p>Efetue seu login clicando <a href='http://localhost/doa-pe/pages/login-usuario.php'>AQUI</a>.</p>");
 
                 if($envio_email) {
                     header("Location: validar-usuario-ong.php");
@@ -39,7 +39,7 @@ if(isset($_GET['id'])) {
                 }
 
             } else {
-                die("Erro ao excluir o usuário.");
+                die("Erro ao atualizar o status do usuário.");
             }
         } else {
             die("Erro ao guardar o email do usuário.");
