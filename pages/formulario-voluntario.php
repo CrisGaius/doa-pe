@@ -1,4 +1,13 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: home-logado.php");
+    die();
+}
+
 require_once("../lib/conexao.php");
 require_once("../lib/funcoes_uteis.php");
 

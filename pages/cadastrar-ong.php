@@ -6,6 +6,7 @@ if (!isset($_SESSION)) {
 
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: home-logado.php");
+    die();
 }
 
 require_once("../lib/conexao.php");
