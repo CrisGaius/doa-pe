@@ -133,7 +133,7 @@ if (isset($total_ongs)) {
         <div class="menu-mobile">
             <ul id="lista" class="flex-container">
                 <li><a href="home-logado.php" id="atual">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
                 <?php if (isset($_SESSION)) {
                     if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário mobile
                 ?>
@@ -165,7 +165,7 @@ if (isset($total_ongs)) {
             <a href=""><img src="../images/logo.png" alt="Logo da Doa PE" id="logo-doa-pe"></a>
             <ul id="lista" class="flex-container">
                 <li><a href="home-logado.php" id="atual">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
                 </div>
 
                 <?php if (isset($_SESSION)) {
