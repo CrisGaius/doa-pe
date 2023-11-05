@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 
 if (isset($id_usuario)) {
-    // $id_usuario = 1; // $_SESSION['id_usuario'];
+    $_SESSION['id_usuario'];
 
     $query = "SELECT id_ong, nome, foto FROM ongs WHERE id_usuario = :id_usuario";
     $stmt = $pdo->prepare($query);
@@ -40,35 +40,75 @@ if (isset($id_usuario)) {
 
 <body>
     <header id="cabecalho">
+        <!-- Menu principal -->
         <nav id="navbar" class="flex-container">
             <a href=""><img src="../images/logo.png" alt="Logo da Doa PE" id="logo-doa-pe"></a>
             <ul id="lista" class="flex-container">
-                <li><a href="">Início</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="" id="atual">Minhas ONGs</a></li>
-                <li><a href="" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
-                <li id="botao-logout" class="flex-container">
-                    <a href="">Logout</a>
-                    <img src="../icons/icone-logout.svg" alt="ícone de logout">
-                </li>
+                <li><a href="home-logado.php" >Início</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                </div>
+
+                <?php if (isset($_SESSION)) {
+                    if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário
+                ?>
+                        <li><a href="minhas-ongs.php" id="atual">Minha ONG</a></li>
+                        <li><a href="cadastrar-ong.php" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm 
+                    ?>
+                        <li><a href="validar-usuario-ong.html">Validação</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else { //coloca a navbar da pessoa deslogada 
+                    ?>
+                        <li id="botao-login" class="flex-container">
+                            <a href="login-usuario.php">Login</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                        </li>
+                <?php }
+                } ?>
                 <img src="../icons/icone-menu.svg" alt="ícone do menu" id="icone-menu">
             </ul>
         </nav>
+                <!-- Menu Mobile -->
         <div class="menu-mobile">
             <ul id="lista" class="flex-container">
-                <li><a href="">Início</a></li>
-                <li><a href="" id="atual">Sobre</a></li>
-                <li><a href="">Minha ONG</a></li>
-                <li><a href="" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
-                <li id="botao-logout" class="flex-container">
-                    <a href="">Logout</a>
-                    <img src="../icons/icone-logout.svg" alt="ícone de logout">
-                </li>
+                <li><a href="home-logado.php">Início</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                <?php if (isset($_SESSION)) {
+                    if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário mobile
+                ?>
+                        <li><a href="minhas-ongs.php" id="atual">Minha ONG</a></li>
+                        <li><a href="cadastrar-ong.php" id="botao-cadastrar-ong">Cadastrar ONG</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm mobile
+                    ?>
+                        <li><a href="validar-usuario-ong.html">Validação</a></li>
+                        <li id="botao-logout" class="flex-container">
+                            <a href="../logout.php">Logout</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de logout">
+                        </li>
+                    <?php } else { //coloca a navbar da pessoa deslogada mobile
+                    ?>
+                        <li id="botao-login" class="flex-container">
+                            <a href="login-usuario.php">Login</a>
+                            <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                        </li>
+                <?php }
+                } ?>
             </ul>
         </div>
     </header>
     <main>
-        <h1 id="titulo">Minhas ONGs</h1>
+        <h1 id="titulo">Minha ONG</h1>
         <?php if ($stmt->rowCount() > 0) : ?>
             <?php foreach ($stmt as $ong) : ?>
                 <div class="box-layout">
