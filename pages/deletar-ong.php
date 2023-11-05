@@ -4,9 +4,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id_usuario']) && isset($_SESSION['funcao'])) {
     header("Location: home-logado.php");
     die();
+} else {
+    $id_usuario = intval($_SESSION['id_usuario']);
+    $funcao = intval($_SESSION['funcao']);
 }
 
 require_once("../lib/conexao.php");
@@ -14,41 +17,58 @@ require_once("../lib/conexao.php");
 if (isset($_GET['id'])) {
     $erro = false;
     $id_ong = intval($_GET['id']);
-    $sql_code_select_foto = "SELECT foto FROM ongs WHERE id_ong = :id_ong LIMIT 1"; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
 
-    $sql_query_select_foto = $pdo->prepare($sql_code_select_foto);
-    $sql_query_select_foto->bindValue(":id_ong", $id_ong, PDO::PARAM_STR);
-    $sql_query_select_foto->execute();
+    $sql_code_select_ong = "SELECT id_usuario FROM ongs WHERE id_ong = $id_ong";
 
-    if ($sql_query_select_foto->rowCount() > 0) {
-        $foto = $sql_query_select_foto->fetchColumn();
+    if (!$funcao) {
+        $sql_code_select_ong .= " AND id_usuario = $id_usuario";
+    }
 
-        if (isset($foto)) {
-            if (unlink("../" . $foto)) {
-                $sql_code_deletar_informacoes_bancarias = "DELETE FROM informacoes_bancarias WHERE id_ong = :id_ong LIMIT 1"; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
+    $sql_code_select_ong .= " LIMIT 1";
 
-                $sql_query_deletar_informacoes_bancarias = $pdo->prepare($sql_code_deletar_informacoes_bancarias);
-                $sql_query_deletar_informacoes_bancarias->bindValue(":id_ong", $id_ong, PDO::PARAM_INT);
+    $sql_query_select_ong = $pdo->prepare($sql_code_select_ong);
+    $sql_query_select_ong->execute() or die("Erro ao selecionar id_usuario");
 
-                if ($sql_query_deletar_informacoes_bancarias->execute()) {
-                    $sql_code_deletar_ong = "DELETE FROM ongs WHERE id_ong = :id_ong LIMIT 1"; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
+    if ($sql_query_select_ong->rowCount() !== 0) {
 
-                    $sql_query_deletar_ong = $pdo->prepare($sql_code_deletar_ong);
-                    $sql_query_deletar_ong->bindValue(":id_ong", $id_ong, PDO::PARAM_STR);
+        $sql_code_select_foto = "SELECT foto FROM ongs WHERE id_ong = :id_ong "; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
 
-                    if ($sql_query_deletar_ong->execute()) {
-                        $erro = false;
+        $sql_query_select_foto = $pdo->prepare($sql_code_select_foto);
+        $sql_query_select_foto->bindValue(":id_ong", $id_ong, PDO::PARAM_STR);
+        $sql_query_select_foto->execute();
+
+        if ($sql_query_select_foto->rowCount() > 0) {
+            $foto = $sql_query_select_foto->fetchColumn();
+
+            if (isset($foto)) {
+                if (unlink("../" . $foto)) {
+                    $sql_code_deletar_informacoes_bancarias = "DELETE FROM informacoes_bancarias WHERE id_ong = :id_ong LIMIT 1"; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
+
+                    $sql_query_deletar_informacoes_bancarias = $pdo->prepare($sql_code_deletar_informacoes_bancarias);
+                    $sql_query_deletar_informacoes_bancarias->bindValue(":id_ong", $id_ong, PDO::PARAM_INT);
+
+                    if ($sql_query_deletar_informacoes_bancarias->execute()) {
+                        $sql_code_deletar_ong = "DELETE FROM ongs WHERE id_ong = :id_ong LIMIT 1"; //colocar a validação com o $_SESSION['id'] (AND id_usuario = $_SESSION['id_usuario'])
+
+                        $sql_query_deletar_ong = $pdo->prepare($sql_code_deletar_ong);
+                        $sql_query_deletar_ong->bindValue(":id_ong", $id_ong, PDO::PARAM_STR);
+
+                        if ($sql_query_deletar_ong->execute()) {
+                            $erro = false;
+                        } else {
+                            $erro = true;
+                            // die("Erro ao excluir a ONG no banco de dados. Entrentanto, a imagem foi excluída. Caminho: $foto");
+                        }
                     } else {
                         $erro = true;
-                        // die("Erro ao excluir a ONG no banco de dados. Entrentanto, a imagem foi excluída. Caminho: $foto");
+                        // die("Erro ao excluir as informações bancárias da ONG. Entretanto, a imagem foi excluída. Caminho: $foto");
                     }
                 } else {
                     $erro = true;
-                    // die("Erro ao excluir as informações bancárias da ONG. Entretanto, a imagem foi excluída. Caminho: $foto");
+                    // die("Erro ao excluir a imagem com caminho ../$foto. Informe ao suporte!");
                 }
             } else {
                 $erro = true;
-                // die("Erro ao excluir a imagem com caminho ../$foto. Informe ao suporte!");
             }
         } else {
             $erro = true;
