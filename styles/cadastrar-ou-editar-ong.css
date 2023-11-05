@@ -293,7 +293,7 @@ footer{
 
 #btn-enviar{
     cursor: pointer;
-    width: 400px;
+    width: 300px;
     margin-top: 40px;
     padding: 10px 0;
     font-size: 24px;
@@ -307,9 +307,7 @@ footer{
 }
 
 #btn-enviar:hover{
-    color: var(--ciano);
-    border: 1px solid #00F0FF;
-    background-color: #00868F;
+    background-color: var(--ciano-escuro);
 }
 
 section#acerto {
@@ -479,7 +477,7 @@ section#acerto div#conteudo-acerto img {
     
     /* FOOTER */
     #btn-enviar{
-        width: 280px;
+        width: 230px;
     }
 }
 @media only screen and (min-width: 459px) and (max-width: 599px) {
