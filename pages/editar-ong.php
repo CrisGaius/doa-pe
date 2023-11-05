@@ -1,4 +1,13 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: home-logado.php");
+    die();
+}
+
 //quando for abrir a tela de editar, informar que a ong irá para análise novamente após a edição. (Atualizar status para "analise" novamente)
 
 require_once("../lib/conexao.php");
