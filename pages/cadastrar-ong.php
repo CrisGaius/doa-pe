@@ -241,7 +241,7 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                             <?php } ?>
                         </select>
 
-                        <span id="span-FinalidadeONG">Selecione uma opção</span>
+                        <!-- <span id="span-FinalidadeONG">Selecione uma opção</span> -->
                     </div>
 
                     <!-- Caixa Formas de Pagamento -->
@@ -251,9 +251,9 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                             <!-- Pix -->
                             <div class="flex-container-pagamento">
                                 <label for="ipt-pix" class="label-pagameto">Pix</label>
-                                <input type="text" id="ipt-pix" name="chave-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." oninput="pixValidate()" value="<?php if (isset($_POST['chave-pix'])) echo $_POST['chave-pix'] ?>">
+                                <input type="text" name="chave-pix" id="ipt-pix" class="campos" maxlength="32" placeholder="Digite seu pix..."  value="<?php if (isset($_POST['chave-pix'])) echo $_POST['chave-pix'] ?>">
 
-                                <span class="alerta">Pix inválido</span>
+                                <span class="alerta" id="spanPix">Pix inválido</span>
                             </div>
 
                             <!-- Linha Divisória -->
@@ -269,22 +269,22 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                                 <div class="flex">
                                     <div class="alinhando-pagamentos">
                                         <div class="ipt-span-vertical">
-                                            <input type="text" name="conta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" oninput="numcontaValidate()" value="<?php if (isset($_POST['conta'])) echo formatar_conta($_POST['conta']) ?>">
+                                            <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php if (isset($_POST['conta'])) echo formatar_conta($_POST['conta']) ?>">
 
-                                            <span class="alerta">Número inválido</span>
+                                            <span class="alerta" id="spanNumConta">Número inválido</span>
                                         </div>
 
                                         <div class="ipt-span-vertical">
-                                            <input type="text" name="agencia" class="ipt-cbancaria campos" placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()" value="<?php if (isset($_POST['agencia'])) echo $_POST['agencia'] ?>">
+                                            <input type="text" name="agencia" id="ipt-agencia" class="ipt-cbancaria campos" placeholder="Agência da conta" maxlength="4" value="<?php if (isset($_POST['agencia'])) echo $_POST['agencia'] ?>">
 
-                                            <span class="alerta">Agência inválida</span>
+                                            <span class="alerta" id="spanAgencia">Agência inválida</span>
                                         </div>
                                     </div>
                                     <div class="alinhando-pagamentos">
                                         <div class="ipt-span-vertical">
-                                            <input type="text" name="instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" oninput="instituicaoValidate()" value="<?php if (isset($_POST['instituicao'])) echo $_POST['instituicao'] ?>">
+                                            <input type="text" name="instituicao" id="ipt-Instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" value="<?php if (isset($_POST['instituicao'])) echo $_POST['instituicao'] ?>">
 
-                                            <span class="alerta">Instituição inválida</span>
+                                            <span class="alerta" id="spanInstituicao">Instituição inválida</span>
                                         </div>
 
 
@@ -295,7 +295,7 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                                                 <?php } ?>
                                             </select>
 
-                                            <span id="span-TipoConta">Selecione uma opção</span>
+                                            <!-- <span id="span-TipoConta">Selecione uma opção</span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +314,7 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                             <?php } ?>
                         </select>
 
-                        <span id="span-regiao">Selecione uma opção</span>
+                        <!-- <span id="span-regiao">Selecione uma opção</span> -->
                     </div>
 
 

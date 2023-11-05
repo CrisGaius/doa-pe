@@ -61,84 +61,109 @@ function cnpjValidate(){
     }
 }
 
-// Validar o select "Finalidade" (de ONG)
-const spanTipo   = document.getElementById('span-FinalidadeONG')
-const selectTipo = document.getElementById('select-finalidade')
-selectTipo.addEventListener('click', function(){
-    // Mostrar o erro
-    if (selectTipo.value == 'FinalidadeONG'){
-        selectTipo.style.border = "2px solid var(--amarelo)"
-        spanTipo.style.display = "block"
-    } else{ 
-        selectTipo.style.border = "none"
-        spanTipo.style.display = "none"
+// Validar o pix
+const spanPix  = document.getElementById('spanPix')
+const caixaPix = document.getElementById('ipt-pix')
+caixaPix.addEventListener('keyup', function(){
+    if (caixaPix.value.length < 11){
+        console.log('Pix Inválido')
+        caixaPix.style.border = "2px solid var(--amarelo)"
+        spanPix.style.display = "block"
+    } else{
+        console.log('Pix Válido')
+        caixaPix.style.border = ""
+        spanPix.style.display = "none"
     }
 })
 
-// Função para validar o pix
-function pixValidate(){
-    if(campos[5].value.length < 32){
-        setError(5)
+// Validar o número (conta bancária)
+const spanNumConta  = document.getElementById('spanNumConta')
+const caixaNumConta = document.getElementById('ipt-NumConta')
+caixaNumConta.addEventListener('keyup', function(){
+    if (caixaNumConta.value.length < 7){
+        console.log('Num Inválido')
+        caixaNumConta.style.border = "2px solid var(--amarelo)"
+        spanNumConta.style.display = "block"
     } else{
-        removerError(5)
+        console.log('Num Válido')
+        caixaNumConta.style.border = ""
+        spanNumConta.style.display = "none"
     }
-}
+})
 
-// Função para validar o número (conta bancária)
-function numcontaValidate(){
-    if(campos[6].value.length < 7){
-        setError(6)
+// Validar a agência (conta bancária)
+const spanAgencia  = document.getElementById('spanAgencia')
+const caixaAgencia = document.getElementById('ipt-agencia')
+caixaAgencia.addEventListener('keyup', function(){
+    if (caixaAgencia.value.length < 4){
+        console.log('Agência Inválido')
+        caixaAgencia.style.border = "2px solid var(--amarelo)"
+        spanAgencia.style.display = "block"
     } else{
-        removerError(6)
+        console.log('Agência Válido')
+        caixaAgencia.style.border = ""
+        spanAgencia.style.display = "none"
     }
-}
+})
 
-// Função para validar a agência (conta bancária)
-function agenciaValidate(){
-    if(campos[7].value.length < 4){
-        setError(7)
+// Validar a instituição (conta bancária)
+const spanInstituicao  = document.getElementById('spanInstituicao')
+const caixaInstituicao = document.getElementById('ipt-Instituicao')
+caixaInstituicao.addEventListener('keyup', function(){
+    if (caixaInstituicao.value.length < 4){
+        console.log('Instituição Inválido')
+        caixaInstituicao.style.border  = "2px solid var(--amarelo)"
+        spanInstituicao .style.display = "block"
     } else{
-        removerError(7)
-    }
-}
-
-// Função para validar a instituição (conta bancária)
-function instituicaoValidate(){
-    if(campos[8].value.length < 4){
-        setError(8)
-    } else{
-        removerError(8)
-    }
-}
-
-// Validar o select "Tipo de conta"
-const spanPagamento   = document.getElementById('span-TipoConta')
-const selectPagamento = document.getElementById('select-conta')    
-selectPagamento.addEventListener('click', function(){
-    // Mostrar o erro
-    if (selectPagamento.value == 'tipoConta'){
-        selectPagamento.style.border = "2px solid var(--amarelo)"
-        spanPagamento.style.display = "block"
-    } else{ 
-        selectPagamento.style.border = "2px solid rgb(0, 166, 255)"
-        spanPagamento.style.display = "none"
+        console.log('Instituição Válido')
+        caixaInstituicao.style.border  = ""
+        spanInstituicao .style.display = "none"
     }
 })
 
 
-// Validar select "Região"
-const spanRegiao   = document.getElementById('span-regiao')
-const selectRegiao = document.getElementById('select-regiao')
-selectRegiao.addEventListener('click', function(){
-    // Mostrar o erro
-    if(selectRegiao.value == 'SelecioneRegiao'){
-        selectRegiao.style.border = "2px solid var(--amarelo)"
-        spanRegiao.style.display  = "block"
-    } else{
-        selectRegiao.style.border = "none"
-        spanRegiao.style.display  = "none"
-    }
-})
+// // Validar o select "Finalidade" (de ONG)
+// const spanTipo   = document.getElementById('span-FinalidadeONG')
+// const selectTipo = document.getElementById('select-finalidade')
+// selectTipo.addEventListener('click', function(){
+//     // Mostrar o erro
+//     if (selectTipo.value == 'FinalidadeONG'){
+//         selectTipo.style.border = "2px solid var(--amarelo)"
+//         spanTipo.style.display = "block"
+//     } else{ 
+//         selectTipo.style.border = "none"
+//         spanTipo.style.display = "none"
+//     }
+// })
+
+// // Validar o select "Tipo de conta"
+// const spanPagamento   = document.getElementById('span-TipoConta')
+// const selectPagamento = document.getElementById('select-conta')    
+// selectPagamento.addEventListener('click', function(){
+//     // Mostrar o erro
+//     if (selectPagamento.value == 'tipoConta'){
+//         selectPagamento.style.border = "2px solid var(--amarelo)"
+//         spanPagamento.style.display = "block"
+//     } else{ 
+//         selectPagamento.style.border = "2px solid rgb(0, 166, 255)"
+//         spanPagamento.style.display = "none"
+//     }
+// })
+
+
+// // Validar o select "Região"
+// const spanRegiao   = document.getElementById('span-regiao')
+// const selectRegiao = document.getElementById('select-regiao')
+// selectRegiao.addEventListener('click', function(){
+//     // Mostrar o erro
+//     if(selectRegiao.value == 'SelecioneRegiao'){
+//         selectRegiao.style.border = "2px solid var(--amarelo)"
+//         spanRegiao.style.display  = "block"
+//     } else{
+//         selectRegiao.style.border = "none"
+//         spanRegiao.style.display  = "none"
+//     }
+// })
 
 
 // Função para validar a descrição
