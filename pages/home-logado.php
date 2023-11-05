@@ -154,7 +154,7 @@ if (isset($total_ongs)) {
                     ?>
                         <li id="botao-login" class="flex-container">
                             <a href="login-usuario.php">Login</a>
-                            <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                            <img src="../icons/icone-login.svg" alt="ícone de Login">
                         </li>
                 <?php }
                 } ?>
@@ -188,7 +188,7 @@ if (isset($total_ongs)) {
                     ?>
                         <li id="botao-login" class="flex-container">
                             <a href="login-usuario.php">Login</a>
-                            <img src="../icons/icone-logout.svg" alt="ícone de Login">
+                            <img src="../icons/icone-login.svg" alt="ícone de Login">
                         </li>
                 <?php }
                 } ?>
