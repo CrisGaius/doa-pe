@@ -7,7 +7,7 @@ if (count($_POST) > 0) {
         $email = trim($_POST['email']);
         $senha = trim($_POST['senha']);
 
-        $sql_code_select_usuario = "SELECT id_usuario, funcao, senha FROM usuarios WHERE email = :email LIMIT 1";
+        $sql_code_select_usuario = "SELECT id_usuario, funcao, senha FROM usuarios WHERE email = :email AND status = 'aprovado' LIMIT 1";
         $sql_query_select_usuario = $pdo->prepare($sql_code_select_usuario);
         $sql_query_select_usuario->bindValue(":email", $email);
 
