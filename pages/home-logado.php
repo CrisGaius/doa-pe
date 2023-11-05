@@ -123,7 +123,9 @@ if (isset($total_ongs)) {
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="stylesheet" href="../styles/home-logado.css">
+    <link rel="stylesheet" href="../styles/modal-excluir.css">
     <script src="../scripts/menu-mobile.js" defer></script>
+    <script src="../scripts/modal.js" defer></script>
     <title>Doa PE</title>
 </head>
 
@@ -273,7 +275,7 @@ if (isset($total_ongs)) {
                                         <?php if (isset($_SESSION['funcao']) && !$_SESSION['funcao']) { ?>
                                             <a href="formulario-voluntario.php?id=<?php echo $id ?>" class="botao-voluntariar">Voluntariar</a>
                                         <?php } else if (isset($_SESSION['funcao']) && $_SESSION['funcao']) { ?>
-                                            <a href="deletar-ong.php?id=<?php echo $id ?>" class="botao-voluntariar">DELETAR</a>
+                                            <a href="deletar-ong.php?id=<?php echo $id ?>" class="botao-voluntariar abrir-modal">DELETAR</a>
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -323,6 +325,16 @@ if (isset($total_ongs)) {
                                     </p>
                                 <?php } ?>
     </main>
+    <section id="fundo-modal" class="flex-container">
+        <section id="modal" class="flex-container">
+            <p id="texto-principal">DESEJA REALMENTE EXCLUIR A ONG?</p>
+            <div id="caixa-botoes" class="flex-container">
+                <a href="" id="botao-confirmar">SIM</a>
+                <button type="button" href="" id="botao-negar">NÃO</button>
+            </div>
+            <button id="botao-fechar-modal" class="flex-container">X</button>
+        </section>
+    </section>
 </body>
 
 </html>
