@@ -114,12 +114,12 @@ if (isset($id_usuario)) {
             <?php foreach ($stmt as $ong) : ?>
                 <div class="box-layout">
                     <div class="logo-imagem flex-container">
-                        <img src="<?= $ong['foto'] ?>" alt="">
+                        <img src="<?= "../". $ong['foto'] ?>" alt="">
                     </div>
                     <h1 class="flex-container"><?= $ong['nome'] ?></h1>
                     <div class="botoes flex-container">
-                        <a href="editar-ong?id=<?= $ong['id_ong'] ?>" class="btn-editar">EDITAR</a>
-                        <a class="abrir-modal btn-excluir" href="../pages/excluir-ong.html?id=<?= $ong['id_ong'] ?>">EXCLUIR</a>
+                        <a href="editar-ong.php?id=<?= $ong['id_ong'] ?>" class="btn-editar">EDITAR</a>
+                        <a class="abrir-modal btn-excluir" href="../pages/deletar-ong.php?id=<?= $ong['id_ong'] ?>">EXCLUIR</a>
                     </div>
                 </div>
             <?php endforeach; ?>

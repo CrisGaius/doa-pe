@@ -3,9 +3,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id_usuario']) && !isset($_SESSION['funcao'])) {
     header("Location: home-logado.php");
     die();
+} else {
+    $id_usuario = intval($_SESSION['id_usuario']);
+    $funcao = intval($_SESSION['funcao']);
 }
 
 //quando for abrir a tela de editar, informar que a ong irá para análise novamente após a edição. (Atualizar status para "analise" novamente)
@@ -161,8 +164,14 @@ if (isset($_GET['id'])) {
         FROM ongs
         JOIN informacoes_bancarias info_bancarias
         ON ongs.id_ong = info_bancarias.id_ong
-        WHERE ongs.id_ong = $id_ong LIMIT 1";
+        WHERE ongs.id_ong = $id_ong";
         // AND ongs.id_usuario = $id_usuario --> para verificar se aquele usuário realmente cadastrou aquela ong. obs: antes do limit.
+
+        if(!$funcao) {
+            $sql_code_select_info_ongs .= " AND ongs.id_usuario = $id_usuario";
+        }
+
+        $sql_code_select_info_ongs .= " LIMIT 1";
 
         $sql_query_select_info_ongs = $pdo->prepare($sql_code_select_info_ongs);
         $sql_query_select_info_ongs->execute() or die("Erro ao consultar as informações da ONG no banco de dados.");
