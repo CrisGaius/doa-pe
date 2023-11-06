@@ -57,8 +57,50 @@ if (isset($_GET['id'])) {
                 }
 
                 $cnpj = preg_replace("/[^0-9]/", "", $_POST['cnpj']);
+
                 if (strlen($cnpj) !== 14) {
                     $erro = true;
+                } else {
+                    $sql_code_select_cnpj = "SELECT cnpj FROM ongs";
+
+                    $sql_query_select_cnpj = $pdo->prepare($sql_code_select_cnpj);
+
+                    $sql_query_select_cnpj->execute();
+
+                    if ($sql_query_select_cnpj->rowCount() > 0) {
+                        $cnpjs = [];
+
+                        foreach ($sql_query_select_cnpj as $dados) {
+                            array_push($cnpjs, $dados['cnpj']);
+                        }
+
+                        if(in_array($cnpj, $cnpjs)) {
+                            $erro = true;
+                            
+                            $sql_code_select_cnpj_atual = "SELECT cnpj FROM ongs WHERE id_ong = $id_ong LIMIT 1";
+    
+                            $sql_query_select_cnpj_atual = $pdo->prepare($sql_code_select_cnpj_atual);
+                            $sql_query_select_cnpj_atual->execute();
+
+                            if($sql_query_select_cnpj_atual->rowCount() > 0) {
+                                $cnpj_atual = $sql_query_select_cnpj_atual->fetchColumn();
+
+                                if($cnpj !== $cnpj_atual) {
+                                    $mensagem_erro = "CNPJ já cadastrado.";
+                                    $erro= true;
+                                } else {
+                                    $erro = false;
+                                }
+                            } else {
+                                $mensagem_erro = "Erro ao selecionar o cnpj atual.";
+                                $erro = true;
+                            }
+                        } else {
+                            $erro = false;
+                        }
+                    } else {
+                        $erro = true;
+                    }
                 }
 
                 $conta = preg_replace("/[^0-9]/", "", $_POST['conta']);
@@ -155,8 +197,13 @@ if (isset($_GET['id'])) {
                     }
                     // se der erro no update, guardar o caminho (se ele estiver definido e mostrar o caminho no erro e mandar enviar para o suporte que a imagem foi enviada, mas houve um erro no update).
                 } else {
+                    if (isset($mensagem_erro)) {
+                        echo "$mensagem_erro <br>";
+                    }
                     die("Algo deu errado no preenchimento dos dados.");
                 }
+            } else {
+                die("Erro nas validações para enviar os dados.");
             }
         }
 
@@ -167,7 +214,7 @@ if (isset($_GET['id'])) {
         WHERE ongs.id_ong = $id_ong";
         // AND ongs.id_usuario = $id_usuario --> para verificar se aquele usuário realmente cadastrou aquela ong. obs: antes do limit.
 
-        if(!$funcao) {
+        if (!$funcao) {
             $sql_code_select_info_ongs .= " AND ongs.id_usuario = $id_usuario";
         }
 
@@ -211,200 +258,200 @@ if (isset($_GET['id'])) {
             <div id="paragrafo">
                 <h1>Editar ONG</h1>
             </div>
-        
+
             <?php if (isset($sql_query_select_info_ongs) && $sql_query_select_info_ongs->rowCount() > 0) { ?>
-            <?php foreach ($sql_query_select_info_ongs as $dados) {
-                $nome = $dados['nome'];
-                $endereco = $dados['endereco'];
-                $email = $dados['email'];
-                $contato = formatar_numero($dados['contato']);
-                $cnpj = formatar_cnpj($dados['cnpj']);
-                $id_tipo_ong_atual = $dados['id_tipo_ong'];
-                $chave_pix = $dados['chave_pix'];
-                $conta = formatar_conta($dados['conta']);
-                $tipo_de_conta_atual = $dados['tipo_de_conta'];
-                $instituicao = $dados['instituicao'];
-                $agencia = $dados['agencia'];
-                $id_regiao_atual = $dados['id_regiao'];
-                $descricao = $dados['descricao'];
-                $foto = $dados['foto'];
-                $status = $dados['status'];
-            ?>
-            <!-- Formulário -->
-            <form autocomplete="off" method="post" enctype="multipart/form-data">
-                <!-- OBS: O Chrome não está aceitando o autocomplete="off" em alguns casos, então uma forma para resolver isso é criar dois inputs, colocar o mesmo id para os dois e colocar o display: none no primeiro. -->
+                <?php foreach ($sql_query_select_info_ongs as $dados) {
+                    $nome = $dados['nome'];
+                    $endereco = $dados['endereco'];
+                    $email = $dados['email'];
+                    $contato = formatar_numero($dados['contato']);
+                    $cnpj = formatar_cnpj($dados['cnpj']);
+                    $id_tipo_ong_atual = $dados['id_tipo_ong'];
+                    $chave_pix = $dados['chave_pix'];
+                    $conta = formatar_conta($dados['conta']);
+                    $tipo_de_conta_atual = $dados['tipo_de_conta'];
+                    $instituicao = $dados['instituicao'];
+                    $agencia = $dados['agencia'];
+                    $id_regiao_atual = $dados['id_regiao'];
+                    $descricao = $dados['descricao'];
+                    $foto = $dados['foto'];
+                    $status = $dados['status'];
+                ?>
+                    <!-- Formulário -->
+                    <form autocomplete="off" method="post" enctype="multipart/form-data">
+                        <!-- OBS: O Chrome não está aceitando o autocomplete="off" em alguns casos, então uma forma para resolver isso é criar dois inputs, colocar o mesmo id para os dois e colocar o display: none no primeiro. -->
 
-                <!-- Input NOME -->
-                <div class="inputs">
-                    <label for="ipt-nome">Nome</label>
-                    <input type="text" id="ipt-nome" style="display: none;">
-                    <input type="text" id="ipt-nome" name="nome" class="caixa-input campos" maxlength="255" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()" value="<?php echo $nome?>">
+                        <!-- Input NOME -->
+                        <div class="inputs">
+                            <label for="ipt-nome">Nome</label>
+                            <input type="text" id="ipt-nome" style="display: none;">
+                            <input type="text" id="ipt-nome" name="nome" class="caixa-input campos" maxlength="255" placeholder="Digite o nome da sua ONG..." oninput="nameValidate()" value="<?php echo $nome ?>">
 
-                    <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
-                </div>
-
-                <!-- Input ENDEREÇO -->
-                <div class="inputs">
-                    <label for="ipt-endereco">Endereço</label>
-                    <input type="text" name="endereco" id="ipt-endereco" class="caixa-input campos" placeholder="Ex: Rua Padre Inglês, 356 - Boa Vista, Recife" oninput="enderecoValidate()" value="<?php echo $endereco?>">
-
-                    <span class="alerta">Mínimo de 20 caracteres</span>
-                </div>
-
-                <!-- Input E-MAIL -->
-                <div class="inputs">
-                    <label for="ipt-email">E-mail</label>
-                    <input type="text" id="ipt-email" name="email" class="caixa-input campos" maxlength="345" placeholder="Ex: email@gmail.com" oninput="emailValidate()" value="<?php echo $email ?>">
-
-                    <span class="alerta">E-mail inválido</span>
-                </div>
-
-                <!-- Input CONTATO -->
-                <div class="inputs">
-                    <label for="ipt-contato">Contato</label>
-                    <input type="text" id="telefone" name="contato" class="caixa-input campos" maxlength="15" placeholder="Número de contato da ONG..." oninput="numeroValidate()" value="<?php echo $contato ?>">
-
-                    <span class="alerta">Número inválido</span>
-                </div>
-
-                <!-- Input CNPJ -->
-                <div class="inputs">
-                    <label for="ipt-cnpj">CNPJ</label>
-                    <input type="text" id="cnpj" name="cnpj" class="caixa-input campos" maxlength="18" placeholder="Ex: xx.xxx.xxx/xxxx-xx" oninput="cnpjValidate()" value="<?php echo $cnpj?>">
-
-                    <span class="alerta">CNPJ incompleto</span>
-                </div>
-
-                <!-- Input TIPO -->
-                <div class="inputs">
-                    <label for="ipt-tipos">Finalidade</label>
-                    <select id="select-finalidade" name="tipo-ong" class="caixa-input campos">
-                    <?php foreach ($tipos as $indice => $tipo) {
-                        $indice = $indice + 1
-                    ?>
-                        <option value="<?php echo $tipo['id_tipo_ong'] ?>" <?php if ($tipo['id_tipo_ong'] === $id_tipo_ong_atual) echo "selected" ?>><?php echo $indice . " - " . $tipo['tipo'] ?></option>
-                    <?php } ?>
-                    </select>
-
-                    <span id="span-FinalidadeONG">Selecione uma opção</span>
-                </div>
-
-                <!-- Caixa Formas de Pagamento -->
-                <div class="inputs">
-                    <p class="subtitulo">Formas de Pagamentos</p>
-                    <div id="ipt-pagamento">
-                        <!-- Pix -->
-                        <div class="flex-container-pagamento">
-                            <label for="ipt-pix" class="label-pagameto">Pix</label>
-                            <input type="text" id="ipt-pix" name="chave-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." value="<?php echo $chave_pix?>">
-
-                            <span class="alerta" id="spanPix">Pix inválido</span>
+                            <span class="alerta" id="min-carac-nome">Mínimo de 3 caracteres</span>
                         </div>
 
-                        <!-- Linha Divisória -->
-                        <div id="flex-container-linha">
-                            <div class="linha-vertical"></div>
-                            <div id="linha-divisoria"></div>
-                            <div class="linha-vertical"></div>
+                        <!-- Input ENDEREÇO -->
+                        <div class="inputs">
+                            <label for="ipt-endereco">Endereço</label>
+                            <input type="text" name="endereco" id="ipt-endereco" class="caixa-input campos" placeholder="Ex: Rua Padre Inglês, 356 - Boa Vista, Recife" oninput="enderecoValidate()" value="<?php echo $endereco ?>">
+
+                            <span class="alerta">Mínimo de 20 caracteres</span>
                         </div>
 
-                        <!-- Conta Bancária -->
-                        <div class="flex-container-pagamento">
-                            <label class="label-pagameto">Conta Bancária</label>
-                            <div class="flex">
-                                <div class="alinhando-pagamentos">
-                                    <div class="ipt-span-vertical">
-                                        <!-- Número da conta -->
-                                        <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php echo $conta ?>">
+                        <!-- Input E-MAIL -->
+                        <div class="inputs">
+                            <label for="ipt-email">E-mail</label>
+                            <input type="text" id="ipt-email" name="email" class="caixa-input campos" maxlength="345" placeholder="Ex: email@gmail.com" oninput="emailValidate()" value="<?php echo $email ?>">
 
-                                        <span class="alerta" id="spanNumConta">Número inválido</span>
-                                    </div>
+                            <span class="alerta">E-mail inválido</span>
+                        </div>
 
-                                    <div class="ipt-span-vertical">
-                                        <!-- Agência -->
-                                        <input type="text" name="agencia" id="ipt-agencia" class="ipt-cbancaria campos"placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()" value="<?php echo $agencia ?>">
+                        <!-- Input CONTATO -->
+                        <div class="inputs">
+                            <label for="ipt-contato">Contato</label>
+                            <input type="text" id="telefone" name="contato" class="caixa-input campos" maxlength="15" placeholder="Número de contato da ONG..." oninput="numeroValidate()" value="<?php echo $contato ?>">
 
-                                        <span class="alerta" id="spanAgencia">Agência inválida</span>
-                                    </div>
+                            <span class="alerta">Número inválido</span>
+                        </div>
+
+                        <!-- Input CNPJ -->
+                        <div class="inputs">
+                            <label for="ipt-cnpj">CNPJ</label>
+                            <input type="text" id="cnpj" name="cnpj" class="caixa-input campos" maxlength="18" placeholder="Ex: xx.xxx.xxx/xxxx-xx" oninput="cnpjValidate()" value="<?php echo $cnpj ?>">
+
+                            <span class="alerta">CNPJ incompleto</span>
+                        </div>
+
+                        <!-- Input TIPO -->
+                        <div class="inputs">
+                            <label for="ipt-tipos">Finalidade</label>
+                            <select id="select-finalidade" name="tipo-ong" class="caixa-input campos">
+                                <?php foreach ($tipos as $indice => $tipo) {
+                                    $indice = $indice + 1
+                                ?>
+                                    <option value="<?php echo $tipo['id_tipo_ong'] ?>" <?php if ($tipo['id_tipo_ong'] === $id_tipo_ong_atual) echo "selected" ?>><?php echo $indice . " - " . $tipo['tipo'] ?></option>
+                                <?php } ?>
+                            </select>
+
+                            <span id="span-FinalidadeONG">Selecione uma opção</span>
+                        </div>
+
+                        <!-- Caixa Formas de Pagamento -->
+                        <div class="inputs">
+                            <p class="subtitulo">Formas de Pagamentos</p>
+                            <div id="ipt-pagamento">
+                                <!-- Pix -->
+                                <div class="flex-container-pagamento">
+                                    <label for="ipt-pix" class="label-pagameto">Pix</label>
+                                    <input type="text" id="ipt-pix" name="chave-pix" class="campos" maxlength="32" placeholder="Digite seu pix..." value="<?php echo $chave_pix ?>">
+
+                                    <span class="alerta" id="spanPix">Pix inválido</span>
                                 </div>
-                                <div class="alinhando-pagamentos">
-                                    <div class="ipt-span-vertical">
-                                    <!-- Instituição -->
-                                    <input type="text" name="instituicao" id="ipt-Instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" oninput="instituicaoValidate()" value="<?php echo $instituicao ?>">
 
-                                        <span class="alerta" id="spanInstituicao">Instituição inválida</span>
-                                    </div>
+                                <!-- Linha Divisória -->
+                                <div id="flex-container-linha">
+                                    <div class="linha-vertical"></div>
+                                    <div id="linha-divisoria"></div>
+                                    <div class="linha-vertical"></div>
+                                </div>
+
+                                <!-- Conta Bancária -->
+                                <div class="flex-container-pagamento">
+                                    <label class="label-pagameto">Conta Bancária</label>
+                                    <div class="flex">
+                                        <div class="alinhando-pagamentos">
+                                            <div class="ipt-span-vertical">
+                                                <!-- Número da conta -->
+                                                <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php echo $conta ?>">
+
+                                                <span class="alerta" id="spanNumConta">Número inválido</span>
+                                            </div>
+
+                                            <div class="ipt-span-vertical">
+                                                <!-- Agência -->
+                                                <input type="text" name="agencia" id="ipt-agencia" class="ipt-cbancaria campos" placeholder="Agência da conta" maxlength="4" oninput="agenciaValidate()" value="<?php echo $agencia ?>">
+
+                                                <span class="alerta" id="spanAgencia">Agência inválida</span>
+                                            </div>
+                                        </div>
+                                        <div class="alinhando-pagamentos">
+                                            <div class="ipt-span-vertical">
+                                                <!-- Instituição -->
+                                                <input type="text" name="instituicao" id="ipt-Instituicao" class="ipt-cbancaria campos" placeholder="Instituição da conta" oninput="instituicaoValidate()" value="<?php echo $instituicao ?>">
+
+                                                <span class="alerta" id="spanInstituicao">Instituição inválida</span>
+                                            </div>
 
 
-                                    <div class="ipt-span-vertical">
-                                        <select id="select-conta" name="tipo-conta" class="ipt-cbancaria">
-                                        <?php foreach ($tipos_de_contas as $tipo_conta) { ?>
-                                            <option value="<?php echo $tipo_conta ?>" <?php if ($tipo_conta === $tipo_de_conta_atual) echo "selected" ?>><?php echo $tipo_conta ?></option>
-                                        <?php } ?>
-                                        </select>
+                                            <div class="ipt-span-vertical">
+                                                <select id="select-conta" name="tipo-conta" class="ipt-cbancaria">
+                                                    <?php foreach ($tipos_de_contas as $tipo_conta) { ?>
+                                                        <option value="<?php echo $tipo_conta ?>" <?php if ($tipo_conta === $tipo_de_conta_atual) echo "selected" ?>><?php echo $tipo_conta ?></option>
+                                                    <?php } ?>
+                                                </select>
 
-                                        <span id="span-TipoConta">Selecione uma opção</span>
+                                                <span id="span-TipoConta">Selecione uma opção</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
 
-                </div>
+                        <!-- Input REGIÃO-->
+                        <div class="inputs">
+                            <label for="select-regiao">Região</label>
+                            <select id="select-regiao" name="regiao-ong">
+                                <?php foreach ($regioes as $indice => $regiao) {
+                                    $indice = $indice + 1 ?>
+                                    <option value="<?php echo $regiao['id_regiao'] ?>" <?php if ($regiao['id_regiao'] === $id_regiao_atual) echo "selected" ?>><?php echo $indice . " - " . $regiao['nome_regiao'] ?></option>
+                                <?php } ?>
+                            </select>
 
-                <!-- Input REGIÃO-->
-                <div class="inputs">
-                    <label for="select-regiao">Região</label>
-                    <select id="select-regiao" name="regiao-ong">
-                    <?php foreach ($regioes as $indice => $regiao) {
-                        $indice = $indice + 1 ?>
-                        <option value="<?php echo $regiao['id_regiao'] ?>" <?php if ($regiao['id_regiao'] === $id_regiao_atual) echo "selected" ?>><?php echo $indice . " - " . $regiao['nome_regiao'] ?></option>
+                            <span id="span-regiao">Selecione uma opção</span>
+                        </div>
+
+
+                        <!-- Input DESCRIÇÃO -->
+                        <div class="inputs">
+                            <label for="ipt-descricao">Descrição</label>
+                            <textarea id="ipt-descricao" name="descricao" rows="10" minlength="20" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"><?php echo $descricao ?></textarea>
+
+                            <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
+                        </div>
+
+                        <!-- Input FOTO -->
+                        <div id="area-maior">
+                            <div class="area-menor">
+                                <div id="caixa-file">
+                                    <input type="file" id="file" name="atualizar-foto">
+                                    <label for="file">Trocar Foto</label>
+
+                                    <img src="../icons/icone-lupa.svg" alt="Lupa" id="icon-lupa">
+                                </div>
+
+                                <div id="escolher-img">
+                                    <img id="imagemPreview" src="<?php echo "../" . $foto ?>" alt="Prévia da imagem">
+                                </div>
+
+                                <span class="alerta" id="alerta-img">Foto não selecionada</span>
+                            </div>
+                        </div>
+                        <span>Status:</span>
+                        <input type="text" name="status" id="status" value="<?php if ($status === "aprovado") {
+                                                                                echo "Aprovado";
+                                                                            } else {
+                                                                                echo "Análise";
+                                                                            } ?>" readonly>
+                        <p><strong>Adendo:</strong> ao clicar no botão <strong>EDITAR</strong>, a ong será enviada para análise novamente.</p>
                     <?php } ?>
-                    </select>
-
-                    <span id="span-regiao">Selecione uma opção</span>
-                </div>
-
-
-                <!-- Input DESCRIÇÃO -->
-                <div class="inputs">
-                    <label for="ipt-descricao">Descrição</label>
-                    <textarea id="ipt-descricao" name="descricao" rows="10" minlength="20" maxlength="500" placeholder="Descreva em até 500 caracteres..." oninput="descricaoValidate()"><?php echo $descricao ?></textarea>
-
-                    <span class="alerta" id="min-carac">Mínimo de 20 caracteres</span>
-                </div>
-
-                <!-- Input FOTO -->
-                <div id="area-maior">
-                    <div class="area-menor">
-                        <div id="caixa-file">
-                            <input type="file" id="file" name="atualizar-foto">
-                            <label for="file">Trocar Foto</label>
-
-                            <img src="../icons/icone-lupa.svg" alt="Lupa" id="icon-lupa">
-                        </div>
-
-                        <div id="escolher-img">
-                            <img id="imagemPreview" src="<?php echo "../". $foto ?>" alt="Prévia da imagem">
-                        </div>
-
-                        <span class="alerta" id="alerta-img">Foto não selecionada</span>
-                    </div>
-                </div>
-                <span>Status:</span>
-                <input type="text" name="status" id="status" value="<?php if ($status === "aprovado") {
-                                                                        echo "Aprovado";
-                                                                    } else {
-                                                                        echo "Análise";
-                                                                    } ?>" readonly>
-                <p><strong>Adendo:</strong> ao clicar no botão <strong>EDITAR</strong>, a ong será enviada para análise novamente.</p>
-                <?php }?>
-                <button type="submit" id="btn-enviar" onclick="verificar()">Editar</button>
+                    <button type="submit" id="btn-enviar" onclick="verificar()">Editar</button>
                 <?php } else { ?>
                     <h1>Ocorreu um erro ao procurar por essa ong... Volte e tente novamente.</h1>
-            <?php } ?>
-            </form>
-            
+                <?php } ?>
+                    </form>
+
         </section>
     </main>
 
