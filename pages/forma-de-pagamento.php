@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <label for="tipo-de-conta">Tipo de Conta</label>
-                <input readonly type="text" name="tipo-de-conta" id="tipo-de-conta" value="<?php echo strtoupper($info_bancarias['tipo_de_conta'])?>">
+                <input readonly type="text" name="tipo-de-conta" id="tipo-de-conta" value="<?php echo $info_bancarias['tipo_de_conta']?>">
             </div>
         </section>
         <?php } else { ?>

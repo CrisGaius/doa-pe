@@ -204,7 +204,7 @@ if (isset($total_ongs)) {
             <form action="" method="get">
                 <div class="pesquisa">
                     <div class="input-container">
-                        <input id="pesquisa" name="pesquisa" type="text" placeholder="Pesquisar" value="<?php if (isset($_GET['pesquisa']) && strlen($_GET['pesquisa']) > 0) echo $_GET['pesquisa'] ?>">
+                        <input id="pesquisa" name="pesquisa" type="text" placeholder="Nome, tipo ou região da ong..." value="<?php if (isset($_GET['pesquisa']) && strlen($_GET['pesquisa']) > 0) echo $_GET['pesquisa'] ?>">
                         <button type="submit" id="botao-procurar">
                             <img src="../images/lupa.png" alt="Pesquisar">
                         </button>
@@ -265,7 +265,7 @@ if (isset($total_ongs)) {
                                 <h2 class="card-title"><?php echo $nome ?></h2>
                                 <div class="card-details">
                                     <details>
-                                        <summary>Detalhes</summary>
+                                        <summary>Descrição</summary>
                                         <p><?php echo $descricao ?></p>
                                     </details>
                                 </div>
@@ -288,7 +288,7 @@ if (isset($total_ongs)) {
                         } ?>
                 <?php } ?>
             <?php } else { ?>
-                <h1>Nenhum resultado encontrado...</h1>
+                <h1 style="text-align: center; margin-top: 20px;">Nenhum resultado encontrado...</h1>
             <?php } ?>
             <?php if ($contador != 0) { ?>
                 </div>

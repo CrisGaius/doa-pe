@@ -245,6 +245,11 @@ img.card-img {
     font-weight: bold;
 }
 
+.card-details details summary {
+    list-style: revert;
+}
+
+
 .card-botoes {
     display: flex;
     justify-content: space-between;
@@ -326,6 +331,7 @@ div#links-paginacao a:hover {
 
     .flex-container-card2{
         flex-direction: column;
+        align-items: center;
     }
 
 }
@@ -357,6 +363,7 @@ div#links-paginacao a:hover {
 
     .flex-container-card2{
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -387,6 +394,7 @@ div#links-paginacao a:hover {
 
     .flex-container-card2{
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -417,6 +425,7 @@ div#links-paginacao a:hover {
 
     .flex-container-card2{
         flex-direction: column;
+        align-items: center;
     }
 }
 
