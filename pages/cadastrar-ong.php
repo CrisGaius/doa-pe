@@ -41,15 +41,17 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
 
     if (count($_POST) > 0) {
         $erro = false;
-        if (strlen($_POST['nome']) >= 3 && strlen($_POST['endereco']) >= 20 && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['contato']) && !empty($_POST['cnpj']) && in_array($_POST['tipo-ong'], $id_tipos_ongs) && strlen($_POST['chave-pix']) >= 11 && !empty($_POST['conta']) && in_array($_POST['tipo-conta'], $tipos_de_contas) && strlen($_POST['instituicao']) > 5 && strlen($_POST['agencia']) === 4 && in_array($_POST['regiao-ong'], $id_regioes) && strlen($_POST['descricao']) <= 500) {
+        if (strlen($_POST['nome']) >= 3 && strlen($_POST['endereco']) >= 20 && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && !empty($_POST['contato']) && !empty($_POST['cnpj']) && in_array($_POST['tipo-ong'], $id_tipos_ongs) && strlen($_POST['chave-pix']) >= 11 && !empty($_POST['conta']) && in_array($_POST['tipo-conta'], $tipos_de_contas) && strlen($_POST['instituicao']) >= 5 && strlen($_POST['agencia']) === 4 && in_array($_POST['regiao-ong'], $id_regioes) && strlen($_POST['descricao']) <= 500) {
 
             $contato = preg_replace("/[^0-9]/", "", $_POST['contato']);
             if (strlen($contato) < 10 || strlen($contato) > 11) {
+                $mensagem_erro = "Contato inválido!";
                 $erro = true;
             }
 
             $cnpj = preg_replace("/[^0-9]/", "", $_POST['cnpj']);
             if (strlen($cnpj) !== 14) {
+                $mensagem_erro = "Cnpj não válido!";
                 $erro = true;
             }
 
@@ -65,7 +67,8 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
             }
 
             $conta = preg_replace("/[^0-9]/", "", $_POST['conta']);
-            if (strlen($conta) !== 8) {
+            if (strlen($conta) < 8 || strlen($conta) > 20) {
+                $mensagem_erro = "Erro na conta bancária!";
                 $erro = true;
             }
 
@@ -270,7 +273,7 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
                                     <div class="alinhando-pagamentos">
                                         <div class="ipt-span-vertical">
                                             <!-- Número da conta -->
-                                            <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php if (isset($_POST['conta'])) echo formatar_conta($_POST['conta']) ?>">
+                                            <input type="text" name="conta" id="ipt-NumConta" class="ipt-cbancaria campos" maxlength="8" placeholder="Número da conta" value="<?php if (isset($_POST['conta'])) echo $_POST['conta'] ?>">
 
                                             <span class="alerta" id="spanNumConta">Número inválido</span>
                                         </div>

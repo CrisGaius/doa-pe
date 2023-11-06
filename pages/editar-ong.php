@@ -104,7 +104,7 @@ if (isset($_GET['id'])) {
                 }
 
                 $conta = preg_replace("/[^0-9]/", "", $_POST['conta']);
-                if (strlen($conta) !== 8) {
+                if (strlen($conta) < 8 || strlen($conta) > 20) {
                     $erro = true;
                 }
 
