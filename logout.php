@@ -4,4 +4,4 @@ if (!isset($_SESSION)) {
 }
 
 session_destroy();
-header("Location: pages/home-logado.php");
+header("Location: index.php");

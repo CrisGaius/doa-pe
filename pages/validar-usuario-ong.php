@@ -4,7 +4,7 @@
     }
     
     if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['funcao']) || !$_SESSION['funcao']) {
-        header("Location: home-logado.php");
+        header("Location: ../index.php");
         die();
     }
 
@@ -34,7 +34,7 @@
 <body>
     <header id="cabecalho" class="flex-container">
         <section id="caixa-voltar" class="flex-container">
-            <a href="#">
+            <a href="../index.php">
                 <img src="../icons/icone-voltar.svg" alt="Ícone de voltar" id="icone-voltar">
                 <p>VOLTAR</p>
             </a>

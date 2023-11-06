@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['funcao'])) {
-    header("Location: home-logado.php");
+    header("Location: ../index.php");
     die();
 } else {
     $id_usuario = intval($_SESSION['id_usuario']);
@@ -199,7 +199,7 @@ if (isset($_GET['id'])) {
 <body>
     <header>
         <!-- Voltar pra HOME LOGADO (USER) -->
-        <a href="../pages/minhas-ongs.html">
+        <a href="minhas-ongs.php">
             <button id="btn-voltar">
                 <img src="../images/seta-voltar.png" alt="Botão Voltar">voltar
             </button>

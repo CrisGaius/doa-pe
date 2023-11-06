@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: home-logado.php");
+    header("Location: ../index.php");
     die();
 }
 
@@ -172,7 +172,7 @@ if ($sql_query_select_tipos->rowCount() > 0 && $sql_query_select_regioes->rowCou
 <body>
     <header>
         <!-- Voltar pra HOME LOGADO (USER) -->
-        <a href="../index-deslogado.html">
+        <a href="../index.php">
             <button id="btn-voltar">
                 <img src="../icons/icone-voltar.svg" id="seta-voltar" alt="Botão Voltar">voltar
             </button>

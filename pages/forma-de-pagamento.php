@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="../styles/config.css">
     <link rel="shortcut icon" href="../favicon/fav.ico" type="image/x-icon">
     <title>Formas de Pagamento | DOA PE</title>
+    <script src="../scripts/botao-voltar-home.js" defer></script>
+    <script src="../scripts/forma-de-pagamento.js" defer></script>
 </head>
 <body>
     <header id="cabecalho" class="flex-container">
@@ -82,6 +84,5 @@
             <h1 id="erro">Erro ao selecionar as formas de pagamento da ong...</h1>
         <?php }?>
     </main>
-    <script src="../scripts/forma-de-pagamento.js"></script>
 </body>
 </html>

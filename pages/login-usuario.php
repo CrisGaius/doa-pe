@@ -24,7 +24,7 @@ if (count($_POST) > 0) {
                 $_SESSION['id_usuario'] = $dados['id_usuario'];
                 $_SESSION['funcao'] =  $dados['funcao'];
 
-                header("Location: home-logado.php");
+                header("Location: ../index.php");
             } else {
                 $erro = true;
             }
@@ -49,6 +49,7 @@ if (count($_POST) > 0) {
     <script src="../scripts/login-usuario.js" defer></script>
     <script src="https://kit.fontawesome.com/c687b2a461.js" crossorigin="anonymous" defer></script>
     <title>Login | DOA PE</title>
+    <script src="../scripts/botao-voltar-home.js" defer></script>
 </head>
 
 <body>

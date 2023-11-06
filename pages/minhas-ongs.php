@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: home-logado.php");
+    header("Location: ../index.php");
     die();
 } else {
     $id_usuario = intval($_SESSION['id_usuario']);
@@ -45,7 +45,7 @@ if (isset($id_usuario)) {
         <nav id="navbar" class="flex-container">
             <a href=""><img src="../images/logo.png" alt="Logo da Doa PE" id="logo-doa-pe"></a>
             <ul id="lista" class="flex-container">
-                <li><a href="home-logado.php" >Início</a></li>
+                <li><a href="../index.php" >Início</a></li>
                 <li><a href="sobre.php">Sobre</a></li>
                 </div>
 
@@ -60,7 +60,7 @@ if (isset($id_usuario)) {
                         </li>
                     <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm 
                     ?>
-                        <li><a href="validar-usuario-ong.html">Validação</a></li>
+                        <li><a href="validar-usuario-ong.php">Validação</a></li>
                         <li id="botao-logout" class="flex-container">
                             <a href="../logout.php">Logout</a>
                             <img src="../icons/icone-logout.svg" alt="ícone de logout">
@@ -79,7 +79,7 @@ if (isset($id_usuario)) {
                 <!-- Menu Mobile -->
         <div class="menu-mobile">
             <ul id="lista" class="flex-container">
-                <li><a href="home-logado.php">Início</a></li>
+                <li><a href="../index.php">Início</a></li>
                 <li><a href="sobre.php">Sobre</a></li>
                 <?php if (isset($_SESSION)) {
                     if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && !$_SESSION['funcao']) { //apresenta os elementos do menu do usuário mobile
@@ -92,7 +92,7 @@ if (isset($id_usuario)) {
                         </li>
                     <?php } else if (isset($_SESSION['id_usuario']) && isset($_SESSION['funcao']) && $_SESSION['funcao']) { // coloca as coisas do adm mobile
                     ?>
-                        <li><a href="validar-usuario-ong.html">Validação</a></li>
+                        <li><a href="validar-usuario-ong.php">Validação</a></li>
                         <li id="botao-logout" class="flex-container">
                             <a href="../logout.php">Logout</a>
                             <img src="../icons/icone-logout.svg" alt="ícone de logout">

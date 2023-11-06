@@ -80,9 +80,9 @@ if (count($_POST) > 0) {
 
 <body>
     <header>
-        <a href="login-usuario.html">
+        <a href="login-usuario.php">
             <button id="btn-voltar">
-                <img src="../icons/icone-voltar.svg" alt="Botão Voltar">voltar
+                <img src="../icons/icone-voltar.svg" alt="Botão Voltar">Voltar
             </button>
         </a>
     </header>
