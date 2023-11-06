@@ -35,7 +35,7 @@ $pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
 
 $intervalo_das_paginas = 3;
 
-$limite = 5;
+$limite = 3;
 $offset = ($pagina - 1) * $limite;
 
 if (isset($_GET['pesquisa']) && isset($_GET['tipo-ong']) && isset($_GET['regiao-ong'])) {
