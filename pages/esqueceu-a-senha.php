@@ -17,7 +17,7 @@ if(count($_POST) > 0) {
 
             if(isset($dados)) {
                 $senha = $dados['senha'];
-                $envio_email = enviar_email("../vendor/autoload.php", $email, "Redefinição de senha - Doa PE", 
+                $envio_email = enviar_email("../vendor/autoload.php", $email, "Redefinição de senha - Doa PE Ticket (" . uniqid() . ") ", 
                 "<h1>Link para redefinir essa senha no software da Doa PE.</h1> <a href='http://localhost/doa-pe/pages/nova-senha.php?pass=$senha'>Clique aqui</a>");
 
                 if($envio_email) {
