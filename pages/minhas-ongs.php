@@ -15,7 +15,7 @@ if (!isset($_SESSION['id_usuario'])) {
 if (isset($id_usuario)) {
     $_SESSION['id_usuario'];
 
-    $query = "SELECT id_ong, nome, foto FROM ongs WHERE id_usuario = :id_usuario";
+    $query = "SELECT id_ong, nome, foto, status FROM ongs WHERE id_usuario = :id_usuario";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':id_usuario', $id_usuario, PDO::PARAM_INT);
     $stmt->execute();
@@ -117,6 +117,13 @@ if (isset($id_usuario)) {
                         <img src="<?= "../". $ong['foto'] ?>" alt="">
                     </div>
                     <h1 class="flex-container"><?= $ong['nome'] ?></h1>
+                    <p id="status-ong" style="<?php if($ong['status'] === "aprovado") echo "color: var(--verde);"?>">
+                    STATUS: <?php if($ong['status'] === "aprovado") { 
+                        echo "APROVADO";
+                    } else {
+                        echo "ANÁLISE";
+                    }?>
+                    </p>
                     <div class="botoes flex-container">
                         <a href="editar-ong.php?id=<?= $ong['id_ong'] ?>" class="btn-editar">EDITAR</a>
                         <a class="abrir-modal btn-excluir" href="../pages/deletar-ong.php?id=<?= $ong['id_ong'] ?>">EXCLUIR</a>

@@ -93,12 +93,22 @@ main div.box-layout {
     height: 360px;
     border-radius: 20px;
     margin: 0px auto 40px auto;
+    position: relative;
 }
 
 main div.box-layout h1{
     font-size: 20px;
     color: var(--preto);
     margin-top: 12px;
+}
+
+p#status-ong {
+    position: absolute; 
+    text-align: center; 
+    width: 100%; 
+    font-weight: bold; 
+    color: var(--roxo-validação); 
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.158);
 }
 
 main div.box-layout div.botoes{
