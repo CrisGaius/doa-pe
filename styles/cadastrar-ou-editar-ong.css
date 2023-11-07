@@ -86,6 +86,14 @@ input::placeholder{
     font-weight: 600;
 }
 
+input:disabled {
+    background-color: rgb(224, 211, 211);
+    padding: 9px 8px; 
+    font-size: 18px; 
+    border-radius: 5px; 
+    color: var(--preto);
+}
+
 .caixa-input:focus{
     border: 2px solid rgb(0, 166, 255);
 }

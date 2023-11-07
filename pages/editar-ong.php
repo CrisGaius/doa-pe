@@ -74,20 +74,20 @@ if (isset($_GET['id'])) {
                             array_push($cnpjs, $dados['cnpj']);
                         }
 
-                        if(in_array($cnpj, $cnpjs)) {
+                        if (in_array($cnpj, $cnpjs)) {
                             $erro = true;
-                            
+
                             $sql_code_select_cnpj_atual = "SELECT cnpj FROM ongs WHERE id_ong = $id_ong LIMIT 1";
-    
+
                             $sql_query_select_cnpj_atual = $pdo->prepare($sql_code_select_cnpj_atual);
                             $sql_query_select_cnpj_atual->execute();
 
-                            if($sql_query_select_cnpj_atual->rowCount() > 0) {
+                            if ($sql_query_select_cnpj_atual->rowCount() > 0) {
                                 $cnpj_atual = $sql_query_select_cnpj_atual->fetchColumn();
 
-                                if($cnpj !== $cnpj_atual) {
+                                if ($cnpj !== $cnpj_atual) {
                                     $mensagem_erro = "CNPJ já cadastrado.";
-                                    $erro= true;
+                                    $erro = true;
                                 } else {
                                     $erro = false;
                                 }
@@ -246,7 +246,7 @@ if (isset($_GET['id'])) {
 <body>
     <header>
         <!-- Voltar pra HOME LOGADO (USER) -->
-        <a href="minhas-ongs.php">
+        <a href="../index.php">
             <button id="btn-voltar">
                 <img src="../images/seta-voltar.png" alt="Botão Voltar">voltar
             </button>
@@ -438,13 +438,13 @@ if (isset($_GET['id'])) {
                                 <span class="alerta" id="alerta-img">Foto não selecionada</span>
                             </div>
                         </div>
-                        <span>Status:</span>
+                        <label style="text-align: center;">Status:</label>
                         <input type="text" name="status" id="status" value="<?php if ($status === "aprovado") {
-                                                                                echo "Aprovado";
-                                                                            } else {
-                                                                                echo "Análise";
-                                                                            } ?>" readonly>
-                        <p><strong>Adendo:</strong> ao clicar no botão <strong>EDITAR</strong>, a ong será enviada para análise novamente.</p>
+                                                                                            echo "Aprovado";
+                                                                                        } else {
+                                                                                            echo "Análise";
+                                                                                        } ?>" disabled>
+                        <p style="text-align: center; font-weight: bold;"><strong>Adendo:</strong> ao clicar no botão <strong>EDITAR</strong>, a ong será enviada para análise novamente.</p>
                     <?php } ?>
                     <button type="submit" id="btn-enviar" onclick="verificar()">Editar</button>
                 <?php } else { ?>
@@ -454,12 +454,6 @@ if (isset($_GET['id'])) {
 
         </section>
     </main>
-
-    <!--<footer>
-        <a href="../pages/minhas-ongs.html">
-            <button type="submit" id="btn-enviar" onclick="verificar()">Editar</button>
-        </a>
-    </footer> -->
 </body>
 
 </html>
