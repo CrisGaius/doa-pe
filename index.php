@@ -49,7 +49,7 @@ if (isset($_GET['pesquisa']) && isset($_GET['tipo-ong']) && isset($_GET['regiao-
     ON tipos_de_ongs.id_tipo_ong = ongs.id_tipo_ong
     WHERE (ongs.nome LIKE :pesquisa OR tipos_de_ongs.tipo LIKE :pesquisa OR regioes.nome_regiao LIKE :pesquisa) AND status = 'aprovado'";
 
-    $sql_code_select_ongs = "SELECT tipos_de_ongs.tipo, regioes.nome_regiao, ongs.id_ong, ongs.foto, ongs.nome, ongs.descricao FROM ongs JOIN regioes 
+    $sql_code_select_ongs = "SELECT tipos_de_ongs.tipo, regioes.nome_regiao, ongs.id_ong, ongs.foto, ongs.nome, ongs.descricao, ongs.endereco FROM ongs JOIN regioes 
         ON regioes.id_regiao = ongs.id_regiao
         JOIN tipos_de_ongs
         ON tipos_de_ongs.id_tipo_ong = ongs.id_tipo_ong
@@ -85,7 +85,7 @@ if (isset($_GET['pesquisa']) && isset($_GET['tipo-ong']) && isset($_GET['regiao-
     $sql_query_select_total_ongs = $pdo->prepare($sql_code_select_total_ongs);
     $sql_query_select_total_ongs->execute() or die("Erro ao selecionar os campos no banco de dados.");
 
-    $sql_code_select_ongs = "SELECT tipos_de_ongs.tipo, regioes.nome_regiao, ongs.id_ong, ongs.foto, ongs.nome, ongs.descricao FROM ongs JOIN regioes 
+    $sql_code_select_ongs = "SELECT tipos_de_ongs.tipo, regioes.nome_regiao, ongs.id_ong, ongs.foto, ongs.nome, ongs.descricao, ongs.endereco FROM ongs JOIN regioes 
     ON regioes.id_regiao = ongs.id_regiao
     JOIN tipos_de_ongs
     ON tipos_de_ongs.id_tipo_ong = ongs.id_tipo_ong
@@ -249,6 +249,7 @@ if (isset($total_ongs)) {
                     $foto = $ong['foto'];
                     $nome = $ong['nome'];
                     $descricao = $ong['descricao'];
+                    $endereco = $ong['endereco'];
                 ?>
                     <?php if ($contador === 0) { ?>
                         <div class="flex-container-card2">
@@ -262,7 +263,7 @@ if (isset($total_ongs)) {
                                 <div class="card-details">
                                     <details>
                                         <summary>Descrição</summary>
-                                        <p><?php echo $descricao ?></p>
+                                        <p><?php echo $descricao . "<br> <br>" . "Endereço:" . "<br>" . $endereco ?></p>
                                     </details>
                                 </div>
                                 <div class="card-botoes">
