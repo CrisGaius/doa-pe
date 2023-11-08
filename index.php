@@ -120,7 +120,7 @@ if (isset($total_ongs)) {
     <link rel="stylesheet" href="styles/config.css">
     <link rel="stylesheet" href="styles/home-logado.css">
     <link rel="stylesheet" href="styles/modal-excluir.css">
-    <script src="scripts/menu-mobile.js" defer></script>
+    <script src="scripts/mobile-index.js" defer></script>
     <script src="scripts/modal.js" defer></script>
     <title>Doa PE</title>
 </head>
