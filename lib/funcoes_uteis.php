@@ -65,14 +65,14 @@ function enviar_email($caminho_vendor, $destinario, $assunto, $mensagem_html) {
     $email->Host = 'smtp.office365.com';
     $email->Port = 587;
     $email->SMTPAuth = true;
-    $email->Username = 'cristianocris12@hotmail.com';
-    $email->Password = 'sfpmlqdhqougiqgt';
+    $email->Username = 'email';
+    $email->Password = 'password';
 
     $email->SMTPSecure = 'tls';
     $email->isHTML(true);
     $email->CharSet = "UTF-8";
 
-    $email->setFrom("cristianocris12@hotmail.com", "Doa PE");
+    $email->setFrom("email", "Doa PE");
     $email->addAddress($destinario);
     $email->Subject = $assunto;
 
